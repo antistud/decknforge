@@ -1,72 +1,72 @@
 - generic [active] [ref=e1]:
-  - navigation [ref=e2]:
-    - generic [ref=e3]:
-      - link "DeckNForge logo DeckNForge" [ref=e4] [cursor=pointer]:
-        - /url: /
-        - img "DeckNForge logo" [ref=e5]
-        - generic [ref=e6]: DeckNForge
-      - generic [ref=e7]:
-        - link "Home" [ref=e8] [cursor=pointer]:
-          - /url: /
-        - link "Learn" [ref=e9] [cursor=pointer]:
-          - /url: /learn/
-        - link "Downloads" [ref=e10] [cursor=pointer]:
-          - /url: /downloads/
-        - link "Tracker" [ref=e11] [cursor=pointer]:
-          - /url: /tracker/
-  - main [ref=e12]:
-    - generic [ref=e13]:
-      - img "DeckNForge logo" [ref=e14]
-      - paragraph [ref=e15]: "\"Without teamwork, your band will never survive the dungeon. Without betrayal, you'll never claim the coppers.\""
-      - paragraph [ref=e16]: A persistent legacy card game for 3–5 wizards. 60–90 minutes. Built from a standard deck of playing cards — and the marks each game leaves on it.
-      - generic [ref=e17]:
-        - link "Learn the Game" [ref=e18] [cursor=pointer]:
-          - /url: /learn/
-        - link "Open Tracker" [ref=e19] [cursor=pointer]:
-          - /url: /tracker/
-        - link "Downloads" [ref=e20] [cursor=pointer]:
-          - /url: /downloads/
-    - generic [ref=e23]:
-      - generic [ref=e24]:
-        - heading "Your deck IS your band" [level=3] [ref=e25]
-        - paragraph [ref=e26]: Inscriptions, labels, and Glory are written on the cards themselves. Every game leaves marks the next wizard inherits.
-      - generic [ref=e27]:
-        - heading "Six bosses, one dungeon" [level=3] [ref=e28]
-        - paragraph [ref=e29]: Wizards pool their Monster cards and fight 6 sequential bosses. The wizard who lands the killing blow takes the coppers.
-      - generic [ref=e30]:
-        - heading "Cooperate. Then betray." [level=3] [ref=e31]
-        - paragraph [ref=e32]: Spike, Foil, Snipe, and Brace let you tip the scales — or steal the kill. Tactics cost cards, not coins.
-    - generic [ref=e35]:
-      - heading "What you need" [level=2] [ref=e36]
-      - list [ref=e37]:
-        - listitem [ref=e38]: 1 standard deck of playing cards with both Jokers (54 cards)
-        - listitem [ref=e39]: A fine-point Sharpie
-        - listitem [ref=e40]: 1 sheet of Avery 18294 labels
-        - listitem [ref=e41]: ~30 pennies per wizard for Coppers
-        - listitem [ref=e42]: A d20 for HP, a d6 for round counting
-      - link "Get the Rules & Sheets" [ref=e44] [cursor=pointer]:
-        - /url: /downloads/
-    - generic [ref=e47]:
-      - heading "Run a Dungeon Tonight" [level=2] [ref=e48]
-      - paragraph [ref=e49]: Open the Tracker on your phone. It handles HP, Coppers, Bosses, Minions, Round counter, and Glory — so the table can focus on the cards.
-      - link "Open the Tracker" [ref=e51] [cursor=pointer]:
-        - /url: /tracker/
-  - contentinfo [ref=e52]:
-    - generic [ref=e53]:
-      - paragraph [ref=e54]: © 2026 DeckNForge — A persistent legacy card game from a single deck of playing cards.
-      - paragraph [ref=e55]: v2.0 Playtest Edition · Without teamwork, your band will never survive the dungeon. Without betrayal, you'll never claim the coppers.
-  - generic [ref=e58]:
-    - button "Menu" [ref=e59]:
-      - img [ref=e61]
-      - generic: Menu
-    - button "Inspect" [ref=e65]:
-      - img [ref=e67]
-      - generic: Inspect
-    - button "Audit" [ref=e69]:
-      - generic [ref=e70]:
-        - img [ref=e71]
-        - img [ref=e74]
-      - generic: Audit
-    - button "Settings" [ref=e77]:
-      - img [ref=e79]
-      - generic: Settings
+    - navigation [ref=e2]:
+        - generic [ref=e3]:
+            - link "DeckNForge logo DeckNForge" [ref=e4] [cursor=pointer]:
+                - /url: /
+                - img "DeckNForge logo" [ref=e5]
+                - generic [ref=e6]: DeckNForge
+            - generic [ref=e7]:
+                - link "Home" [ref=e8] [cursor=pointer]:
+                    - /url: /
+                - link "Learn" [ref=e9] [cursor=pointer]:
+                    - /url: /learn/
+                - link "Downloads" [ref=e10] [cursor=pointer]:
+                    - /url: /downloads/
+                - link "Tracker" [ref=e11] [cursor=pointer]:
+                    - /url: /tracker/
+    - main [ref=e12]:
+        - generic [ref=e13]:
+            - img "DeckNForge logo" [ref=e14]
+            - paragraph [ref=e15]: '"Without teamwork, your band will never survive the dungeon. Without betrayal, you''ll never claim the coppers."'
+            - paragraph [ref=e16]: A persistent legacy card game for 3–5 wizards. 60–90 minutes. Built from a standard deck of playing cards — and the marks each game leaves on it.
+            - generic [ref=e17]:
+                - link "Learn the Game" [ref=e18] [cursor=pointer]:
+                    - /url: /learn/
+                - link "Open Tracker" [ref=e19] [cursor=pointer]:
+                    - /url: /tracker/
+                - link "Downloads" [ref=e20] [cursor=pointer]:
+                    - /url: /downloads/
+        - generic [ref=e23]:
+            - generic [ref=e24]:
+                - heading "Your deck IS your band" [level=3] [ref=e25]
+                - paragraph [ref=e26]: Inscriptions, labels, and Glory are written on the cards themselves. Every game leaves marks the next wizard inherits.
+            - generic [ref=e27]:
+                - heading "Six bosses, one dungeon" [level=3] [ref=e28]
+                - paragraph [ref=e29]: Wizards pool their Monster cards and fight 6 sequential bosses. The wizard who lands the killing blow takes the coppers.
+            - generic [ref=e30]:
+                - heading "Cooperate. Then betray." [level=3] [ref=e31]
+                - paragraph [ref=e32]: Spike, Foil, Snipe, and Brace let you tip the scales — or steal the kill. Tactics cost cards, not coins.
+        - generic [ref=e35]:
+            - heading "What you need" [level=2] [ref=e36]
+            - list [ref=e37]:
+                - listitem [ref=e38]: 1 standard deck of playing cards with both Jokers (54 cards)
+                - listitem [ref=e39]: A fine-point Sharpie
+                - listitem [ref=e40]: 1 sheet of Avery 18294 labels
+                - listitem [ref=e41]: ~30 pennies per wizard for Coppers
+                - listitem [ref=e42]: A d20 for HP, a d6 for round counting
+            - link "Get the Rules & Sheets" [ref=e44] [cursor=pointer]:
+                - /url: /downloads/
+        - generic [ref=e47]:
+            - heading "Run a Dungeon Tonight" [level=2] [ref=e48]
+            - paragraph [ref=e49]: Open the Tracker on your phone. It handles HP, Coppers, Bosses, Minions, Round counter, and Glory — so the table can focus on the cards.
+            - link "Open the Tracker" [ref=e51] [cursor=pointer]:
+                - /url: /tracker/
+    - contentinfo [ref=e52]:
+        - generic [ref=e53]:
+            - paragraph [ref=e54]: © 2026 DeckNForge — A persistent Legacy card game from a pocker deck of playing cards.
+            - paragraph [ref=e55]: v2.0 Playtest Edition · Without teamwork, your band will never survive the dungeon. Without betrayal, you'll never claim the coppers.
+    - generic [ref=e58]:
+        - button "Menu" [ref=e59]:
+            - img [ref=e61]
+            - generic: Menu
+        - button "Inspect" [ref=e65]:
+            - img [ref=e67]
+            - generic: Inspect
+        - button "Audit" [ref=e69]:
+            - generic [ref=e70]:
+                - img [ref=e71]
+                - img [ref=e74]
+            - generic: Audit
+        - button "Settings" [ref=e77]:
+            - img [ref=e79]
+            - generic: Settings

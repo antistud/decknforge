@@ -1,186 +1,186 @@
 - generic [ref=e1]:
-  - navigation [ref=e2]:
-    - generic [ref=e3]:
-      - link "DeckNForge logo" [ref=e4] [cursor=pointer]:
-        - /url: /
-        - img "DeckNForge logo" [ref=e5]
-      - generic [ref=e6]:
-        - link "Home" [ref=e7] [cursor=pointer]:
-          - /url: /
-        - link "Learn" [ref=e8] [cursor=pointer]:
-          - /url: /learn/
-        - link "Downloads" [ref=e9] [cursor=pointer]:
-          - /url: /downloads/
-        - link "Tracker" [ref=e10] [cursor=pointer]:
-          - /url: /tracker/
-  - main [ref=e11]:
-    - generic [ref=e13]:
-      - heading "Dungeon Tracker" [level=1] [ref=e14]
-      - paragraph [ref=e15]: Track wizards, bosses, and minions through a 6-fight dungeon. Saves to your device automatically — no account, no backend.
-      - tablist [ref=e16]:
-        - button "Dungeon" [ref=e17] [cursor=pointer]
-        - button "Wizards" [ref=e18] [cursor=pointer]
-        - button "Bosses" [active] [ref=e19] [cursor=pointer]
-        - button "Minions" [ref=e20] [cursor=pointer]
-        - button "Setup" [ref=e21] [cursor=pointer]
-      - generic [ref=e374]:
-        - generic [ref=e375]:
-          - generic [ref=e376]:
-            - textbox "Boss name (e.g. Ace of Spades)" [ref=e377]
-            - spinbutton [ref=e378]
-            - spinbutton [ref=e379]
-          - generic [ref=e380]:
-            - textbox "Labels (e.g. DOOM, TOUGH)" [ref=e381]
-            - button "Add Boss" [ref=e382] [cursor=pointer]
-          - paragraph [ref=e383]: Boss HP is automatically multiplied by the player count from Setup. Add up to 6 bosses; the dungeon plays them in order.
-        - generic [ref=e384]:
-          - generic [ref=e385]:
-            - generic [ref=e386]:
-              - generic [ref=e387]:
-                - generic [ref=e388]: 1. Skeleton King
-                - generic [ref=e389]:
-                  - text: Base HP 18 × 3 =
-                  - strong [ref=e390]: "54"
-                  - text: · ATK 4 ·
-                  - generic [ref=e391]: SWIFT
-              - generic [ref=e392]:
-                - generic [ref=e393]: Current
-                - button "Reset HP" [ref=e394] [cursor=pointer]
-                - button "Remove" [ref=e395] [cursor=pointer]
-            - generic [ref=e398]:
-              - generic [ref=e399]: HP
-              - generic [ref=e400]:
-                - button "−10" [ref=e401] [cursor=pointer]
-                - button "−5" [ref=e402] [cursor=pointer]
-                - button "−1" [ref=e403] [cursor=pointer]
-                - generic [ref=e404]: "49"
-                - button "+1" [ref=e405] [cursor=pointer]
-                - button "+5" [ref=e406] [cursor=pointer]
-          - generic [ref=e407]:
-            - generic [ref=e408]:
-              - generic [ref=e409]:
-                - generic [ref=e410]: 2. Dragon Whelp
-                - generic [ref=e411]:
-                  - text: Base HP 22 × 3 =
-                  - strong [ref=e412]: "66"
-                  - text: · ATK 5 ·
-                  - generic [ref=e413]: TOUGH
-              - generic [ref=e414]:
-                - button "Set Current" [ref=e415] [cursor=pointer]
-                - button "Reset HP" [ref=e416] [cursor=pointer]
-                - button "Remove" [ref=e417] [cursor=pointer]
-            - generic [ref=e420]:
-              - generic [ref=e421]: HP
-              - generic [ref=e422]:
-                - button "−10" [ref=e423] [cursor=pointer]
-                - button "−5" [ref=e424] [cursor=pointer]
-                - button "−1" [ref=e425] [cursor=pointer]
-                - generic [ref=e426]: "66"
-                - button "+1" [ref=e427] [cursor=pointer]
-                - button "+5" [ref=e428] [cursor=pointer]
-          - generic [ref=e429]:
-            - generic [ref=e430]:
-              - generic [ref=e431]:
-                - generic [ref=e432]: 3. Goblin Warlord
-                - generic [ref=e433]:
-                  - text: Base HP 16 × 3 =
-                  - strong [ref=e434]: "48"
-                  - text: · ATK 3
-              - generic [ref=e435]:
-                - button "Set Current" [ref=e436] [cursor=pointer]
-                - button "Reset HP" [ref=e437] [cursor=pointer]
-                - button "Remove" [ref=e438] [cursor=pointer]
-            - generic [ref=e441]:
-              - generic [ref=e442]: HP
-              - generic [ref=e443]:
-                - button "−10" [ref=e444] [cursor=pointer]
-                - button "−5" [ref=e445] [cursor=pointer]
-                - button "−1" [ref=e446] [cursor=pointer]
-                - generic [ref=e447]: "48"
-                - button "+1" [ref=e448] [cursor=pointer]
-                - button "+5" [ref=e449] [cursor=pointer]
-          - generic [ref=e450]:
-            - generic [ref=e451]:
-              - generic [ref=e452]:
-                - generic [ref=e453]: 4. The Watcher
-                - generic [ref=e454]:
-                  - text: Base HP 24 × 3 =
-                  - strong [ref=e455]: "72"
-                  - text: · ATK 5 ·
-                  - generic [ref=e456]: CUNNING
-              - generic [ref=e457]:
-                - button "Set Current" [ref=e458] [cursor=pointer]
-                - button "Reset HP" [ref=e459] [cursor=pointer]
-                - button "Remove" [ref=e460] [cursor=pointer]
-            - generic [ref=e463]:
-              - generic [ref=e464]: HP
-              - generic [ref=e465]:
-                - button "−10" [ref=e466] [cursor=pointer]
-                - button "−5" [ref=e467] [cursor=pointer]
-                - button "−1" [ref=e468] [cursor=pointer]
-                - generic [ref=e469]: "72"
-                - button "+1" [ref=e470] [cursor=pointer]
-                - button "+5" [ref=e471] [cursor=pointer]
-          - generic [ref=e472]:
-            - generic [ref=e473]:
-              - generic [ref=e474]:
-                - generic [ref=e475]: 5. Bone Tyrant
-                - generic [ref=e476]:
-                  - text: Base HP 26 × 3 =
-                  - strong [ref=e477]: "78"
-                  - text: · ATK 6 ·
-                  - generic [ref=e478]: VAMPIRIC
-              - generic [ref=e479]:
-                - button "Set Current" [ref=e480] [cursor=pointer]
-                - button "Reset HP" [ref=e481] [cursor=pointer]
-                - button "Remove" [ref=e482] [cursor=pointer]
-            - generic [ref=e485]:
-              - generic [ref=e486]: HP
-              - generic [ref=e487]:
-                - button "−10" [ref=e488] [cursor=pointer]
-                - button "−5" [ref=e489] [cursor=pointer]
-                - button "−1" [ref=e490] [cursor=pointer]
-                - generic [ref=e491]: "78"
-                - button "+1" [ref=e492] [cursor=pointer]
-                - button "+5" [ref=e493] [cursor=pointer]
-          - generic [ref=e494]:
-            - generic [ref=e495]:
-              - generic [ref=e496]:
-                - generic [ref=e497]: 6. Doomspawn
-                - generic [ref=e498]:
-                  - text: Base HP 30 × 3 =
-                  - strong [ref=e499]: "90"
-                  - text: · ATK 7 ·
-                  - generic [ref=e500]: DOOM
-              - generic [ref=e501]:
-                - button "Set Current" [ref=e502] [cursor=pointer]
-                - button "Reset HP" [ref=e503] [cursor=pointer]
-                - button "Remove" [ref=e504] [cursor=pointer]
-            - generic [ref=e507]:
-              - generic [ref=e508]: HP
-              - generic [ref=e509]:
-                - button "−10" [ref=e510] [cursor=pointer]
-                - button "−5" [ref=e511] [cursor=pointer]
-                - button "−1" [ref=e512] [cursor=pointer]
-                - generic [ref=e513]: "90"
-                - button "+1" [ref=e514] [cursor=pointer]
-                - button "+5" [ref=e515] [cursor=pointer]
-  - contentinfo [ref=e54]:
-    - generic [ref=e55]:
-      - paragraph [ref=e56]: © 2026 DeckNForge — A persistent legacy card game from a single deck of playing cards.
-      - paragraph [ref=e57]: v2.0 Playtest Edition · Without teamwork, your band will never survive the dungeon. Without betrayal, you'll never claim the coppers.
-  - generic [ref=e60]:
-    - button "Menu" [ref=e61]:
-      - img [ref=e63]
-      - generic: Menu
-    - button "Inspect" [ref=e67]:
-      - img [ref=e69]
-      - generic: Inspect
-    - button "Audit" [ref=e71]:
-      - generic [ref=e72]:
-        - img [ref=e73]
-        - img [ref=e236]
-      - generic: Audit
-    - button "Settings" [ref=e79]:
-      - img [ref=e81]
-      - generic: Settings
+    - navigation [ref=e2]:
+        - generic [ref=e3]:
+            - link "DeckNForge logo" [ref=e4] [cursor=pointer]:
+                - /url: /
+                - img "DeckNForge logo" [ref=e5]
+            - generic [ref=e6]:
+                - link "Home" [ref=e7] [cursor=pointer]:
+                    - /url: /
+                - link "Learn" [ref=e8] [cursor=pointer]:
+                    - /url: /learn/
+                - link "Downloads" [ref=e9] [cursor=pointer]:
+                    - /url: /downloads/
+                - link "Tracker" [ref=e10] [cursor=pointer]:
+                    - /url: /tracker/
+    - main [ref=e11]:
+        - generic [ref=e13]:
+            - heading "Dungeon Tracker" [level=1] [ref=e14]
+            - paragraph [ref=e15]: Track wizards, bosses, and minions through a 6-fight dungeon. Saves to your device automatically — no account, no backend.
+            - tablist [ref=e16]:
+                - button "Dungeon" [ref=e17] [cursor=pointer]
+                - button "Wizards" [ref=e18] [cursor=pointer]
+                - button "Bosses" [active] [ref=e19] [cursor=pointer]
+                - button "Minions" [ref=e20] [cursor=pointer]
+                - button "Setup" [ref=e21] [cursor=pointer]
+            - generic [ref=e374]:
+                - generic [ref=e375]:
+                    - generic [ref=e376]:
+                        - textbox "Boss name (e.g. Ace of Spades)" [ref=e377]
+                        - spinbutton [ref=e378]
+                        - spinbutton [ref=e379]
+                    - generic [ref=e380]:
+                        - textbox "Labels (e.g. DOOM, TOUGH)" [ref=e381]
+                        - button "Add Boss" [ref=e382] [cursor=pointer]
+                    - paragraph [ref=e383]: Boss HP is automatically multiplied by the player count from Setup. Add up to 6 bosses; the dungeon plays them in order.
+                - generic [ref=e384]:
+                    - generic [ref=e385]:
+                        - generic [ref=e386]:
+                            - generic [ref=e387]:
+                                - generic [ref=e388]: 1. Skeleton King
+                                - generic [ref=e389]:
+                                    - text: Base HP 18 × 3 =
+                                    - strong [ref=e390]: "54"
+                                    - text: · ATK 4 ·
+                                    - generic [ref=e391]: SWIFT
+                            - generic [ref=e392]:
+                                - generic [ref=e393]: Current
+                                - button "Reset HP" [ref=e394] [cursor=pointer]
+                                - button "Remove" [ref=e395] [cursor=pointer]
+                        - generic [ref=e398]:
+                            - generic [ref=e399]: HP
+                            - generic [ref=e400]:
+                                - button "−10" [ref=e401] [cursor=pointer]
+                                - button "−5" [ref=e402] [cursor=pointer]
+                                - button "−1" [ref=e403] [cursor=pointer]
+                                - generic [ref=e404]: "49"
+                                - button "+1" [ref=e405] [cursor=pointer]
+                                - button "+5" [ref=e406] [cursor=pointer]
+                    - generic [ref=e407]:
+                        - generic [ref=e408]:
+                            - generic [ref=e409]:
+                                - generic [ref=e410]: 2. Dragon Whelp
+                                - generic [ref=e411]:
+                                    - text: Base HP 22 × 3 =
+                                    - strong [ref=e412]: "66"
+                                    - text: · ATK 5 ·
+                                    - generic [ref=e413]: TOUGH
+                            - generic [ref=e414]:
+                                - button "Set Current" [ref=e415] [cursor=pointer]
+                                - button "Reset HP" [ref=e416] [cursor=pointer]
+                                - button "Remove" [ref=e417] [cursor=pointer]
+                        - generic [ref=e420]:
+                            - generic [ref=e421]: HP
+                            - generic [ref=e422]:
+                                - button "−10" [ref=e423] [cursor=pointer]
+                                - button "−5" [ref=e424] [cursor=pointer]
+                                - button "−1" [ref=e425] [cursor=pointer]
+                                - generic [ref=e426]: "66"
+                                - button "+1" [ref=e427] [cursor=pointer]
+                                - button "+5" [ref=e428] [cursor=pointer]
+                    - generic [ref=e429]:
+                        - generic [ref=e430]:
+                            - generic [ref=e431]:
+                                - generic [ref=e432]: 3. Goblin Warlord
+                                - generic [ref=e433]:
+                                    - text: Base HP 16 × 3 =
+                                    - strong [ref=e434]: "48"
+                                    - text: · ATK 3
+                            - generic [ref=e435]:
+                                - button "Set Current" [ref=e436] [cursor=pointer]
+                                - button "Reset HP" [ref=e437] [cursor=pointer]
+                                - button "Remove" [ref=e438] [cursor=pointer]
+                        - generic [ref=e441]:
+                            - generic [ref=e442]: HP
+                            - generic [ref=e443]:
+                                - button "−10" [ref=e444] [cursor=pointer]
+                                - button "−5" [ref=e445] [cursor=pointer]
+                                - button "−1" [ref=e446] [cursor=pointer]
+                                - generic [ref=e447]: "48"
+                                - button "+1" [ref=e448] [cursor=pointer]
+                                - button "+5" [ref=e449] [cursor=pointer]
+                    - generic [ref=e450]:
+                        - generic [ref=e451]:
+                            - generic [ref=e452]:
+                                - generic [ref=e453]: 4. The Watcher
+                                - generic [ref=e454]:
+                                    - text: Base HP 24 × 3 =
+                                    - strong [ref=e455]: "72"
+                                    - text: · ATK 5 ·
+                                    - generic [ref=e456]: CUNNING
+                            - generic [ref=e457]:
+                                - button "Set Current" [ref=e458] [cursor=pointer]
+                                - button "Reset HP" [ref=e459] [cursor=pointer]
+                                - button "Remove" [ref=e460] [cursor=pointer]
+                        - generic [ref=e463]:
+                            - generic [ref=e464]: HP
+                            - generic [ref=e465]:
+                                - button "−10" [ref=e466] [cursor=pointer]
+                                - button "−5" [ref=e467] [cursor=pointer]
+                                - button "−1" [ref=e468] [cursor=pointer]
+                                - generic [ref=e469]: "72"
+                                - button "+1" [ref=e470] [cursor=pointer]
+                                - button "+5" [ref=e471] [cursor=pointer]
+                    - generic [ref=e472]:
+                        - generic [ref=e473]:
+                            - generic [ref=e474]:
+                                - generic [ref=e475]: 5. Bone Tyrant
+                                - generic [ref=e476]:
+                                    - text: Base HP 26 × 3 =
+                                    - strong [ref=e477]: "78"
+                                    - text: · ATK 6 ·
+                                    - generic [ref=e478]: VAMPIRIC
+                            - generic [ref=e479]:
+                                - button "Set Current" [ref=e480] [cursor=pointer]
+                                - button "Reset HP" [ref=e481] [cursor=pointer]
+                                - button "Remove" [ref=e482] [cursor=pointer]
+                        - generic [ref=e485]:
+                            - generic [ref=e486]: HP
+                            - generic [ref=e487]:
+                                - button "−10" [ref=e488] [cursor=pointer]
+                                - button "−5" [ref=e489] [cursor=pointer]
+                                - button "−1" [ref=e490] [cursor=pointer]
+                                - generic [ref=e491]: "78"
+                                - button "+1" [ref=e492] [cursor=pointer]
+                                - button "+5" [ref=e493] [cursor=pointer]
+                    - generic [ref=e494]:
+                        - generic [ref=e495]:
+                            - generic [ref=e496]:
+                                - generic [ref=e497]: 6. Doomspawn
+                                - generic [ref=e498]:
+                                    - text: Base HP 30 × 3 =
+                                    - strong [ref=e499]: "90"
+                                    - text: · ATK 7 ·
+                                    - generic [ref=e500]: DOOM
+                            - generic [ref=e501]:
+                                - button "Set Current" [ref=e502] [cursor=pointer]
+                                - button "Reset HP" [ref=e503] [cursor=pointer]
+                                - button "Remove" [ref=e504] [cursor=pointer]
+                        - generic [ref=e507]:
+                            - generic [ref=e508]: HP
+                            - generic [ref=e509]:
+                                - button "−10" [ref=e510] [cursor=pointer]
+                                - button "−5" [ref=e511] [cursor=pointer]
+                                - button "−1" [ref=e512] [cursor=pointer]
+                                - generic [ref=e513]: "90"
+                                - button "+1" [ref=e514] [cursor=pointer]
+                                - button "+5" [ref=e515] [cursor=pointer]
+    - contentinfo [ref=e54]:
+        - generic [ref=e55]:
+            - paragraph [ref=e56]: © 2026 DeckNForge — A persistent Legacy card game from a pocker deck of playing cards.
+            - paragraph [ref=e57]: v2.0 Playtest Edition · Without teamwork, your band will never survive the dungeon. Without betrayal, you'll never claim the coppers.
+    - generic [ref=e60]:
+        - button "Menu" [ref=e61]:
+            - img [ref=e63]
+            - generic: Menu
+        - button "Inspect" [ref=e67]:
+            - img [ref=e69]
+            - generic: Inspect
+        - button "Audit" [ref=e71]:
+            - generic [ref=e72]:
+                - img [ref=e73]
+                - img [ref=e236]
+            - generic: Audit
+        - button "Settings" [ref=e79]:
+            - img [ref=e81]
+            - generic: Settings

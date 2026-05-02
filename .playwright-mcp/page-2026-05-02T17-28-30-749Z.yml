@@ -1,284 +1,284 @@
 - generic [active] [ref=e1]:
-  - navigation [ref=e2]:
-    - generic [ref=e3]:
-      - link "DeckNForge logo" [ref=e4] [cursor=pointer]:
-        - /url: /
-        - img "DeckNForge logo" [ref=e5]
-      - generic [ref=e6]:
-        - link "Home" [ref=e7] [cursor=pointer]:
-          - /url: /
-        - link "Learn" [ref=e8] [cursor=pointer]:
-          - /url: /learn/
-        - link "Downloads" [ref=e9] [cursor=pointer]:
-          - /url: /downloads/
-        - link "Tracker" [ref=e10] [cursor=pointer]:
-          - /url: /tracker/
-  - main [ref=e11]:
-    - generic [ref=e13]:
-      - heading "Learn the Game" [level=1] [ref=e14]
-      - paragraph [ref=e15]:
-        - text: DeckNForge is a 3–5 player legacy card game. You are a wizard. Your deck is your band. Every game leaves permanent marks the next wizard inherits. Below is the quick-start. For the full rules, head to
-        - link "Downloads" [ref=e16] [cursor=pointer]:
-          - /url: /downloads/
-        - text: .
-      - generic [ref=e17]:
-        - heading "The 60-second pitch" [level=2] [ref=e18]
-        - list [ref=e19]:
-          - listitem [ref=e20]:
-            - text: Each wizard brings their own deck (their
-            - strong [ref=e21]: band
-            - text: ).
-          - listitem [ref=e22]:
-            - text: Aces and Jokers become
-            - strong [ref=e23]: Monsters
-            - text: . Js, Qs, Ks are
-            - strong [ref=e24]: Heroes
-            - text: . Pip cards are
-            - strong [ref=e25]: Items
-            - text: .
-          - listitem [ref=e26]:
-            - text: A
-            - strong [ref=e27]: dungeon
-            - text: is 6 sequential boss fights. Wizards pool monsters; 6 are drawn as Bosses, the rest become
-            - strong [ref=e28]: Minions
-            - text: .
-          - listitem [ref=e29]: Wizards play cards face-down (Plot), reveal simultaneously, and add the values to damage the Boss.
-          - listitem [ref=e30]:
-            - text: Whoever lands the killing blow keeps the
-            - strong [ref=e31]: Coppers
-            - text: . Everyone else gets a small assist.
-          - listitem [ref=e32]:
-            - text: Between games, decks
-            - strong [ref=e33]: Fade
-            - text: ","
-            - strong [ref=e34]: Drift
-            - text: to a new wizard, and get
-            - strong [ref=e35]: Turned
-            - text: with new inscriptions.
-      - generic [ref=e36]:
-        - heading "Card breakdown (per band)" [level=2] [ref=e37]
-        - table [ref=e38]:
-          - rowgroup [ref=e39]:
-            - row "Card Count Role" [ref=e40]:
-              - columnheader "Card" [ref=e41]
-              - columnheader "Count" [ref=e42]
-              - columnheader "Role" [ref=e43]
-          - rowgroup [ref=e44]:
-            - row "Aces + Jokers 6 Monsters (removed from combat deck)" [ref=e45]:
-              - cell "Aces + Jokers" [ref=e46]
-              - cell "6" [ref=e47]
-              - cell "Monsters (removed from combat deck)" [ref=e48]
-            - row "J / Q / K 12 Heroes" [ref=e49]:
-              - cell "J / Q / K" [ref=e50]
-              - cell "12" [ref=e51]
-              - cell "Heroes" [ref=e52]
-            - row "2–10 36 Items" [ref=e53]:
-              - cell "2–10" [ref=e54]
-              - cell "36" [ref=e55]
-              - cell "Items" [ref=e56]
-            - row "Combat deck 48 All non-Monster cards" [ref=e57]:
-              - cell "Combat deck" [ref=e58]:
-                - strong [ref=e59]: Combat deck
-              - cell "48" [ref=e60]:
-                - strong [ref=e61]: "48"
-              - cell "All non-Monster cards" [ref=e62]
-      - generic [ref=e63]:
-        - heading "A round, in 9 steps" [level=2] [ref=e64]
-        - list [ref=e65]:
-          - listitem [ref=e66]:
-            - strong [ref=e67]: Plot.
-            - text: Every wizard plays 1 card face-down.
-          - listitem [ref=e68]:
-            - strong [ref=e69]: Reveal.
-            - text: All cards flip simultaneously.
-          - listitem [ref=e70]:
-            - strong [ref=e71]: Tactics.
-            - text: Each wizard, clockwise from the active wizard, may take ONE Tactic — paid by discarding cards.
-          - listitem [ref=e72]:
-            - strong [ref=e73]: Damage.
-            - text: Sum revealed values + inscription effects. Apply to the Boss. All revealed cards are
-            - emphasis [ref=e74]: committed
-            - text: for the rest of the dungeon.
-          - listitem [ref=e75]:
-            - strong [ref=e76]: Killing blow.
-            - text: If Boss HP ≤ 0, the wizard with the highest revealed face value takes the kill (suit tiebreak ♠ > ♥ > ♣ > ♦).
-          - listitem [ref=e77]:
-            - strong [ref=e78]: Boss attack.
-            - text: Boss deals ATK to all wizards. Take it, or commit cards summing to
-            - emphasis [ref=e79]: strictly more
-            - text: than ATK to dodge.
-          - listitem [ref=e80]:
-            - strong [ref=e81]: Pressure check.
-            - text: If 0 damage was dealt this round, ALL wizards take 2.
-          - listitem [ref=e82]:
-            - strong [ref=e83]: Minions strike.
-            - text: Active Minions attack each wizard.
-          - listitem [ref=e84]:
-            - strong [ref=e85]: Refill.
-            - text: Each wizard draws up to 2 (capped at 12-card hand).
-      - generic [ref=e86]:
-        - generic [ref=e87]:
-          - heading "Tactics (cost cards, not coppers)" [level=3] [ref=e88]
-          - table [ref=e89]:
-            - rowgroup [ref=e90]:
-              - row "Tactic Cost Effect" [ref=e91]:
-                - columnheader "Tactic" [ref=e92]
-                - columnheader "Cost" [ref=e93]
-                - columnheader "Effect" [ref=e94]
-            - rowgroup [ref=e95]:
-              - row "Spike 1 card +3 to your revealed card" [ref=e96]:
-                - cell "Spike" [ref=e97]
-                - cell "1 card" [ref=e98]
-                - cell "+3 to your revealed card" [ref=e99]
-              - row "Foil 2 cards −3 to another wizard's reveal (min 1)" [ref=e100]:
-                - cell "Foil" [ref=e101]
-                - cell "2 cards" [ref=e102]
-                - cell "−3 to another wizard's reveal (min 1)" [ref=e103]
-              - row "Snipe 1 Hero Swap your reveal with another's" [ref=e104]:
-                - cell "Snipe" [ref=e105]
-                - cell "1 Hero" [ref=e106]
-                - cell "Swap your reveal with another's" [ref=e107]
-              - row "Brace 1 card Take 0 boss damage this round" [ref=e108]:
-                - cell "Brace" [ref=e109]
-                - cell "1 card" [ref=e110]
-                - cell "Take 0 boss damage this round" [ref=e111]
-        - generic [ref=e112]:
-          - heading "Suit Convert (buffs)" [level=3] [ref=e113]
-          - paragraph [ref=e114]: "Instead of dealing damage, sacrifice a played Item:"
-          - table [ref=e115]:
-            - rowgroup [ref=e116]:
-              - row "Suit Effect" [ref=e117]:
-                - columnheader "Suit" [ref=e118]
-                - columnheader "Effect" [ref=e119]
-            - rowgroup [ref=e120]:
-              - row "♠ Spade +1 shield per Spade lost in this dungeon" [ref=e121]:
-                - cell "♠ Spade" [ref=e122]
-                - cell "+1 shield per Spade lost in this dungeon" [ref=e123]
-              - row "♥ Heart Heal HP equal to ⌈face ÷ 2⌉" [ref=e124]:
-                - cell "♥ Heart" [ref=e125]
-                - cell "Heal HP equal to ⌈face ÷ 2⌉" [ref=e126]
-              - row "♣ Club Draw 2 cards" [ref=e127]:
-                - cell "♣ Club" [ref=e128]
-                - cell "Draw 2 cards" [ref=e129]
-              - row "♦ Diamond Plunder Coppers equal to face value" [ref=e130]:
-                - cell "♦ Diamond" [ref=e131]
-                - cell "Plunder Coppers equal to face value" [ref=e132]
-          - paragraph [ref=e133]: Heroes (J/Q/K) cannot be Converted.
-      - generic [ref=e134]:
-        - heading "Killing the Boss" [level=2] [ref=e135]
-        - list [ref=e136]:
-          - listitem [ref=e137]:
-            - strong [ref=e138]: Killer
-            - text: "earns +3 Coppers, +1 per overkill (cap +5c), and chooses one:"
-            - emphasis [ref=e139]: Rally
-            - text: (all heal 5),
-            - emphasis [ref=e140]: Surge
-            - text: (Killer draws 3), or
-            - emphasis [ref=e141]: Momentum
-            - text: (next Boss starts at HP −10).
-          - listitem [ref=e142]: All other wizards get +1c (assist).
-          - listitem [ref=e143]: "All wizards: +1 Glory toward the band. Killer: +1 personal Glory."
-          - listitem [ref=e144]: Legend kill? Next Fading draws 2 Blessed cards — choose 1 to fade, the other survives.
-      - generic [ref=e145]:
-        - heading "Boss HP scales with players" [level=2] [ref=e146]
-        - table [ref=e147]:
-          - rowgroup [ref=e148]:
-            - row "Players Boss HP × Starting hand Inscription budget" [ref=e149]:
-              - columnheader "Players" [ref=e150]
-              - columnheader "Boss HP ×" [ref=e151]
-              - columnheader "Starting hand" [ref=e152]
-              - columnheader "Inscription budget" [ref=e153]
-          - rowgroup [ref=e154]:
-            - row "1 (Solo) ×1 14 40c" [ref=e155]:
-              - cell "1 (Solo)" [ref=e156]
-              - cell "×1" [ref=e157]
-              - cell "14" [ref=e158]
-              - cell "40c" [ref=e159]
-            - row "2 ×2 12 30c" [ref=e160]:
-              - cell "2" [ref=e161]
-              - cell "×2" [ref=e162]
-              - cell "12" [ref=e163]
-              - cell "30c" [ref=e164]
-            - row "3 ×3 12 30c" [ref=e165]:
-              - cell "3" [ref=e166]
-              - cell "×3" [ref=e167]
-              - cell "12" [ref=e168]
-              - cell "30c" [ref=e169]
-            - row "4 ×4 12 30c" [ref=e170]:
-              - cell "4" [ref=e171]
-              - cell "×4" [ref=e172]
-              - cell "12" [ref=e173]
-              - cell "30c" [ref=e174]
-            - row "5 ×5 14 30c" [ref=e175]:
-              - cell "5" [ref=e176]
-              - cell "×5" [ref=e177]
-              - cell "14" [ref=e178]
-              - cell "30c" [ref=e179]
-      - generic [ref=e180]:
-        - heading "The Post-Game Cycle" [level=2] [ref=e181]
-        - list [ref=e182]:
-          - listitem [ref=e183]:
-            - strong [ref=e184]: Fading.
-            - text: Each wizard shuffles their Blessed cards, draws 1, crosses out its inscriptions.
-          - listitem [ref=e185]:
-            - strong [ref=e186]: Drifting.
-            - text: Decks pool. Draft order = personal Glory this game. You may pick your own.
-          - listitem [ref=e187]:
-            - strong [ref=e188]: Turning.
-            - text: Spend Coppers on new inscriptions in your inherited deck.
-        - paragraph [ref=e189]: Coppers follow the wizard. Glory etches onto the band's box. Bands fade into legend when no Blessed cards remain.
-      - generic [ref=e190]:
-        - heading "Inscription tiers" [level=2] [ref=e191]
-        - paragraph [ref=e192]: Spent in The Turning. 1 inscription per card max. Mythic only on Heroes — and Mythic is earned, not bought.
-        - table [ref=e193]:
-          - rowgroup [ref=e194]:
-            - row "Tier Cost Examples" [ref=e195]:
-              - columnheader "Tier" [ref=e196]
-              - columnheader "Cost" [ref=e197]
-              - columnheader "Examples" [ref=e198]
-          - rowgroup [ref=e199]:
-            - row "Common 5c Sharp, Sturdy, Glint, Quick, Bright" [ref=e200]:
-              - cell "Common" [ref=e201]:
-                - generic [ref=e202]: Common
-              - cell "5c" [ref=e203]
-              - cell "Sharp, Sturdy, Glint, Quick, Bright" [ref=e204]
-            - row "Uncommon 10c Echo, Banner, Blood Money, Vampiric, Thorns" [ref=e205]:
-              - cell "Uncommon" [ref=e206]:
-                - generic [ref=e207]: Uncommon
-              - cell "10c" [ref=e208]
-              - cell "Echo, Banner, Blood Money, Vampiric, Thorns" [ref=e209]
-            - row "Rare 20c Ascension, Doublestrike, Phoenix, Wizard's Will, Pierce…" [ref=e210]:
-              - cell "Rare" [ref=e211]:
-                - generic [ref=e212]: Rare
-              - cell "20c" [ref=e213]
-              - cell "Ascension, Doublestrike, Phoenix, Wizard's Will, Pierce…" [ref=e214]
-            - row "Mythic Earned Royal Decree, Legend Etched, Tower's Memory, The Patron, Untouchable" [ref=e215]:
-              - cell "Mythic" [ref=e216]:
-                - generic [ref=e217]: Mythic
-              - cell "Earned" [ref=e218]
-              - cell "Royal Decree, Legend Etched, Tower's Memory, The Patron, Untouchable" [ref=e219]
-      - generic [ref=e220]:
-        - heading "Ready to play?" [level=2] [ref=e221]
-        - paragraph [ref=e222]: Print the player rules, grab a deck, and open the tracker on your phone.
-        - generic [ref=e223]:
-          - link "Downloads" [ref=e224] [cursor=pointer]:
-            - /url: /downloads/
-          - link "Open Tracker" [ref=e225] [cursor=pointer]:
-            - /url: /tracker/
-  - contentinfo [ref=e226]:
-    - generic [ref=e227]:
-      - paragraph [ref=e228]: © 2026 DeckNForge — A persistent legacy card game from a single deck of playing cards.
-      - paragraph [ref=e229]: v2.0 Playtest Edition · Without teamwork, your band will never survive the dungeon. Without betrayal, you'll never claim the coppers.
-  - generic [ref=e232]:
-    - button "Menu" [ref=e233]:
-      - img [ref=e235]
-      - generic: Menu
-    - button "Inspect" [ref=e239]:
-      - img [ref=e241]
-      - generic: Inspect
-    - button "Audit" [ref=e243]:
-      - img [ref=e245]
-      - generic: Audit
-    - button "Settings" [ref=e248]:
-      - img [ref=e250]
-      - generic: Settings
+    - navigation [ref=e2]:
+        - generic [ref=e3]:
+            - link "DeckNForge logo" [ref=e4] [cursor=pointer]:
+                - /url: /
+                - img "DeckNForge logo" [ref=e5]
+            - generic [ref=e6]:
+                - link "Home" [ref=e7] [cursor=pointer]:
+                    - /url: /
+                - link "Learn" [ref=e8] [cursor=pointer]:
+                    - /url: /learn/
+                - link "Downloads" [ref=e9] [cursor=pointer]:
+                    - /url: /downloads/
+                - link "Tracker" [ref=e10] [cursor=pointer]:
+                    - /url: /tracker/
+    - main [ref=e11]:
+        - generic [ref=e13]:
+            - heading "Learn the Game" [level=1] [ref=e14]
+            - paragraph [ref=e15]:
+                - text: DeckNForge is a 3–5 player legacy card game. You are a wizard. Your deck is your band. Every game leaves permanent marks the next wizard inherits. Below is the quick-start. For the full rules, head to
+                - link "Downloads" [ref=e16] [cursor=pointer]:
+                    - /url: /downloads/
+                - text: .
+            - generic [ref=e17]:
+                - heading "The 60-second pitch" [level=2] [ref=e18]
+                - list [ref=e19]:
+                    - listitem [ref=e20]:
+                        - text: Each wizard brings their own deck (their
+                        - strong [ref=e21]: band
+                        - text: ).
+                    - listitem [ref=e22]:
+                        - text: Aces and Jokers become
+                        - strong [ref=e23]: Monsters
+                        - text: . Js, Qs, Ks are
+                        - strong [ref=e24]: Heroes
+                        - text: . Pip cards are
+                        - strong [ref=e25]: Items
+                        - text: .
+                    - listitem [ref=e26]:
+                        - text: A
+                        - strong [ref=e27]: dungeon
+                        - text: is 6 sequential boss fights. Wizards pool monsters; 6 are drawn as Bosses, the rest become
+                        - strong [ref=e28]: Minions
+                        - text: .
+                    - listitem [ref=e29]: Wizards play cards face-down (Plot), reveal simultaneously, and add the values to damage the Boss.
+                    - listitem [ref=e30]:
+                        - text: Whoever lands the killing blow keeps the
+                        - strong [ref=e31]: Coppers
+                        - text: . Everyone else gets a small assist.
+                    - listitem [ref=e32]:
+                        - text: Between games, decks
+                        - strong [ref=e33]: Fade
+                        - text: ","
+                        - strong [ref=e34]: Drift
+                        - text: to a new wizard, and get
+                        - strong [ref=e35]: Turned
+                        - text: with new inscriptions.
+            - generic [ref=e36]:
+                - heading "Card breakdown (per band)" [level=2] [ref=e37]
+                - table [ref=e38]:
+                    - rowgroup [ref=e39]:
+                        - row "Card Count Role" [ref=e40]:
+                            - columnheader "Card" [ref=e41]
+                            - columnheader "Count" [ref=e42]
+                            - columnheader "Role" [ref=e43]
+                    - rowgroup [ref=e44]:
+                        - row "Aces + Jokers 6 Monsters (removed from combat deck)" [ref=e45]:
+                            - cell "Aces + Jokers" [ref=e46]
+                            - cell "6" [ref=e47]
+                            - cell "Monsters (removed from combat deck)" [ref=e48]
+                        - row "J / Q / K 12 Heroes" [ref=e49]:
+                            - cell "J / Q / K" [ref=e50]
+                            - cell "12" [ref=e51]
+                            - cell "Heroes" [ref=e52]
+                        - row "2–10 36 Items" [ref=e53]:
+                            - cell "2–10" [ref=e54]
+                            - cell "36" [ref=e55]
+                            - cell "Items" [ref=e56]
+                        - row "Combat deck 48 All non-Monster cards" [ref=e57]:
+                            - cell "Combat deck" [ref=e58]:
+                                - strong [ref=e59]: Combat deck
+                            - cell "48" [ref=e60]:
+                                - strong [ref=e61]: "48"
+                            - cell "All non-Monster cards" [ref=e62]
+            - generic [ref=e63]:
+                - heading "A round, in 9 steps" [level=2] [ref=e64]
+                - list [ref=e65]:
+                    - listitem [ref=e66]:
+                        - strong [ref=e67]: Plot.
+                        - text: Every wizard plays 1 card face-down.
+                    - listitem [ref=e68]:
+                        - strong [ref=e69]: Reveal.
+                        - text: All cards flip simultaneously.
+                    - listitem [ref=e70]:
+                        - strong [ref=e71]: Tactics.
+                        - text: Each wizard, clockwise from the active wizard, may take ONE Tactic — paid by discarding cards.
+                    - listitem [ref=e72]:
+                        - strong [ref=e73]: Damage.
+                        - text: Sum revealed values + inscription effects. Apply to the Boss. All revealed cards are
+                        - emphasis [ref=e74]: committed
+                        - text: for the rest of the dungeon.
+                    - listitem [ref=e75]:
+                        - strong [ref=e76]: Killing blow.
+                        - text: If Boss HP ≤ 0, the wizard with the highest revealed face value takes the kill (suit tiebreak ♠ > ♥ > ♣ > ♦).
+                    - listitem [ref=e77]:
+                        - strong [ref=e78]: Boss attack.
+                        - text: Boss deals ATK to all wizards. Take it, or commit cards summing to
+                        - emphasis [ref=e79]: strictly more
+                        - text: than ATK to dodge.
+                    - listitem [ref=e80]:
+                        - strong [ref=e81]: Pressure check.
+                        - text: If 0 damage was dealt this round, ALL wizards take 2.
+                    - listitem [ref=e82]:
+                        - strong [ref=e83]: Minions strike.
+                        - text: Active Minions attack each wizard.
+                    - listitem [ref=e84]:
+                        - strong [ref=e85]: Refill.
+                        - text: Each wizard draws up to 2 (capped at 12-card hand).
+            - generic [ref=e86]:
+                - generic [ref=e87]:
+                    - heading "Tactics (cost cards, not coppers)" [level=3] [ref=e88]
+                    - table [ref=e89]:
+                        - rowgroup [ref=e90]:
+                            - row "Tactic Cost Effect" [ref=e91]:
+                                - columnheader "Tactic" [ref=e92]
+                                - columnheader "Cost" [ref=e93]
+                                - columnheader "Effect" [ref=e94]
+                        - rowgroup [ref=e95]:
+                            - row "Spike 1 card +3 to your revealed card" [ref=e96]:
+                                - cell "Spike" [ref=e97]
+                                - cell "1 card" [ref=e98]
+                                - cell "+3 to your revealed card" [ref=e99]
+                            - row "Foil 2 cards −3 to another wizard's reveal (min 1)" [ref=e100]:
+                                - cell "Foil" [ref=e101]
+                                - cell "2 cards" [ref=e102]
+                                - cell "−3 to another wizard's reveal (min 1)" [ref=e103]
+                            - row "Snipe 1 Hero Swap your reveal with another's" [ref=e104]:
+                                - cell "Snipe" [ref=e105]
+                                - cell "1 Hero" [ref=e106]
+                                - cell "Swap your reveal with another's" [ref=e107]
+                            - row "Brace 1 card Take 0 boss damage this round" [ref=e108]:
+                                - cell "Brace" [ref=e109]
+                                - cell "1 card" [ref=e110]
+                                - cell "Take 0 boss damage this round" [ref=e111]
+                - generic [ref=e112]:
+                    - heading "Suit Convert (buffs)" [level=3] [ref=e113]
+                    - paragraph [ref=e114]: "Instead of dealing damage, sacrifice a played Item:"
+                    - table [ref=e115]:
+                        - rowgroup [ref=e116]:
+                            - row "Suit Effect" [ref=e117]:
+                                - columnheader "Suit" [ref=e118]
+                                - columnheader "Effect" [ref=e119]
+                        - rowgroup [ref=e120]:
+                            - row "♠ Spade +1 shield per Spade lost in this dungeon" [ref=e121]:
+                                - cell "♠ Spade" [ref=e122]
+                                - cell "+1 shield per Spade lost in this dungeon" [ref=e123]
+                            - row "♥ Heart Heal HP equal to ⌈face ÷ 2⌉" [ref=e124]:
+                                - cell "♥ Heart" [ref=e125]
+                                - cell "Heal HP equal to ⌈face ÷ 2⌉" [ref=e126]
+                            - row "♣ Club Draw 2 cards" [ref=e127]:
+                                - cell "♣ Club" [ref=e128]
+                                - cell "Draw 2 cards" [ref=e129]
+                            - row "♦ Diamond Plunder Coppers equal to face value" [ref=e130]:
+                                - cell "♦ Diamond" [ref=e131]
+                                - cell "Plunder Coppers equal to face value" [ref=e132]
+                    - paragraph [ref=e133]: Heroes (J/Q/K) cannot be Converted.
+            - generic [ref=e134]:
+                - heading "Killing the Boss" [level=2] [ref=e135]
+                - list [ref=e136]:
+                    - listitem [ref=e137]:
+                        - strong [ref=e138]: Killer
+                        - text: "earns +3 Coppers, +1 per overkill (cap +5c), and chooses one:"
+                        - emphasis [ref=e139]: Rally
+                        - text: (all heal 5),
+                        - emphasis [ref=e140]: Surge
+                        - text: (Killer draws 3), or
+                        - emphasis [ref=e141]: Momentum
+                        - text: (next Boss starts at HP −10).
+                    - listitem [ref=e142]: All other wizards get +1c (assist).
+                    - listitem [ref=e143]: "All wizards: +1 Glory toward the band. Killer: +1 personal Glory."
+                    - listitem [ref=e144]: Legend kill? Next Fading draws 2 Blessed cards — choose 1 to fade, the other survives.
+            - generic [ref=e145]:
+                - heading "Boss HP scales with players" [level=2] [ref=e146]
+                - table [ref=e147]:
+                    - rowgroup [ref=e148]:
+                        - row "Players Boss HP × Starting hand Inscription budget" [ref=e149]:
+                            - columnheader "Players" [ref=e150]
+                            - columnheader "Boss HP ×" [ref=e151]
+                            - columnheader "Starting hand" [ref=e152]
+                            - columnheader "Inscription budget" [ref=e153]
+                    - rowgroup [ref=e154]:
+                        - row "1 (Solo) ×1 14 40c" [ref=e155]:
+                            - cell "1 (Solo)" [ref=e156]
+                            - cell "×1" [ref=e157]
+                            - cell "14" [ref=e158]
+                            - cell "40c" [ref=e159]
+                        - row "2 ×2 12 30c" [ref=e160]:
+                            - cell "2" [ref=e161]
+                            - cell "×2" [ref=e162]
+                            - cell "12" [ref=e163]
+                            - cell "30c" [ref=e164]
+                        - row "3 ×3 12 30c" [ref=e165]:
+                            - cell "3" [ref=e166]
+                            - cell "×3" [ref=e167]
+                            - cell "12" [ref=e168]
+                            - cell "30c" [ref=e169]
+                        - row "4 ×4 12 30c" [ref=e170]:
+                            - cell "4" [ref=e171]
+                            - cell "×4" [ref=e172]
+                            - cell "12" [ref=e173]
+                            - cell "30c" [ref=e174]
+                        - row "5 ×5 14 30c" [ref=e175]:
+                            - cell "5" [ref=e176]
+                            - cell "×5" [ref=e177]
+                            - cell "14" [ref=e178]
+                            - cell "30c" [ref=e179]
+            - generic [ref=e180]:
+                - heading "The Post-Game Cycle" [level=2] [ref=e181]
+                - list [ref=e182]:
+                    - listitem [ref=e183]:
+                        - strong [ref=e184]: Fading.
+                        - text: Each wizard shuffles their Blessed cards, draws 1, crosses out its inscriptions.
+                    - listitem [ref=e185]:
+                        - strong [ref=e186]: Drifting.
+                        - text: Decks pool. Draft order = personal Glory this game. You may pick your own.
+                    - listitem [ref=e187]:
+                        - strong [ref=e188]: Turning.
+                        - text: Spend Coppers on new inscriptions in your inherited deck.
+                - paragraph [ref=e189]: Coppers follow the wizard. Glory etches onto the band's box. Bands fade into legend when no Blessed cards remain.
+            - generic [ref=e190]:
+                - heading "Inscription tiers" [level=2] [ref=e191]
+                - paragraph [ref=e192]: Spent in The Turning. 1 inscription per card max. Mythic only on Heroes — and Mythic is earned, not bought.
+                - table [ref=e193]:
+                    - rowgroup [ref=e194]:
+                        - row "Tier Cost Examples" [ref=e195]:
+                            - columnheader "Tier" [ref=e196]
+                            - columnheader "Cost" [ref=e197]
+                            - columnheader "Examples" [ref=e198]
+                    - rowgroup [ref=e199]:
+                        - row "Common 5c Sharp, Sturdy, Glint, Quick, Bright" [ref=e200]:
+                            - cell "Common" [ref=e201]:
+                                - generic [ref=e202]: Common
+                            - cell "5c" [ref=e203]
+                            - cell "Sharp, Sturdy, Glint, Quick, Bright" [ref=e204]
+                        - row "Uncommon 10c Echo, Banner, Blood Money, Vampiric, Thorns" [ref=e205]:
+                            - cell "Uncommon" [ref=e206]:
+                                - generic [ref=e207]: Uncommon
+                            - cell "10c" [ref=e208]
+                            - cell "Echo, Banner, Blood Money, Vampiric, Thorns" [ref=e209]
+                        - row "Rare 20c Ascension, Doublestrike, Phoenix, Wizard's Will, Pierce…" [ref=e210]:
+                            - cell "Rare" [ref=e211]:
+                                - generic [ref=e212]: Rare
+                            - cell "20c" [ref=e213]
+                            - cell "Ascension, Doublestrike, Phoenix, Wizard's Will, Pierce…" [ref=e214]
+                        - row "Mythic Earned Royal Decree, Legend Etched, Tower's Memory, The Patron, Untouchable" [ref=e215]:
+                            - cell "Mythic" [ref=e216]:
+                                - generic [ref=e217]: Mythic
+                            - cell "Earned" [ref=e218]
+                            - cell "Royal Decree, Legend Etched, Tower's Memory, The Patron, Untouchable" [ref=e219]
+            - generic [ref=e220]:
+                - heading "Ready to play?" [level=2] [ref=e221]
+                - paragraph [ref=e222]: Print the player rules, grab a deck, and open the tracker on your phone.
+                - generic [ref=e223]:
+                    - link "Downloads" [ref=e224] [cursor=pointer]:
+                        - /url: /downloads/
+                    - link "Open Tracker" [ref=e225] [cursor=pointer]:
+                        - /url: /tracker/
+    - contentinfo [ref=e226]:
+        - generic [ref=e227]:
+            - paragraph [ref=e228]: © 2026 DeckNForge — A persistent Legacy card game from a pocker deck of playing cards.
+            - paragraph [ref=e229]: v2.0 Playtest Edition · Without teamwork, your band will never survive the dungeon. Without betrayal, you'll never claim the coppers.
+    - generic [ref=e232]:
+        - button "Menu" [ref=e233]:
+            - img [ref=e235]
+            - generic: Menu
+        - button "Inspect" [ref=e239]:
+            - img [ref=e241]
+            - generic: Inspect
+        - button "Audit" [ref=e243]:
+            - img [ref=e245]
+            - generic: Audit
+        - button "Settings" [ref=e248]:
+            - img [ref=e250]
+            - generic: Settings

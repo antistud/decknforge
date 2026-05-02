@@ -1,117 +1,117 @@
 - generic [active] [ref=e1]:
-  - navigation [ref=e2]:
-    - generic [ref=e3]:
-      - link "DeckNForge logo" [ref=e4] [cursor=pointer]:
-        - /url: /
-        - img "DeckNForge logo" [ref=e5]
-      - generic [ref=e6]:
-        - link "Home" [ref=e7] [cursor=pointer]:
-          - /url: /
-        - link "Learn" [ref=e8] [cursor=pointer]:
-          - /url: /learn/
-        - link "Downloads" [ref=e9] [cursor=pointer]:
-          - /url: /downloads/
-        - link "Tracker" [ref=e10] [cursor=pointer]:
-          - /url: /tracker/
-        - link "Contribute" [ref=e11] [cursor=pointer]:
-          - /url: /contribute/
-        - link "GitHub repository" [ref=e12] [cursor=pointer]:
-          - /url: https://github.com/decknforge/decknforge
-          - img [ref=e13]
-  - main [ref=e15]:
-    - generic [ref=e16]:
-      - img "DeckNForge logo" [ref=e17]
-      - heading "Turn a $5 deck of poker cards into an action-packed legacy dungeon crawl." [level=1] [ref=e18]
-      - paragraph [ref=e19]:
-        - text: Six boss fights. Three to five wizards. A Sharpie, a sheet of stickers, and a deck that
-        - emphasis [ref=e20]: remembers
-        - text: . Cards earn inscriptions. Bosses earn labels. Bands drift between wizards. Nothing resets.
-      - paragraph [ref=e21]: "\"Without teamwork, your band will never survive the dungeon. Without betrayal, you'll never claim the coppers.\""
-      - generic [ref=e22]:
-        - link "Learn the Game" [ref=e23] [cursor=pointer]:
-          - /url: /learn/
-        - link "Open Tracker" [ref=e24] [cursor=pointer]:
-          - /url: /tracker/
-        - link "Downloads" [ref=e25] [cursor=pointer]:
-          - /url: /downloads/
-      - list "What you need" [ref=e26]:
-        - listitem [ref=e27]:
-          - generic [ref=e28]: ♠
-          - text: 1 standard deck (54 cards w/ jokers)
-        - listitem [ref=e29]:
-          - generic [ref=e30]: ✎
-          - text: A fine-point Sharpie
-        - listitem [ref=e31]:
-          - generic [ref=e32]: ◫
-          - text: 1 sheet of Avery 18294 labels
-        - listitem [ref=e33]:
-          - generic [ref=e34]: ⏱
-          - text: 60–90 minutes per dungeon
-    - generic [ref=e37]:
-      - generic [ref=e38]:
-        - heading "Your deck IS your band" [level=3] [ref=e39]
-        - paragraph [ref=e40]: Inscriptions, labels, and Glory are written on the cards themselves. Every game leaves marks the next wizard inherits.
-      - generic [ref=e41]:
-        - heading "Six bosses, one dungeon" [level=3] [ref=e42]
-        - paragraph [ref=e43]: Wizards pool their Monster cards and fight 6 sequential bosses. The wizard who lands the killing blow takes the coppers.
-      - generic [ref=e44]:
-        - heading "Cooperate. Then betray." [level=3] [ref=e45]
-        - paragraph [ref=e46]: Spike, Foil, Snipe, and Brace let you tip the scales — or steal the kill. Tactics cost cards, not coins.
-    - generic [ref=e49]:
-      - heading "What you need" [level=2] [ref=e50]
-      - list [ref=e51]:
-        - listitem [ref=e52]: 1 standard deck of playing cards with both Jokers (54 cards)
-        - listitem [ref=e53]: A fine-point Sharpie
-        - listitem [ref=e54]: 1 sheet of Avery 18294 labels
-        - listitem [ref=e55]: ~30 pennies per wizard for Coppers
-        - listitem [ref=e56]: A d20 for HP, a d6 for round counting
-      - link "Get the Rules & Sheets" [ref=e58] [cursor=pointer]:
-        - /url: /downloads/
-    - generic [ref=e61]:
-      - heading "Run a Dungeon Tonight" [level=2] [ref=e62]
-      - paragraph [ref=e63]: Open the Tracker on your phone. It handles HP, Coppers, Bosses, Minions, Round counter, and Glory — so the table can focus on the cards.
-      - link "Open the Tracker" [ref=e65] [cursor=pointer]:
-        - /url: /tracker/
-    - generic [ref=e68]:
-      - heading "Open source. Open table." [level=2] [ref=e69]
-      - paragraph [ref=e70]:
-        - text: DeckNForge is in active playtest. Game content is
-        - strong [ref=e71]: CC BY-SA 4.0
-        - text: — fork it, remix it, ship your own dungeon. The website is
-        - strong [ref=e72]: MIT
-        - text: . Every band that gets played is data we can learn from.
-      - paragraph [ref=e73]: Star the repo, run a dungeon, file a playtest report.
-      - generic [ref=e74]:
-        - link "★ Star on GitHub" [ref=e75] [cursor=pointer]:
-          - /url: https://github.com/decknforge/decknforge
-        - link "How to Contribute" [ref=e76] [cursor=pointer]:
-          - /url: /contribute/
-  - contentinfo [ref=e77]:
-    - generic [ref=e78]:
-      - paragraph [ref=e79]: © 2026 DeckNForge — A persistent legacy card game from a single deck of playing cards.
-      - paragraph [ref=e80]:
-        - link "GitHub" [ref=e81] [cursor=pointer]:
-          - /url: https://github.com/decknforge/decknforge
-        - text: ·
-        - link "Contribute" [ref=e82] [cursor=pointer]:
-          - /url: /contribute/
-        - text: ·
-        - link "License" [ref=e83] [cursor=pointer]:
-          - /url: /downloads/LICENSE.md
-        - text: ·
-        - link "Downloads" [ref=e84] [cursor=pointer]:
-          - /url: /downloads/
-      - paragraph [ref=e85]: v2.0 Playtest Edition · Game content licensed CC BY-SA 4.0. Site code MIT.
-  - generic [ref=e88]:
-    - button "Menu" [ref=e89]:
-      - img [ref=e91]
-      - generic: Menu
-    - button "Inspect" [ref=e95]:
-      - img [ref=e97]
-      - generic: Inspect
-    - button "Audit" [ref=e99]:
-      - img [ref=e101]
-      - generic: Audit
-    - button "Settings" [ref=e104]:
-      - img [ref=e106]
-      - generic: Settings
+    - navigation [ref=e2]:
+        - generic [ref=e3]:
+            - link "DeckNForge logo" [ref=e4] [cursor=pointer]:
+                - /url: /
+                - img "DeckNForge logo" [ref=e5]
+            - generic [ref=e6]:
+                - link "Home" [ref=e7] [cursor=pointer]:
+                    - /url: /
+                - link "Learn" [ref=e8] [cursor=pointer]:
+                    - /url: /learn/
+                - link "Downloads" [ref=e9] [cursor=pointer]:
+                    - /url: /downloads/
+                - link "Tracker" [ref=e10] [cursor=pointer]:
+                    - /url: /tracker/
+                - link "Contribute" [ref=e11] [cursor=pointer]:
+                    - /url: /contribute/
+                - link "GitHub repository" [ref=e12] [cursor=pointer]:
+                    - /url: https://github.com/decknforge/decknforge
+                    - img [ref=e13]
+    - main [ref=e15]:
+        - generic [ref=e16]:
+            - img "DeckNForge logo" [ref=e17]
+            - heading "Turn a $5 deck of poker cards into an action-packed legacy dungeon crawl." [level=1] [ref=e18]
+            - paragraph [ref=e19]:
+                - text: Six boss fights. Three to five wizards. A Sharpie, a sheet of stickers, and a deck that
+                - emphasis [ref=e20]: remembers
+                - text: . Cards earn inscriptions. Bosses earn labels. Bands drift between wizards. Nothing resets.
+            - paragraph [ref=e21]: '"Without teamwork, your band will never survive the dungeon. Without betrayal, you''ll never claim the coppers."'
+            - generic [ref=e22]:
+                - link "Learn the Game" [ref=e23] [cursor=pointer]:
+                    - /url: /learn/
+                - link "Open Tracker" [ref=e24] [cursor=pointer]:
+                    - /url: /tracker/
+                - link "Downloads" [ref=e25] [cursor=pointer]:
+                    - /url: /downloads/
+            - list "What you need" [ref=e26]:
+                - listitem [ref=e27]:
+                    - generic [ref=e28]: ♠
+                    - text: 1 standard deck (54 cards w/ jokers)
+                - listitem [ref=e29]:
+                    - generic [ref=e30]: ✎
+                    - text: A fine-point Sharpie
+                - listitem [ref=e31]:
+                    - generic [ref=e32]: ◫
+                    - text: 1 sheet of Avery 18294 labels
+                - listitem [ref=e33]:
+                    - generic [ref=e34]: ⏱
+                    - text: 60–90 minutes per dungeon
+        - generic [ref=e37]:
+            - generic [ref=e38]:
+                - heading "Your deck IS your band" [level=3] [ref=e39]
+                - paragraph [ref=e40]: Inscriptions, labels, and Glory are written on the cards themselves. Every game leaves marks the next wizard inherits.
+            - generic [ref=e41]:
+                - heading "Six bosses, one dungeon" [level=3] [ref=e42]
+                - paragraph [ref=e43]: Wizards pool their Monster cards and fight 6 sequential bosses. The wizard who lands the killing blow takes the coppers.
+            - generic [ref=e44]:
+                - heading "Cooperate. Then betray." [level=3] [ref=e45]
+                - paragraph [ref=e46]: Spike, Foil, Snipe, and Brace let you tip the scales — or steal the kill. Tactics cost cards, not coins.
+        - generic [ref=e49]:
+            - heading "What you need" [level=2] [ref=e50]
+            - list [ref=e51]:
+                - listitem [ref=e52]: 1 standard deck of playing cards with both Jokers (54 cards)
+                - listitem [ref=e53]: A fine-point Sharpie
+                - listitem [ref=e54]: 1 sheet of Avery 18294 labels
+                - listitem [ref=e55]: ~30 pennies per wizard for Coppers
+                - listitem [ref=e56]: A d20 for HP, a d6 for round counting
+            - link "Get the Rules & Sheets" [ref=e58] [cursor=pointer]:
+                - /url: /downloads/
+        - generic [ref=e61]:
+            - heading "Run a Dungeon Tonight" [level=2] [ref=e62]
+            - paragraph [ref=e63]: Open the Tracker on your phone. It handles HP, Coppers, Bosses, Minions, Round counter, and Glory — so the table can focus on the cards.
+            - link "Open the Tracker" [ref=e65] [cursor=pointer]:
+                - /url: /tracker/
+        - generic [ref=e68]:
+            - heading "Open source. Open table." [level=2] [ref=e69]
+            - paragraph [ref=e70]:
+                - text: DeckNForge is in active playtest. Game content is
+                - strong [ref=e71]: CC BY-SA 4.0
+                - text: — fork it, remix it, ship your own dungeon. The website is
+                - strong [ref=e72]: MIT
+                - text: . Every band that gets played is data we can learn from.
+            - paragraph [ref=e73]: Star the repo, run a dungeon, file a playtest report.
+            - generic [ref=e74]:
+                - link "★ Star on GitHub" [ref=e75] [cursor=pointer]:
+                    - /url: https://github.com/decknforge/decknforge
+                - link "How to Contribute" [ref=e76] [cursor=pointer]:
+                    - /url: /contribute/
+    - contentinfo [ref=e77]:
+        - generic [ref=e78]:
+            - paragraph [ref=e79]: © 2026 DeckNForge — A persistent Legacy card game from a pocker deck of playing cards.
+            - paragraph [ref=e80]:
+                - link "GitHub" [ref=e81] [cursor=pointer]:
+                    - /url: https://github.com/decknforge/decknforge
+                - text: ·
+                - link "Contribute" [ref=e82] [cursor=pointer]:
+                    - /url: /contribute/
+                - text: ·
+                - link "License" [ref=e83] [cursor=pointer]:
+                    - /url: /downloads/LICENSE.md
+                - text: ·
+                - link "Downloads" [ref=e84] [cursor=pointer]:
+                    - /url: /downloads/
+            - paragraph [ref=e85]: v2.0 Playtest Edition · Game content licensed CC BY-SA 4.0. Site code MIT.
+    - generic [ref=e88]:
+        - button "Menu" [ref=e89]:
+            - img [ref=e91]
+            - generic: Menu
+        - button "Inspect" [ref=e95]:
+            - img [ref=e97]
+            - generic: Inspect
+        - button "Audit" [ref=e99]:
+            - img [ref=e101]
+            - generic: Audit
+        - button "Settings" [ref=e104]:
+            - img [ref=e106]
+            - generic: Settings

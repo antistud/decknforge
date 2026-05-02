@@ -1,155 +1,155 @@
 - generic [active] [ref=e1]:
-  - navigation [ref=e2]:
-    - generic [ref=e3]:
-      - link "DeckNForge logo" [ref=e4] [cursor=pointer]:
-        - /url: /
-        - img "DeckNForge logo" [ref=e5]
-      - generic [ref=e6]:
-        - link "Home" [ref=e7] [cursor=pointer]:
-          - /url: /
-        - link "Learn" [ref=e8] [cursor=pointer]:
-          - /url: /learn/
-        - link "Downloads" [ref=e9] [cursor=pointer]:
-          - /url: /downloads/
-        - link "Tracker" [ref=e10] [cursor=pointer]:
-          - /url: /tracker/
-        - link "Contribute" [ref=e11] [cursor=pointer]:
-          - /url: /contribute/
-        - link "GitHub repository" [ref=e12] [cursor=pointer]:
-          - /url: https://github.com/decknforge/decknforge
-          - img [ref=e13]
-  - main [ref=e15]:
-    - generic [ref=e17]:
-      - heading "Contribute" [level=1] [ref=e18]
-      - paragraph [ref=e19]: DeckNForge is open source and in active playtest. Every band that gets played is data. Whether you have 90 minutes and three friends or fifteen minutes and an idea — there's a way to help.
-      - generic [ref=e20]:
-        - heading "The repository" [level=2] [ref=e21]
-        - paragraph [ref=e22]: All rules, sheets, labels, and the website source live on GitHub.
-        - generic [ref=e23]:
-          - link "View on GitHub →" [ref=e24] [cursor=pointer]:
-            - /url: https://github.com/decknforge/decknforge
-          - link "Open an Issue" [ref=e25] [cursor=pointer]:
-            - /url: https://github.com/decknforge/decknforge/issues
-          - link "Discussions" [ref=e26] [cursor=pointer]:
-            - /url: https://github.com/decknforge/decknforge/discussions
-      - generic [ref=e27]:
-        - generic [ref=e28]:
-          - heading "1. Playtest the game" [level=3] [ref=e29]
-          - paragraph [ref=e30]:
-            - text: The single most valuable thing you can do. Run a dungeon, then file a
-            - strong [ref=e31]: Playtest Report
-            - text: issue.
-          - paragraph [ref=e32]: "Useful things to include:"
-          - list [ref=e33]:
-            - listitem [ref=e34]: Player count + play time
-            - listitem [ref=e35]: Did wizards hesitate before revealing high cards?
-            - listitem [ref=e36]: Did anyone use a Tactic before round 4?
-            - listitem [ref=e37]: Did the table audibly react when a Tactic resolved?
-            - listitem [ref=e38]: Did one wizard run away with the Coppers?
-            - listitem [ref=e39]: Anything that confused the table
-          - paragraph [ref=e40]: The full Playtest Watchlist is in section 8 of the rulebook.
-          - link "File a Playtest Report" [ref=e42] [cursor=pointer]:
-            - /url: https://github.com/decknforge/decknforge/issues/new?labels=playtest&title=Playtest+Report
-        - generic [ref=e43]:
-          - heading "2. Suggest a rules change" [level=3] [ref=e44]
-          - paragraph [ref=e45]:
-            - text: Open an issue tagged
-            - generic [ref=e46]: rules
-            - text: "with:"
-          - list [ref=e47]:
-            - listitem [ref=e48]: The section number you're amending
-            - listitem [ref=e49]: The problem you're solving
-            - listitem [ref=e50]: Your proposed wording
-            - listitem [ref=e51]: Playtest data if you have it
-          - paragraph [ref=e52]: Rules changes shipping with playtest data move 10× faster than ones without.
-          - link "Suggest a Rule Change" [ref=e54] [cursor=pointer]:
-            - /url: https://github.com/decknforge/decknforge/issues/new?labels=rules&title=Rules+change%3A+
-        - generic [ref=e55]:
-          - heading "3. Add labels & inscriptions" [level=3] [ref=e56]
-          - paragraph [ref=e57]: "New labels, inscriptions, or monster types are welcome. A good submission includes:"
-          - list [ref=e58]:
-            - listitem [ref=e59]: Name + effect text (≤ 12 words)
-            - listitem [ref=e60]: Tier (Easy/Med/Hard for labels; Common/Uncommon/Rare/Mythic for inscriptions)
-            - listitem [ref=e61]: Why it's interesting — what new decision does it create?
-          - paragraph [ref=e62]:
-            - text: Game content is
-            - link "CC BY-SA 4.0" [ref=e63] [cursor=pointer]:
-              - /url: /downloads/LICENSE.md
-            - text: . By contributing you agree to the same license.
-          - link "Pitch Content" [ref=e65] [cursor=pointer]:
-            - /url: https://github.com/decknforge/decknforge/issues/new?labels=content&title=New+label%3A+
-        - generic [ref=e66]:
-          - heading "4. Improve the site / tracker" [level=3] [ref=e67]
-          - paragraph [ref=e68]:
-            - text: The website is
-            - link "Astro" [ref=e69] [cursor=pointer]:
-              - /url: https://astro.build
-            - text: + vanilla JS, no backend, no build framework heavy lift.
-          - generic [ref=e70]: "# clone the repo, then cd site npm install npm run dev # http://127.0.0.1:4321 npm run build # static build → dist/"
-          - paragraph [ref=e71]: Code is licensed MIT. Bug reports and feature ideas welcome.
-          - link "Good First Issues" [ref=e73] [cursor=pointer]:
-            - /url: https://github.com/decknforge/decknforge/issues?q=is%3Aopen+is%3Aissue+label%3A%22good+first+issue%22
-      - separator [ref=e74]
-      - generic [ref=e75]:
-        - heading "Licenses" [level=2] [ref=e76]
-        - paragraph [ref=e77]: "DeckNForge is dual-licensed:"
-        - list [ref=e78]:
-          - listitem [ref=e79]:
-            - strong [ref=e80]: Game content
-            - text: (rules, labels, inscriptions, printable sheets) —
-            - link "Creative Commons Attribution-ShareAlike 4.0" [ref=e81] [cursor=pointer]:
-              - /url: https://creativecommons.org/licenses/by-sa/4.0/
-            - text: . You can fork and remix, but your version must share the same license, and you must credit DeckNForge.
-          - listitem [ref=e82]:
-            - strong [ref=e83]: Website code
-            - text: (everything in
-            - generic [ref=e84]: site/src
-            - text: ) —
-            - link "MIT" [ref=e85] [cursor=pointer]:
-              - /url: https://opensource.org/license/mit/
-            - text: . Use it for whatever you want, including commercially.
-          - listitem [ref=e86]:
-            - strong [ref=e87]: Logo & key art
-            - text: — © DeckNForge. Not covered by the open-source licenses. Replace with your own art if you fork.
-        - link "Read the full LICENSE" [ref=e89] [cursor=pointer]:
-          - /url: /downloads/LICENSE.md
-      - generic [ref=e90]:
-        - heading "Code of conduct" [level=2] [ref=e91]
-        - paragraph [ref=e92]: Be kind. We're building a game about cooperation and betrayal. Keep the betrayal at the table, not in the issue tracker.
-      - generic [ref=e93]:
-        - heading "Ready to forge?" [level=2] [ref=e94]
-        - paragraph [ref=e95]: Star the repo, run a dungeon, file an issue.
-        - generic [ref=e96]:
-          - link "★ Star on GitHub" [ref=e97] [cursor=pointer]:
-            - /url: https://github.com/decknforge/decknforge
-          - link "Learn the Game" [ref=e98] [cursor=pointer]:
-            - /url: /learn/
-  - contentinfo [ref=e99]:
-    - generic [ref=e100]:
-      - paragraph [ref=e101]: © 2026 DeckNForge — A persistent legacy card game from a single deck of playing cards.
-      - paragraph [ref=e102]:
-        - link "GitHub" [ref=e103] [cursor=pointer]:
-          - /url: https://github.com/decknforge/decknforge
-        - text: ·
-        - link "Contribute" [ref=e104] [cursor=pointer]:
-          - /url: /contribute/
-        - text: ·
-        - link "License" [ref=e105] [cursor=pointer]:
-          - /url: /downloads/LICENSE.md
-        - text: ·
-        - link "Downloads" [ref=e106] [cursor=pointer]:
-          - /url: /downloads/
-      - paragraph [ref=e107]: v2.0 Playtest Edition · Game content licensed CC BY-SA 4.0. Site code MIT.
-  - generic [ref=e110]:
-    - button "Menu" [ref=e111]:
-      - img [ref=e113]
-      - generic: Menu
-    - button "Inspect" [ref=e117]:
-      - img [ref=e119]
-      - generic: Inspect
-    - button "Audit" [ref=e121]:
-      - img [ref=e123]
-      - generic: Audit
-    - button "Settings" [ref=e126]:
-      - img [ref=e128]
-      - generic: Settings
+    - navigation [ref=e2]:
+        - generic [ref=e3]:
+            - link "DeckNForge logo" [ref=e4] [cursor=pointer]:
+                - /url: /
+                - img "DeckNForge logo" [ref=e5]
+            - generic [ref=e6]:
+                - link "Home" [ref=e7] [cursor=pointer]:
+                    - /url: /
+                - link "Learn" [ref=e8] [cursor=pointer]:
+                    - /url: /learn/
+                - link "Downloads" [ref=e9] [cursor=pointer]:
+                    - /url: /downloads/
+                - link "Tracker" [ref=e10] [cursor=pointer]:
+                    - /url: /tracker/
+                - link "Contribute" [ref=e11] [cursor=pointer]:
+                    - /url: /contribute/
+                - link "GitHub repository" [ref=e12] [cursor=pointer]:
+                    - /url: https://github.com/decknforge/decknforge
+                    - img [ref=e13]
+    - main [ref=e15]:
+        - generic [ref=e17]:
+            - heading "Contribute" [level=1] [ref=e18]
+            - paragraph [ref=e19]: DeckNForge is open source and in active playtest. Every band that gets played is data. Whether you have 90 minutes and three friends or fifteen minutes and an idea — there's a way to help.
+            - generic [ref=e20]:
+                - heading "The repository" [level=2] [ref=e21]
+                - paragraph [ref=e22]: All rules, sheets, labels, and the website source live on GitHub.
+                - generic [ref=e23]:
+                    - link "View on GitHub →" [ref=e24] [cursor=pointer]:
+                        - /url: https://github.com/decknforge/decknforge
+                    - link "Open an Issue" [ref=e25] [cursor=pointer]:
+                        - /url: https://github.com/decknforge/decknforge/issues
+                    - link "Discussions" [ref=e26] [cursor=pointer]:
+                        - /url: https://github.com/decknforge/decknforge/discussions
+            - generic [ref=e27]:
+                - generic [ref=e28]:
+                    - heading "1. Playtest the game" [level=3] [ref=e29]
+                    - paragraph [ref=e30]:
+                        - text: The single most valuable thing you can do. Run a dungeon, then file a
+                        - strong [ref=e31]: Playtest Report
+                        - text: issue.
+                    - paragraph [ref=e32]: "Useful things to include:"
+                    - list [ref=e33]:
+                        - listitem [ref=e34]: Player count + play time
+                        - listitem [ref=e35]: Did wizards hesitate before revealing high cards?
+                        - listitem [ref=e36]: Did anyone use a Tactic before round 4?
+                        - listitem [ref=e37]: Did the table audibly react when a Tactic resolved?
+                        - listitem [ref=e38]: Did one wizard run away with the Coppers?
+                        - listitem [ref=e39]: Anything that confused the table
+                    - paragraph [ref=e40]: The full Playtest Watchlist is in section 8 of the rulebook.
+                    - link "File a Playtest Report" [ref=e42] [cursor=pointer]:
+                        - /url: https://github.com/decknforge/decknforge/issues/new?labels=playtest&title=Playtest+Report
+                - generic [ref=e43]:
+                    - heading "2. Suggest a rules change" [level=3] [ref=e44]
+                    - paragraph [ref=e45]:
+                        - text: Open an issue tagged
+                        - generic [ref=e46]: rules
+                        - text: "with:"
+                    - list [ref=e47]:
+                        - listitem [ref=e48]: The section number you're amending
+                        - listitem [ref=e49]: The problem you're solving
+                        - listitem [ref=e50]: Your proposed wording
+                        - listitem [ref=e51]: Playtest data if you have it
+                    - paragraph [ref=e52]: Rules changes shipping with playtest data move 10× faster than ones without.
+                    - link "Suggest a Rule Change" [ref=e54] [cursor=pointer]:
+                        - /url: https://github.com/decknforge/decknforge/issues/new?labels=rules&title=Rules+change%3A+
+                - generic [ref=e55]:
+                    - heading "3. Add labels & inscriptions" [level=3] [ref=e56]
+                    - paragraph [ref=e57]: "New labels, inscriptions, or monster types are welcome. A good submission includes:"
+                    - list [ref=e58]:
+                        - listitem [ref=e59]: Name + effect text (≤ 12 words)
+                        - listitem [ref=e60]: Tier (Easy/Med/Hard for labels; Common/Uncommon/Rare/Mythic for inscriptions)
+                        - listitem [ref=e61]: Why it's interesting — what new decision does it create?
+                    - paragraph [ref=e62]:
+                        - text: Game content is
+                        - link "CC BY-SA 4.0" [ref=e63] [cursor=pointer]:
+                            - /url: /downloads/LICENSE.md
+                        - text: . By contributing you agree to the same license.
+                    - link "Pitch Content" [ref=e65] [cursor=pointer]:
+                        - /url: https://github.com/decknforge/decknforge/issues/new?labels=content&title=New+label%3A+
+                - generic [ref=e66]:
+                    - heading "4. Improve the site / tracker" [level=3] [ref=e67]
+                    - paragraph [ref=e68]:
+                        - text: The website is
+                        - link "Astro" [ref=e69] [cursor=pointer]:
+                            - /url: https://astro.build
+                        - text: + vanilla JS, no backend, no build framework heavy lift.
+                    - generic [ref=e70]: "# clone the repo, then cd site npm install npm run dev # http://127.0.0.1:4321 npm run build # static build → dist/"
+                    - paragraph [ref=e71]: Code is licensed MIT. Bug reports and feature ideas welcome.
+                    - link "Good First Issues" [ref=e73] [cursor=pointer]:
+                        - /url: https://github.com/decknforge/decknforge/issues?q=is%3Aopen+is%3Aissue+label%3A%22good+first+issue%22
+            - separator [ref=e74]
+            - generic [ref=e75]:
+                - heading "Licenses" [level=2] [ref=e76]
+                - paragraph [ref=e77]: "DeckNForge is dual-licensed:"
+                - list [ref=e78]:
+                    - listitem [ref=e79]:
+                        - strong [ref=e80]: Game content
+                        - text: (rules, labels, inscriptions, printable sheets) —
+                        - link "Creative Commons Attribution-ShareAlike 4.0" [ref=e81] [cursor=pointer]:
+                            - /url: https://creativecommons.org/licenses/by-sa/4.0/
+                        - text: . You can fork and remix, but your version must share the same license, and you must credit DeckNForge.
+                    - listitem [ref=e82]:
+                        - strong [ref=e83]: Website code
+                        - text: (everything in
+                        - generic [ref=e84]: site/src
+                        - text: ) —
+                        - link "MIT" [ref=e85] [cursor=pointer]:
+                            - /url: https://opensource.org/license/mit/
+                        - text: . Use it for whatever you want, including commercially.
+                    - listitem [ref=e86]:
+                        - strong [ref=e87]: Logo & key art
+                        - text: — © DeckNForge. Not covered by the open-source licenses. Replace with your own art if you fork.
+                - link "Read the full LICENSE" [ref=e89] [cursor=pointer]:
+                    - /url: /downloads/LICENSE.md
+            - generic [ref=e90]:
+                - heading "Code of conduct" [level=2] [ref=e91]
+                - paragraph [ref=e92]: Be kind. We're building a game about cooperation and betrayal. Keep the betrayal at the table, not in the issue tracker.
+            - generic [ref=e93]:
+                - heading "Ready to forge?" [level=2] [ref=e94]
+                - paragraph [ref=e95]: Star the repo, run a dungeon, file an issue.
+                - generic [ref=e96]:
+                    - link "★ Star on GitHub" [ref=e97] [cursor=pointer]:
+                        - /url: https://github.com/decknforge/decknforge
+                    - link "Learn the Game" [ref=e98] [cursor=pointer]:
+                        - /url: /learn/
+    - contentinfo [ref=e99]:
+        - generic [ref=e100]:
+            - paragraph [ref=e101]: © 2026 DeckNForge — A persistent Legacy card game from a pocker deck of playing cards.
+            - paragraph [ref=e102]:
+                - link "GitHub" [ref=e103] [cursor=pointer]:
+                    - /url: https://github.com/decknforge/decknforge
+                - text: ·
+                - link "Contribute" [ref=e104] [cursor=pointer]:
+                    - /url: /contribute/
+                - text: ·
+                - link "License" [ref=e105] [cursor=pointer]:
+                    - /url: /downloads/LICENSE.md
+                - text: ·
+                - link "Downloads" [ref=e106] [cursor=pointer]:
+                    - /url: /downloads/
+            - paragraph [ref=e107]: v2.0 Playtest Edition · Game content licensed CC BY-SA 4.0. Site code MIT.
+    - generic [ref=e110]:
+        - button "Menu" [ref=e111]:
+            - img [ref=e113]
+            - generic: Menu
+        - button "Inspect" [ref=e117]:
+            - img [ref=e119]
+            - generic: Inspect
+        - button "Audit" [ref=e121]:
+            - img [ref=e123]
+            - generic: Audit
+        - button "Settings" [ref=e126]:
+            - img [ref=e128]
+            - generic: Settings
