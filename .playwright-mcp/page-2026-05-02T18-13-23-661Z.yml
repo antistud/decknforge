@@ -1,0 +1,90 @@
+- generic [ref=e1]:
+  - navigation [ref=e2]:
+    - generic [ref=e3]:
+      - link "DeckNForge logo" [ref=e4] [cursor=pointer]:
+        - /url: /
+        - img "DeckNForge logo" [ref=e5]
+      - generic [ref=e6]:
+        - link "Home" [ref=e7] [cursor=pointer]:
+          - /url: /
+        - link "Learn" [ref=e8] [cursor=pointer]:
+          - /url: /learn/
+        - link "Downloads" [ref=e9] [cursor=pointer]:
+          - /url: /downloads/
+        - link "Tracker" [ref=e10] [cursor=pointer]:
+          - /url: /tracker/
+        - link "Contribute" [ref=e11] [cursor=pointer]:
+          - /url: /contribute/
+        - link "GitHub repository" [ref=e12] [cursor=pointer]:
+          - /url: https://github.com/decknforge/decknforge
+          - img [ref=e13]
+  - main [ref=e15]:
+    - generic [ref=e17]:
+      - heading "Dungeon Tracker" [level=1] [ref=e18]
+      - paragraph [ref=e19]: Track wizards, bosses, and minions through a 6-fight dungeon. Saves to your device automatically — no account, no backend.
+      - tablist [ref=e20]:
+        - button "Dungeon" [ref=e21] [cursor=pointer]
+        - button "Wizards" [ref=e22] [cursor=pointer]
+        - button "Bosses" [ref=e23] [cursor=pointer]
+        - button "Minions" [ref=e24] [cursor=pointer]
+        - button "Setup" [active] [ref=e25] [cursor=pointer]
+      - generic [ref=e167]:
+        - generic [ref=e168]:
+          - heading "Player count" [level=3] [ref=e169]
+          - paragraph [ref=e170]: Sets boss HP multiplier and starting hand size.
+          - generic [ref=e171]:
+            - generic [ref=e172]: Players
+            - generic [ref=e173]:
+              - button "-1 player" [ref=e174] [cursor=pointer]: −
+              - generic [ref=e175]: "3"
+              - button "+1 player" [ref=e176] [cursor=pointer]: +
+          - paragraph [ref=e177]: "3 wizards: Boss HP × 3, hand 12, inscriptions 30c. Sweet spot."
+        - generic [ref=e178]:
+          - heading "Quick start" [level=3] [ref=e179]
+          - paragraph [ref=e180]: Seed a fresh tracker with 4 wizards and 6 placeholder bosses to get going fast.
+          - button "Seed 4 wizards + 6 bosses" [ref=e182] [cursor=pointer]
+        - generic [ref=e183]:
+          - heading "Reset" [level=3] [ref=e184]
+          - generic [ref=e185]:
+            - generic [ref=e186]:
+              - strong [ref=e187]: Reset HP & Round
+              - paragraph [ref=e188]: Restores all wizards to 20 HP, current boss to full HP, clears minions, sets round to 1. Keeps wizards, bosses, coppers, and glory.
+              - button "Reset HP & Round" [ref=e189] [cursor=pointer]
+            - generic [ref=e190]:
+              - strong [ref=e191]: Wipe everything
+              - paragraph [ref=e192]: Removes all wizards, bosses, coppers, glory, and round state. Cannot be undone.
+              - button "Wipe All Data" [ref=e193] [cursor=pointer]
+        - generic [ref=e194]:
+          - heading "Persistence" [level=3] [ref=e195]
+          - paragraph [ref=e196]: All tracker data is saved automatically to your browser's local storage. Refresh the page, close the tab, or come back tomorrow — your dungeon will be exactly where you left it. Clearing site data, switching browsers, or using a different device will lose the state.
+  - contentinfo [ref=e132]:
+    - generic [ref=e133]:
+      - paragraph [ref=e134]: © 2026 DeckNForge — A persistent Legacy card game from a poker deck of playing cards.
+      - paragraph [ref=e135]:
+        - link "GitHub" [ref=e136] [cursor=pointer]:
+          - /url: https://github.com/decknforge/decknforge
+        - text: ·
+        - link "Contribute" [ref=e137] [cursor=pointer]:
+          - /url: /contribute/
+        - text: ·
+        - link "License" [ref=e138] [cursor=pointer]:
+          - /url: /downloads/LICENSE.md
+        - text: ·
+        - link "Downloads" [ref=e139] [cursor=pointer]:
+          - /url: /downloads/
+      - paragraph [ref=e140]: v2.0 Playtest Edition · Game content licensed CC BY-SA 4.0. Site code MIT.
+  - generic [ref=e143]:
+    - button "Menu" [ref=e144]:
+      - img [ref=e146]
+      - generic: Menu
+    - button "Inspect" [ref=e150]:
+      - img [ref=e152]
+      - generic: Inspect
+    - button "Audit" [ref=e154]:
+      - generic [ref=e155]:
+        - img [ref=e156]
+        - img [ref=e165]
+      - generic: Audit
+    - button "Settings" [ref=e159]:
+      - img [ref=e161]
+      - generic: Settings

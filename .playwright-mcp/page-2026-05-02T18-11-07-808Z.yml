@@ -1,0 +1,85 @@
+- generic [ref=e1]:
+  - navigation [ref=e2]:
+    - generic [ref=e3]:
+      - link "DeckNForge logo" [ref=e4] [cursor=pointer]:
+        - /url: /
+        - img "DeckNForge logo" [ref=e5]
+      - generic [ref=e6]:
+        - link "Home" [ref=e7] [cursor=pointer]:
+          - /url: /
+        - link "Learn" [ref=e8] [cursor=pointer]:
+          - /url: /learn/
+        - link "Downloads" [ref=e9] [cursor=pointer]:
+          - /url: /downloads/
+        - link "Tracker" [ref=e10] [cursor=pointer]:
+          - /url: /tracker/
+        - link "Contribute" [ref=e11] [cursor=pointer]:
+          - /url: /contribute/
+        - link "GitHub repository" [ref=e12] [cursor=pointer]:
+          - /url: https://github.com/decknforge/decknforge
+          - img [ref=e13]
+  - main [ref=e15]:
+    - generic [ref=e17]:
+      - heading "Dungeon Tracker" [level=1] [ref=e18]
+      - paragraph [ref=e19]: Track wizards, bosses, and minions through a 6-fight dungeon. Saves to your device automatically — no account, no backend.
+      - tablist [ref=e20]:
+        - button "Dungeon" [ref=e21] [cursor=pointer]
+        - button "Wizards" [ref=e22] [cursor=pointer]
+        - button "Bosses" [ref=e23] [cursor=pointer]
+        - button "Minions" [ref=e24] [cursor=pointer]
+        - button "Setup" [active] [ref=e25] [cursor=pointer]
+      - generic [ref=e156]:
+        - generic [ref=e157]:
+          - heading "Player count" [level=3] [ref=e158]
+          - paragraph [ref=e159]: Sets boss HP multiplier and starting hand size.
+          - generic [ref=e160]:
+            - generic [ref=e161]: Players
+            - generic [ref=e162]:
+              - button "-1 player" [ref=e163] [cursor=pointer]: −
+              - generic [ref=e164]: "3"
+              - button "+1 player" [ref=e165] [cursor=pointer]: +
+          - paragraph [ref=e166]: "3 wizards: Boss HP × 3, hand 12, inscriptions 30c. Sweet spot."
+        - generic [ref=e167]:
+          - heading "Quick start" [level=3] [ref=e168]
+          - paragraph [ref=e169]: Seed a fresh tracker with 4 wizards and 6 placeholder bosses to get going fast.
+          - button "Seed 4 wizards + 6 bosses" [ref=e171] [cursor=pointer]
+        - generic [ref=e172]:
+          - heading "Reset" [level=3] [ref=e173]
+          - paragraph [ref=e174]: Wipes the entire tracker state on this device. Cannot be undone.
+          - generic [ref=e175]:
+            - button "Reset Tracker" [ref=e176] [cursor=pointer]
+            - button "Reset HP & Round" [ref=e177] [cursor=pointer]
+        - generic [ref=e178]:
+          - heading "About" [level=3] [ref=e179]
+          - paragraph [ref=e180]: All data is saved in your browser's local storage. Clearing site data or using a different device will lose state.
+  - contentinfo [ref=e124]:
+    - generic [ref=e125]:
+      - paragraph [ref=e126]: © 2026 DeckNForge — A persistent Legacy card game from a poker deck of playing cards.
+      - paragraph [ref=e127]:
+        - link "GitHub" [ref=e128] [cursor=pointer]:
+          - /url: https://github.com/decknforge/decknforge
+        - text: ·
+        - link "Contribute" [ref=e129] [cursor=pointer]:
+          - /url: /contribute/
+        - text: ·
+        - link "License" [ref=e130] [cursor=pointer]:
+          - /url: /downloads/LICENSE.md
+        - text: ·
+        - link "Downloads" [ref=e131] [cursor=pointer]:
+          - /url: /downloads/
+      - paragraph [ref=e132]: v2.0 Playtest Edition · Game content licensed CC BY-SA 4.0. Site code MIT.
+  - generic [ref=e135]:
+    - button "Menu" [ref=e136]:
+      - img [ref=e138]
+      - generic: Menu
+    - button "Inspect" [ref=e142]:
+      - img [ref=e144]
+      - generic: Inspect
+    - button "Audit" [ref=e146]:
+      - generic [ref=e147]:
+        - img [ref=e148]
+        - img [ref=e182]
+      - generic: Audit
+    - button "Settings" [ref=e151]:
+      - img [ref=e153]
+      - generic: Settings

@@ -72,6 +72,22 @@ import Layout from '../layouts/Layout.astro';
           <h3 style="margin-bottom:8px;">Wizards</h3>
           <div id="wizards-mini"></div>
         </div>
+
+        <div class="reset-row">
+          <span id="autosave-indicator" class="text-dim" title="Tracker autosaves to your browser. Refresh, close the tab, and come back — your dungeon is still here.">
+            <svg viewBox="0 0 16 16" width="14" height="14" fill="currentColor" aria-hidden="true" style="vertical-align:-2px;">
+              <path d="M8 1.5a6.5 6.5 0 1 0 0 13 6.5 6.5 0 0 0 0-13zM7.5 4a.5.5 0 0 1 1 0v4.293l2.354 2.353a.5.5 0 0 1-.708.708L7.146 8.854a.5.5 0 0 1-.146-.354V4z"/>
+            </svg>
+            Autosaved
+          </span>
+          <button id="reset-dungeon-quick" class="icon-btn danger" type="button" aria-label="Reset tracker">
+            <svg viewBox="0 0 16 16" width="14" height="14" fill="currentColor" aria-hidden="true" style="vertical-align:-2px;">
+              <path d="M5.5 5.5A.5.5 0 0 1 6 6v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5zm2.5 0a.5.5 0 0 1 .5.5v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5zm3 .5a.5.5 0 0 0-1 0v6a.5.5 0 0 0 1 0V6z"/>
+              <path d="M14.5 3a1 1 0 0 1-1 1H13v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V4h-.5a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1H6a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1h3.5a1 1 0 0 1 1 1v1zM4.118 4 4 4.059V13a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1V4.059L11.882 4H4.118zM2.5 3h11V2h-11v1z"/>
+            </svg>
+            Reset
+          </button>
+        </div>
       </div>
 
       <!-- WIZARDS TAB -->
@@ -145,16 +161,23 @@ import Layout from '../layouts/Layout.astro';
 
         <div class="card">
           <h3 style="margin-bottom:8px;">Reset</h3>
-          <p class="text-dim">Wipes the entire tracker state on this device. Cannot be undone.</p>
-          <div class="btn-row" style="justify-content:flex-start; margin-top:8px;">
-            <button class="btn btn-danger" id="reset-all">Reset Tracker</button>
-            <button class="btn btn-ghost" id="reset-fight">Reset HP &amp; Round</button>
+          <div class="grid cols-2" style="gap:14px;">
+            <div>
+              <strong>Reset HP &amp; Round</strong>
+              <p class="text-dim" style="font-size:0.9rem; margin: 4px 0 8px;">Restores all wizards to 20 HP, current boss to full HP, clears minions, sets round to 1. Keeps wizards, bosses, coppers, and glory.</p>
+              <button class="btn btn-ghost" id="reset-fight">Reset HP &amp; Round</button>
+            </div>
+            <div>
+              <strong style="color:#f87171;">Wipe everything</strong>
+              <p class="text-dim" style="font-size:0.9rem; margin: 4px 0 8px;">Removes all wizards, bosses, coppers, glory, and round state. Cannot be undone.</p>
+              <button class="btn btn-danger" id="reset-all">Wipe All Data</button>
+            </div>
           </div>
         </div>
 
         <div class="card">
-          <h3 style="margin-bottom:8px;">About</h3>
-          <p class="text-dim">All data is saved in your browser's local storage. Clearing site data or using a different device will lose state.</p>
+          <h3 style="margin-bottom:8px;">Persistence</h3>
+          <p class="text-dim">All tracker data is saved automatically to your browser's local storage. Refresh the page, close the tab, or come back tomorrow — your dungeon will be exactly where you left it. Clearing site data, switching browsers, or using a different device will lose the state.</p>
         </div>
       </div>
     </div>
@@ -193,8 +216,19 @@ import Layout from '../layouts/Layout.astro';
       }
 
       function save() {
-        try { localStorage.setItem(KEY, JSON.stringify(state)); }
-        catch (e) {}
+        try {
+          localStorage.setItem(KEY, JSON.stringify(state));
+          flashSaved();
+        } catch (e) {}
+      }
+
+      let savedTimer = null;
+      function flashSaved() {
+        const el = document.getElementById('autosave-indicator');
+        if (!el) return;
+        el.classList.add('saved-flash');
+        if (savedTimer) clearTimeout(savedTimer);
+        savedTimer = setTimeout(() => el.classList.remove('saved-flash'), 600);
       }
 
       function clamp(n, lo, hi) { return Math.max(lo, Math.min(hi, n)); }
@@ -635,12 +669,14 @@ import Layout from '../layouts/Layout.astro';
         setActiveTab('dungeon');
       });
 
-      document.getElementById('reset-all').addEventListener('click', () => {
-        if (!confirm('Wipe the entire tracker? This cannot be undone.')) return;
+      function wipeEverything() {
+        if (!confirm('Wipe the entire tracker?\n\nThis removes all wizards, bosses, coppers, and glory. Cannot be undone.')) return;
         state = defaultState();
         save(); renderAll();
         setActiveTab('dungeon');
-      });
+      }
+      document.getElementById('reset-all').addEventListener('click', wipeEverything);
+      document.getElementById('reset-dungeon-quick').addEventListener('click', wipeEverything);
       document.getElementById('reset-fight').addEventListener('click', () => {
         state.wizards.forEach(w => { w.hp = STARTING_HP; });
         state.minions = [];

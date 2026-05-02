@@ -1,0 +1,162 @@
+- generic [active] [ref=e1]:
+  - navigation [ref=e2]:
+    - generic [ref=e3]:
+      - link "DeckNForge logo" [ref=e4] [cursor=pointer]:
+        - /url: /
+        - img "DeckNForge logo" [ref=e5]
+      - generic [ref=e6]:
+        - link "Home" [ref=e7] [cursor=pointer]:
+          - /url: /
+        - link "Learn" [ref=e8] [cursor=pointer]:
+          - /url: /learn/
+        - link "Downloads" [ref=e9] [cursor=pointer]:
+          - /url: /downloads/
+        - link "Tracker" [ref=e10] [cursor=pointer]:
+          - /url: /tracker/
+        - link "Contribute" [ref=e11] [cursor=pointer]:
+          - /url: /contribute/
+        - link "GitHub repository" [ref=e12] [cursor=pointer]:
+          - /url: https://github.com/decknforge/decknforge
+          - img [ref=e13]
+  - main [ref=e15]:
+    - generic [ref=e17]:
+      - heading "Dungeon Tracker" [level=1] [ref=e18]
+      - paragraph [ref=e19]: Track wizards, bosses, and minions through a 6-fight dungeon. Saves to your device automatically — no account, no backend.
+      - tablist [ref=e20]:
+        - button "Dungeon" [ref=e21] [cursor=pointer]
+        - button "Wizards" [ref=e22] [cursor=pointer]
+        - button "Bosses" [ref=e23] [cursor=pointer]
+        - button "Minions" [ref=e24] [cursor=pointer]
+        - button "Setup" [ref=e25] [cursor=pointer]
+      - generic [ref=e26]:
+        - generic [ref=e27]:
+          - generic [ref=e28]:
+            - generic [ref=e29]:
+              - generic [ref=e30]: Current Boss
+              - generic [ref=e31]: 1. Skeleton King
+              - generic [ref=e32]:
+                - text: HP 54 · ATK 4 ·
+                - generic [ref=e33]: SWIFT
+            - generic [ref=e34]:
+              - button "Previous boss" [ref=e35] [cursor=pointer]: ‹
+              - generic [ref=e36]: 1/6
+              - button "Next boss" [ref=e37] [cursor=pointer]: ›
+          - generic [ref=e38]:
+            - generic [ref=e40]: Boss HP
+            - generic [ref=e43]:
+              - button "-5 HP" [ref=e44] [cursor=pointer]: −5
+              - button "-1 HP" [ref=e45] [cursor=pointer]: −1
+              - generic [ref=e46]: "49"
+              - button "+1 HP" [ref=e47] [cursor=pointer]: "+1"
+              - button "+5 HP" [ref=e48] [cursor=pointer]: "+5"
+          - generic [ref=e49]:
+            - generic [ref=e50]: Round
+            - generic [ref=e51]:
+              - button "-1 round" [ref=e52] [cursor=pointer]: −
+              - generic [ref=e53]: "1"
+              - button "+1 round" [ref=e54] [cursor=pointer]: +
+          - generic [ref=e55]:
+            - generic [ref=e56]: Band Glory
+            - generic [ref=e57]:
+              - button "-1 Glory" [ref=e58] [cursor=pointer]: −
+              - generic [ref=e59]: "0"
+              - button "+1 Glory" [ref=e60] [cursor=pointer]: +
+          - generic [ref=e61]:
+            - generic [ref=e62]: Active Wizard
+            - generic [ref=e63]: Aelar
+          - paragraph [ref=e64]: "DOOM watch: if a Boss with the DOOM label is alive at the end of round 5, it's a party wipe."
+        - generic [ref=e65]:
+          - heading "Wizards" [level=3] [ref=e66]
+          - generic [ref=e67]:
+            - generic [ref=e68]:
+              - generic [ref=e69]:
+                - generic [ref=e70]: Aelar ★
+                - generic [ref=e71]:
+                  - generic [ref=e72]:
+                    - text: ♥
+                    - strong [ref=e73]: "20"
+                  - generic [ref=e74]:
+                    - text: ¢
+                    - strong [ref=e75]: "0"
+                  - generic [ref=e76]: ★ 0
+              - generic [ref=e79]:
+                - button "−" [ref=e80] [cursor=pointer]
+                - button "+" [ref=e81] [cursor=pointer]
+            - generic [ref=e82]:
+              - generic [ref=e83]:
+                - generic [ref=e84]: Brunhild
+                - generic [ref=e85]:
+                  - generic [ref=e86]:
+                    - text: ♥
+                    - strong [ref=e87]: "20"
+                  - generic [ref=e88]:
+                    - text: ¢
+                    - strong [ref=e89]: "0"
+                  - generic [ref=e90]: ★ 0
+              - generic [ref=e93]:
+                - button "−" [ref=e94] [cursor=pointer]
+                - button "+" [ref=e95] [cursor=pointer]
+            - generic [ref=e96]:
+              - generic [ref=e97]:
+                - generic [ref=e98]: Cassien
+                - generic [ref=e99]:
+                  - generic [ref=e100]:
+                    - text: ♥
+                    - strong [ref=e101]: "20"
+                  - generic [ref=e102]:
+                    - text: ¢
+                    - strong [ref=e103]: "0"
+                  - generic [ref=e104]: ★ 0
+              - generic [ref=e107]:
+                - button "−" [ref=e108] [cursor=pointer]
+                - button "+" [ref=e109] [cursor=pointer]
+            - generic [ref=e110]:
+              - generic [ref=e111]:
+                - generic [ref=e112]: Dmitri
+                - generic [ref=e113]:
+                  - generic [ref=e114]:
+                    - text: ♥
+                    - strong [ref=e115]: "20"
+                  - generic [ref=e116]:
+                    - text: ¢
+                    - strong [ref=e117]: "0"
+                  - generic [ref=e118]: ★ 0
+              - generic [ref=e121]:
+                - button "−" [ref=e122] [cursor=pointer]
+                - button "+" [ref=e123] [cursor=pointer]
+        - generic [ref=e124]:
+          - generic "Tracker autosaves to your browser. Refresh, close the tab, and come back — your dungeon is still here." [ref=e125]:
+            - img [ref=e126]
+            - text: Autosaved
+          - button "Reset tracker" [ref=e128] [cursor=pointer]:
+            - img [ref=e129]
+            - text: Reset
+  - contentinfo [ref=e132]:
+    - generic [ref=e133]:
+      - paragraph [ref=e134]: © 2026 DeckNForge — A persistent Legacy card game from a poker deck of playing cards.
+      - paragraph [ref=e135]:
+        - link "GitHub" [ref=e136] [cursor=pointer]:
+          - /url: https://github.com/decknforge/decknforge
+        - text: ·
+        - link "Contribute" [ref=e137] [cursor=pointer]:
+          - /url: /contribute/
+        - text: ·
+        - link "License" [ref=e138] [cursor=pointer]:
+          - /url: /downloads/LICENSE.md
+        - text: ·
+        - link "Downloads" [ref=e139] [cursor=pointer]:
+          - /url: /downloads/
+      - paragraph [ref=e140]: v2.0 Playtest Edition · Game content licensed CC BY-SA 4.0. Site code MIT.
+  - generic [ref=e143]:
+    - button "Menu" [ref=e144]:
+      - img [ref=e146]
+      - generic: Menu
+    - button "Inspect" [ref=e150]:
+      - img [ref=e152]
+      - generic: Inspect
+    - button "Audit" [ref=e154]:
+      - img [ref=e156]
+      - generic: Audit
+    - button "Settings" [ref=e159]:
+      - img [ref=e161]
+      - generic: Settings
