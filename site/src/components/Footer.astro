@@ -1,9 +1,23 @@
 ---
+import { GITHUB_URL } from '../config';
 const year = new Date().getFullYear();
 ---
 <footer class="footer">
   <div class="container">
-    <p>&copy; {year} DeckNForge — A persistent legacy card game from a single deck of playing cards.</p>
-    <p class="text-dim" style="font-size:0.8rem;">v2.0 Playtest Edition · Without teamwork, your band will never survive the dungeon. Without betrayal, you'll never claim the coppers.</p>
+    <p>
+      &copy; {year} DeckNForge — A persistent legacy card game from a single deck of playing cards.
+    </p>
+    <p style="margin: 8px 0 0;">
+      <a href={GITHUB_URL} target="_blank" rel="noopener">GitHub</a>
+      &nbsp;·&nbsp;
+      <a href="/contribute/">Contribute</a>
+      &nbsp;·&nbsp;
+      <a href="/downloads/LICENSE.md" target="_blank" rel="noopener">License</a>
+      &nbsp;·&nbsp;
+      <a href="/downloads/">Downloads</a>
+    </p>
+    <p class="text-dim" style="font-size:0.8rem; margin-top:8px;">
+      v2.0 Playtest Edition · Game content licensed CC BY-SA 4.0. Site code MIT.
+    </p>
   </div>
 </footer>

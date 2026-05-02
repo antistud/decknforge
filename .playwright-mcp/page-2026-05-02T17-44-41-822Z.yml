@@ -1,0 +1,87 @@
+- generic [active] [ref=e1]:
+  - navigation [ref=e2]:
+    - generic [ref=e3]:
+      - link "DeckNForge logo" [ref=e4] [cursor=pointer]:
+        - /url: /
+        - img "DeckNForge logo" [ref=e5]
+      - generic [ref=e6]:
+        - link "Home" [ref=e7] [cursor=pointer]:
+          - /url: /
+        - link "Learn" [ref=e8] [cursor=pointer]:
+          - /url: /learn/
+        - link "Downloads" [ref=e9] [cursor=pointer]:
+          - /url: /downloads/
+        - link "Tracker" [ref=e10] [cursor=pointer]:
+          - /url: /tracker/
+        - link "Contribute" [ref=e11] [cursor=pointer]:
+          - /url: /contribute/
+        - link "GitHub repository" [ref=e12] [cursor=pointer]:
+          - /url: https://github.com/decknforge/decknforge
+          - img [ref=e13]
+  - main [ref=e15]:
+    - generic [ref=e16]:
+      - img "DeckNForge logo" [ref=e17]
+      - paragraph [ref=e18]: "\"Without teamwork, your band will never survive the dungeon. Without betrayal, you'll never claim the coppers.\""
+      - paragraph [ref=e19]: A persistent legacy card game for 3–5 wizards. 60–90 minutes. Built from a standard deck of playing cards — and the marks each game leaves on it.
+      - generic [ref=e20]:
+        - link "Learn the Game" [ref=e21] [cursor=pointer]:
+          - /url: /learn/
+        - link "Open Tracker" [ref=e22] [cursor=pointer]:
+          - /url: /tracker/
+        - link "Downloads" [ref=e23] [cursor=pointer]:
+          - /url: /downloads/
+    - generic [ref=e26]:
+      - generic [ref=e27]:
+        - heading "Your deck IS your band" [level=3] [ref=e28]
+        - paragraph [ref=e29]: Inscriptions, labels, and Glory are written on the cards themselves. Every game leaves marks the next wizard inherits.
+      - generic [ref=e30]:
+        - heading "Six bosses, one dungeon" [level=3] [ref=e31]
+        - paragraph [ref=e32]: Wizards pool their Monster cards and fight 6 sequential bosses. The wizard who lands the killing blow takes the coppers.
+      - generic [ref=e33]:
+        - heading "Cooperate. Then betray." [level=3] [ref=e34]
+        - paragraph [ref=e35]: Spike, Foil, Snipe, and Brace let you tip the scales — or steal the kill. Tactics cost cards, not coins.
+    - generic [ref=e38]:
+      - heading "What you need" [level=2] [ref=e39]
+      - list [ref=e40]:
+        - listitem [ref=e41]: 1 standard deck of playing cards with both Jokers (54 cards)
+        - listitem [ref=e42]: A fine-point Sharpie
+        - listitem [ref=e43]: 1 sheet of Avery 18294 labels
+        - listitem [ref=e44]: ~30 pennies per wizard for Coppers
+        - listitem [ref=e45]: A d20 for HP, a d6 for round counting
+      - link "Get the Rules & Sheets" [ref=e47] [cursor=pointer]:
+        - /url: /downloads/
+    - generic [ref=e50]:
+      - heading "Run a Dungeon Tonight" [level=2] [ref=e51]
+      - paragraph [ref=e52]: Open the Tracker on your phone. It handles HP, Coppers, Bosses, Minions, Round counter, and Glory — so the table can focus on the cards.
+      - link "Open the Tracker" [ref=e54] [cursor=pointer]:
+        - /url: /tracker/
+    - generic [ref=e57]:
+      - heading "Open source. Open table." [level=2] [ref=e58]
+      - paragraph [ref=e59]:
+        - text: DeckNForge is in active playtest. Game content is
+        - strong [ref=e60]: CC BY-SA 4.0
+        - text: — fork it, remix it, ship your own dungeon. The website is
+        - strong [ref=e61]: MIT
+        - text: . Every band that gets played is data we can learn from.
+      - paragraph [ref=e62]: Star the repo, run a dungeon, file a playtest report.
+      - generic [ref=e63]:
+        - link "★ Star on GitHub" [ref=e64] [cursor=pointer]:
+          - /url: https://github.com/decknforge/decknforge
+        - link "How to Contribute" [ref=e65] [cursor=pointer]:
+          - /url: /contribute/
+  - contentinfo [ref=e66]:
+    - generic [ref=e67]:
+      - paragraph [ref=e68]: © 2026 DeckNForge — A persistent legacy card game from a single deck of playing cards.
+      - paragraph [ref=e69]:
+        - link "GitHub" [ref=e70] [cursor=pointer]:
+          - /url: https://github.com/decknforge/decknforge
+        - text: ·
+        - link "Contribute" [ref=e71] [cursor=pointer]:
+          - /url: /contribute/
+        - text: ·
+        - link "License" [ref=e72] [cursor=pointer]:
+          - /url: /downloads/LICENSE.md
+        - text: ·
+        - link "Downloads" [ref=e73] [cursor=pointer]:
+          - /url: /downloads/
+      - paragraph [ref=e74]: v2.0 Playtest Edition · Game content licensed CC BY-SA 4.0. Site code MIT.

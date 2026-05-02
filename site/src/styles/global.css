@@ -131,11 +131,28 @@ p { margin: 0 0 1em 0; }
   color: var(--gold-bright);
   text-decoration: none;
 }
+.nav-github {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  border-radius: 8px;
+  color: var(--text-dim) !important;
+  padding: 0 !important;
+  margin-left: 4px;
+  border: 1px solid var(--border);
+}
+.nav-github:hover {
+  color: var(--gold-bright) !important;
+  background: rgba(245, 158, 11, 0.12);
+}
 
-@media (max-width: 520px) {
+@media (max-width: 720px) {
   .nav-brand span { display: none; }
   .nav-inner { padding: 8px 10px; }
   .nav-links a { padding: 6px 8px; font-size: 0.85rem; }
+  .nav-github { width: 32px; height: 32px; }
 }
 
 /* === HERO === */

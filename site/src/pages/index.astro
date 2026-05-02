@@ -1,5 +1,6 @@
 ---
 import Layout from '../layouts/Layout.astro';
+import { GITHUB_URL } from '../config';
 ---
 <Layout>
   <section class="hero">
@@ -57,6 +58,25 @@ import Layout from '../layouts/Layout.astro';
         <p class="text-dim">Open the Tracker on your phone. It handles HP, Coppers, Bosses, Minions, Round counter, and Glory — so the table can focus on the cards.</p>
         <div class="btn-row">
           <a class="btn" href="/tracker/">Open the Tracker</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div class="card center">
+        <h2>Open source. Open table.</h2>
+        <p class="text-dim" style="max-width:640px; margin: 0 auto 8px;">
+          DeckNForge is in active playtest. Game content is <strong>CC BY-SA 4.0</strong> — fork it, remix it, ship your own dungeon.
+          The website is <strong>MIT</strong>. Every band that gets played is data we can learn from.
+        </p>
+        <p class="text-dim" style="max-width:640px; margin: 0 auto 16px;">
+          Star the repo, run a dungeon, file a playtest report.
+        </p>
+        <div class="btn-row">
+          <a class="btn" href={GITHUB_URL} target="_blank" rel="noopener">★ Star on GitHub</a>
+          <a class="btn btn-ghost" href="/contribute/">How to Contribute</a>
         </div>
       </div>
     </div>
