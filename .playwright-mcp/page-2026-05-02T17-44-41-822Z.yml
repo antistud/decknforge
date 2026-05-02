@@ -71,7 +71,7 @@
                     - /url: /contribute/
     - contentinfo [ref=e66]:
         - generic [ref=e67]:
-            - paragraph [ref=e68]: © 2026 DeckNForge — A persistent Legacy card game from a pocker deck of playing cards.
+            - paragraph [ref=e68]: © 2026 DeckNForge — A persistent Legacy card game from a poker deck of playing cards.
             - paragraph [ref=e69]:
                 - link "GitHub" [ref=e70] [cursor=pointer]:
                     - /url: https://github.com/decknforge/decknforge

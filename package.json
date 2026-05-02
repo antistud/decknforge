@@ -2,7 +2,7 @@
   "name": "decknforge",
   "private": true,
   "version": "0.1.0",
-  "description": "DeckNForge — a persistent Legacy card game from a pocker deck of playing cards. Site root delegates to ./site for builds.",
+  "description": "DeckNForge — a persistent Legacy card game from a poker deck of playing cards. Site root delegates to ./site for builds.",
   "scripts": {
     "build": "cd site && npm ci && npm run build && rm -rf ../dist && cp -R dist ../dist",
     "dev": "cd site && npm install && npm run dev",
