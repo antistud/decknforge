@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>DeckNForge — Wizard / Band Record Sheet</title>
+<style>
+  @page { size: 8.5in 11in; margin: 0.5in; }
+  * { box-sizing: border-box; }
+  html, body {
+    margin: 0; padding: 0;
+    font-family: Georgia, "Times New Roman", serif;
+    color: #1a1a1a;
+    background: #e8e8e8;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+  body { padding: 24px 0; display: flex; flex-direction: column; align-items: center; gap: 16px; }
+  .page {
+    width: 8.5in; min-height: 11in;
+    background: #fdf6e3;
+    background-image:
+      radial-gradient(rgba(120,80,40,0.06) 1px, transparent 1px);
+    background-size: 18px 18px;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.15);
+    padding: 0.45in;
+    position: relative;
+    page-break-after: always;
+  }
+  .page:last-child { page-break-after: auto; }
+  h1 {
+    font-family: "Cinzel", "Trajan Pro", Georgia, serif;
+    font-size: 26pt; margin: 0; color: #6b3410;
+    letter-spacing: 0.04em; text-align: center;
+  }
+  h2 {
+    font-family: "Cinzel", "Trajan Pro", Georgia, serif;
+    font-size: 13pt; color: #6b3410;
+    border-bottom: 2px solid #b45309;
+    margin: 14px 0 8px;
+    padding-bottom: 2px; letter-spacing: 0.06em;
+    text-transform: uppercase;
+  }
+  .sub { text-align: center; font-style: italic; color: #6b3410; margin: 4px 0 8px; }
+  .row { display: flex; gap: 14px; align-items: flex-end; flex-wrap: wrap; }
+  .field { flex: 1; min-width: 140px; }
+  .field label {
+    display: block; font-size: 8.5pt; text-transform: uppercase;
+    letter-spacing: 0.08em; color: #6b3410; margin-bottom: 2px;
+  }
+  .underline { border-bottom: 1.5px solid #6b3410; min-height: 22px; padding: 2px 4px; font-size: 11pt; }
+  table { width: 100%; border-collapse: collapse; margin-top: 6px; font-size: 10pt; }
+  th, td { border: 1px solid #b45309; padding: 4px 6px; text-align: left; vertical-align: top; }
+  th { background: #f5e6d3; font-family: "Cinzel", Georgia, serif; font-size: 8.5pt;
+       text-transform: uppercase; letter-spacing: 0.06em; color: #6b3410; }
+  td.empty { height: 24px; }
+  .small { font-size: 8pt; color: #6b3410; }
+  .grid2 { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+  .grid3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; }
+  .box {
+    border: 1.5px solid #b45309; border-radius: 6px; padding: 10px;
+    background: rgba(255,255,255,0.4);
+  }
+  .checkbox { display: inline-block; width: 11px; height: 11px;
+    border: 1.2px solid #6b3410; vertical-align: -1px; margin-right: 4px;
+    border-radius: 2px;
+  }
+  .controls {
+    background: white; border: 1px solid #ddd; border-radius: 8px;
+    padding: 8px 14px; display: inline-flex; gap: 12px; align-items: center;
+    font-size: 13px;
+  }
+  @media print { .controls { display: none; } body { padding: 0; gap: 0; background: white; } }
+</style>
+</head>
+<body>
+
+<div class="controls">
+  <strong>DeckNForge — Wizard / Band Record</strong>
+  <button onclick="window.print()">Print</button>
+  <span style="color:#888;">Print 2 sheets per band — one for the box, one for the wizard.</span>
+</div>
+
+<div class="page">
+  <h1>DeckNForge</h1>
+  <p class="sub">Band Record · Wizard Ledger</p>
+
+  <h2>Band Identity</h2>
+  <div class="row">
+    <div class="field"><label>Band Name</label><div class="underline"></div></div>
+    <div class="field" style="flex:0 0 110px;"><label>Glory (lifetime)</label><div class="underline"></div></div>
+    <div class="field" style="flex:0 0 110px;"><label>Dungeons run</label><div class="underline"></div></div>
+  </div>
+  <div class="row" style="margin-top:8px;">
+    <div class="field"><label>Current Wizard</label><div class="underline"></div></div>
+    <div class="field" style="flex:0 0 110px;"><label>Coppers (carry)</label><div class="underline"></div></div>
+  </div>
+
+  <h2>The Six Monsters</h2>
+  <p class="small">Built once at band creation. Pick a creature label, draw 3 Items, HP = sum, ATK = ⌈avg ÷ 2⌉. Two same-rank Items = ⭐ Legend.</p>
+  <table>
+    <thead>
+      <tr>
+        <th style="width:38px;">Card</th>
+        <th>Name</th>
+        <th style="width:70px;">HP</th>
+        <th style="width:55px;">ATK</th>
+        <th style="width:42px;">⭐</th>
+        <th>Labels (max 5 lifetime)</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr><td>A♠</td><td class="empty"></td><td></td><td></td><td></td><td></td></tr>
+      <tr><td>A♥</td><td class="empty"></td><td></td><td></td><td></td><td></td></tr>
+      <tr><td>A♣</td><td class="empty"></td><td></td><td></td><td></td><td></td></tr>
+      <tr><td>A♦</td><td class="empty"></td><td></td><td></td><td></td><td></td></tr>
+      <tr><td>Joker B</td><td class="empty"></td><td></td><td></td><td></td><td></td></tr>
+      <tr><td>Joker R</td><td class="empty"></td><td></td><td></td><td></td><td></td></tr>
+    </tbody>
+  </table>
+
+  <h2>Blessed Cards (Inscriptions)</h2>
+  <p class="small">1 inscription per card max. Mythic only on Heroes. Cross out faded inscriptions; the card is unblessed until re-inscribed.</p>
+  <table>
+    <thead>
+      <tr>
+        <th style="width:60px;">Card</th>
+        <th>Inscription</th>
+        <th style="width:90px;">Tier</th>
+        <th style="width:90px;">Faded?</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr><td class="empty"></td><td></td><td></td><td><span class="checkbox"></span></td></tr>
+      <tr><td class="empty"></td><td></td><td></td><td><span class="checkbox"></span></td></tr>
+      <tr><td class="empty"></td><td></td><td></td><td><span class="checkbox"></span></td></tr>
+      <tr><td class="empty"></td><td></td><td></td><td><span class="checkbox"></span></td></tr>
+      <tr><td class="empty"></td><td></td><td></td><td><span class="checkbox"></span></td></tr>
+      <tr><td class="empty"></td><td></td><td></td><td><span class="checkbox"></span></td></tr>
+      <tr><td class="empty"></td><td></td><td></td><td><span class="checkbox"></span></td></tr>
+      <tr><td class="empty"></td><td></td><td></td><td><span class="checkbox"></span></td></tr>
+      <tr><td class="empty"></td><td></td><td></td><td><span class="checkbox"></span></td></tr>
+      <tr><td class="empty"></td><td></td><td></td><td><span class="checkbox"></span></td></tr>
+      <tr><td class="empty"></td><td></td><td></td><td><span class="checkbox"></span></td></tr>
+      <tr><td class="empty"></td><td></td><td></td><td><span class="checkbox"></span></td></tr>
+    </tbody>
+  </table>
+
+  <div class="grid2" style="margin-top:14px;">
+    <div class="box">
+      <h2 style="margin-top:0;">Dungeon Log</h2>
+      <p class="small">Record the date, who held the band, and the outcome.</p>
+      <table>
+        <thead><tr><th>Date</th><th>Wizard</th><th>Result</th><th>Glory</th></tr></thead>
+        <tbody>
+          <tr><td class="empty"></td><td></td><td></td><td></td></tr>
+          <tr><td class="empty"></td><td></td><td></td><td></td></tr>
+          <tr><td class="empty"></td><td></td><td></td><td></td></tr>
+          <tr><td class="empty"></td><td></td><td></td><td></td></tr>
+          <tr><td class="empty"></td><td></td><td></td><td></td></tr>
+          <tr><td class="empty"></td><td></td><td></td><td></td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="box">
+      <h2 style="margin-top:0;">Drift History</h2>
+      <p class="small">Wizards who have held this band, in order.</p>
+      <table>
+        <thead><tr><th>#</th><th>Wizard</th><th>Notes</th></tr></thead>
+        <tbody>
+          <tr><td>1</td><td class="empty"></td><td></td></tr>
+          <tr><td>2</td><td class="empty"></td><td></td></tr>
+          <tr><td>3</td><td class="empty"></td><td></td></tr>
+          <tr><td>4</td><td class="empty"></td><td></td></tr>
+          <tr><td>5</td><td class="empty"></td><td></td></tr>
+          <tr><td>6</td><td class="empty"></td><td></td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+</div>
+</body>
+</html>

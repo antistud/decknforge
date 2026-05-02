@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>DeckNForge — Avery 18294 Label Sheet</title>
+<style>
+  /* Avery 18294: 4 columns × 15 rows = 60 labels per sheet
+     Label size: 1.75" wide × 0.5" tall on 8.5" × 11" Letter */
+  @page { size: 8.5in 11in; margin: 0; }
+  * { box-sizing: border-box; }
+  html, body {
+    margin: 0; padding: 0;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+    background: #ddd; color: #111;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+  body { padding: 24px 0; display: flex; flex-direction: column; align-items: center; gap: 16px; }
+  .sheet {
+    width: 8.5in; height: 11in;
+    background: white;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.15);
+    padding: 0.5in 0.28125in; /* top/bot 0.5", left/right 0.28125" */
+    position: relative;
+    page-break-after: always;
+  }
+  .sheet:last-child { page-break-after: auto; }
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1.75in);
+    grid-template-rows: repeat(15, 0.5in);
+    column-gap: 0.3in;
+    row-gap: 0;
+    width: 100%; height: 100%;
+  }
+  .label {
+    width: 1.75in; height: 0.5in;
+    padding: 2px 6px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    border: 1px dashed transparent; /* shown via toggle */
+    text-align: center;
+  }
+  .show-borders .label { border-color: #ccc; }
+  .label .name {
+    font-weight: 800;
+    font-size: 9pt;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    line-height: 1.05;
+  }
+  .label .body {
+    font-size: 6.5pt;
+    line-height: 1.1;
+    color: #333;
+  }
+  .label.easy .name { color: #166534; }
+  .label.med .name { color: #b45309; }
+  .label.hard .name { color: #991b1b; }
+  .label.common .name { color: #1f2937; }
+  .label.uncommon .name { color: #1e3a8a; }
+  .label.rare .name { color: #581c87; }
+  .label.mythic .name { color: #7f1d1d; }
+
+  .controls {
+    background: white; border: 1px solid #ddd; border-radius: 8px;
+    padding: 8px 14px; display: inline-flex; gap: 12px; align-items: center;
+    font-size: 13px;
+  }
+  @media print { .controls { display: none; } body { padding: 0; gap: 0; background: white; } }
+</style>
+</head>
+<body>
+
+<div class="controls">
+  <strong>DeckNForge — Avery 18294</strong>
+  <label><input type="checkbox" id="showBorders"> show cut guides</label>
+  <button onclick="window.print()">Print</button>
+  <span style="color:#888;">Tip: print at 100% scale, no fit-to-page.</span>
+</div>
+
+<!-- Sheet 1 — Column 1: 15 Monster Labels (5 Easy / 5 Medium / 5 Hard) -->
+<div class="sheet" id="sheet1">
+  <div class="grid">
+    <!-- Column 1 — Monster Labels (Easy x5) -->
+    <div class="label easy"><div class="name">Swift</div><div class="body">+1 ATK on first round</div></div>
+    <div class="label easy"><div class="name">Sneaky</div><div class="body">First reveal can't be Foiled</div></div>
+    <div class="label easy"><div class="name">Greedy</div><div class="body">Killer −1 copper from kill</div></div>
+    <div class="label easy"><div class="name">Stinky</div><div class="body">All wizards −1 to dodges</div></div>
+    <div class="label easy"><div class="name">Twitchy</div><div class="body">Dodge requires +1 over ATK</div></div>
+    <!-- Medium x5 -->
+    <div class="label med"><div class="name">Tough</div><div class="body">−1 damage from each card</div></div>
+    <div class="label med"><div class="name">Cunning</div><div class="body">Snipe targeting it costs +1</div></div>
+    <div class="label med"><div class="name">Hungry</div><div class="body">Boss heals 3 if it kills a wizard</div></div>
+    <div class="label med"><div class="name">Vicious</div><div class="body">+1 ATK</div></div>
+    <div class="label med"><div class="name">Resilient</div><div class="body">Ignore first 5 damage each round</div></div>
+    <!-- Hard x5 -->
+    <div class="label hard"><div class="name">Doom</div><div class="body">Party wipe at end of round 5</div></div>
+    <div class="label hard"><div class="name">Vampiric</div><div class="body">Boss heals = ATK on hit</div></div>
+    <div class="label hard"><div class="name">Cursed</div><div class="body">Killer loses 1 inscription</div></div>
+    <div class="label hard"><div class="name">Hexproof</div><div class="body">Tactics cost double</div></div>
+    <div class="label hard"><div class="name">Rampage</div><div class="body">+1 ATK each round, cumulative</div></div>
+
+    <!-- Column 2 — Common Inscriptions (3× each of 5) -->
+    <div class="label common"><div class="name">Sharp</div><div class="body">Card value +1</div></div>
+    <div class="label common"><div class="name">Sharp</div><div class="body">Card value +1</div></div>
+    <div class="label common"><div class="name">Sharp</div><div class="body">Card value +1</div></div>
+    <div class="label common"><div class="name">Sturdy</div><div class="body">Dodge with this → draw 1</div></div>
+    <div class="label common"><div class="name">Sturdy</div><div class="body">Dodge with this → draw 1</div></div>
+    <div class="label common"><div class="name">Sturdy</div><div class="body">Dodge with this → draw 1</div></div>
+    <div class="label common"><div class="name">Glint</div><div class="body">Reveal → +1c (max 3c/fight)</div></div>
+    <div class="label common"><div class="name">Glint</div><div class="body">Reveal → +1c (max 3c/fight)</div></div>
+    <div class="label common"><div class="name">Glint</div><div class="body">Reveal → +1c (max 3c/fight)</div></div>
+    <div class="label common"><div class="name">Quick</div><div class="body">Damages boss → draw 1</div></div>
+    <div class="label common"><div class="name">Quick</div><div class="body">Damages boss → draw 1</div></div>
+    <div class="label common"><div class="name">Quick</div><div class="body">Damages boss → draw 1</div></div>
+    <div class="label common"><div class="name">Bright</div><div class="body">Reveal → wizard left draws 1</div></div>
+    <div class="label common"><div class="name">Bright</div><div class="body">Reveal → wizard left draws 1</div></div>
+    <div class="label common"><div class="name">Bright</div><div class="body">Reveal → wizard left draws 1</div></div>
+
+    <!-- Column 3 — Uncommon Inscriptions (3× each of 5) -->
+    <div class="label uncommon"><div class="name">Echo</div><div class="body">Convert effect doubles</div></div>
+    <div class="label uncommon"><div class="name">Echo</div><div class="body">Convert effect doubles</div></div>
+    <div class="label uncommon"><div class="name">Echo</div><div class="body">Convert effect doubles</div></div>
+    <div class="label uncommon"><div class="name">Banner</div><div class="body">Reveal → all your cards +1 face</div></div>
+    <div class="label uncommon"><div class="name">Banner</div><div class="body">Reveal → all your cards +1 face</div></div>
+    <div class="label uncommon"><div class="name">Banner</div><div class="body">Reveal → all your cards +1 face</div></div>
+    <div class="label uncommon"><div class="name">Blood Money</div><div class="body">Killing blow → +3c bonus</div></div>
+    <div class="label uncommon"><div class="name">Blood Money</div><div class="body">Killing blow → +3c bonus</div></div>
+    <div class="label uncommon"><div class="name">Blood Money</div><div class="body">Killing blow → +3c bonus</div></div>
+    <div class="label uncommon"><div class="name">Vampiric</div><div class="body">Hit boss → heal 2 HP</div></div>
+    <div class="label uncommon"><div class="name">Vampiric</div><div class="body">Hit boss → heal 2 HP</div></div>
+    <div class="label uncommon"><div class="name">Vampiric</div><div class="body">Hit boss → heal 2 HP</div></div>
+    <div class="label uncommon"><div class="name">Thorns</div><div class="body">Take dmg w/ this → 1 back</div></div>
+    <div class="label uncommon"><div class="name">Thorns</div><div class="body">Take dmg w/ this → 1 back</div></div>
+    <div class="label uncommon"><div class="name">Thorns</div><div class="body">Take dmg w/ this → 1 back</div></div>
+
+    <!-- Column 4 — 10 Rare + 5 Mythic -->
+    <div class="label rare"><div class="name">Ascension</div><div class="body">Item counts as Hero</div></div>
+    <div class="label rare"><div class="name">Doublestrike</div><div class="body">Reveal → reveal another</div></div>
+    <div class="label rare"><div class="name">Phoenix</div><div class="body">At 0 HP → return to 1</div></div>
+    <div class="label rare"><div class="name">Wizard's Will</div><div class="body">1×/dungeon: swap any 2 reveals</div></div>
+    <div class="label rare"><div class="name">Reaper's Mark</div><div class="body">Kill Legend → free Mythic</div></div>
+    <div class="label rare"><div class="name">Slippery</div><div class="body">Tactics on this cost +1</div></div>
+    <div class="label rare"><div class="name">Hunter's Edge</div><div class="body">+1 dmg per 10 missing HP</div></div>
+    <div class="label rare"><div class="name">Pierce</div><div class="body">Ignore boss damage reduction</div></div>
+    <div class="label rare"><div class="name">Mercenary Pact</div><div class="body">Other wizard kills → +2c</div></div>
+    <div class="label rare"><div class="name">Wildcard</div><div class="body">Convert: any suit</div></div>
+    <div class="label mythic"><div class="name">Royal Decree</div><div class="body">In hand: your cards +1 face</div></div>
+    <div class="label mythic"><div class="name">Legend Etched</div><div class="body">Cannot be Faded</div></div>
+    <div class="label mythic"><div class="name">Tower's Memory</div><div class="body">Drift with you to next band</div></div>
+    <div class="label mythic"><div class="name">The Patron</div><div class="body">Reveal → heal 5 OR steal 2c</div></div>
+    <div class="label mythic"><div class="name">Untouchable</div><div class="body">Cannot be Foiled or Sniped</div></div>
+  </div>
+</div>
+
+<script>
+  document.getElementById('showBorders').addEventListener('change', (e) => {
+    document.getElementById('sheet1').classList.toggle('show-borders', e.target.checked);
+  });
+</script>
+
+</body>
+</html>

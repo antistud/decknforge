@@ -1,0 +1,140 @@
+- generic [ref=e1]:
+  - navigation [ref=e2]:
+    - generic [ref=e3]:
+      - link "DeckNForge logo" [ref=e4] [cursor=pointer]:
+        - /url: /
+        - img "DeckNForge logo" [ref=e5]
+      - generic [ref=e6]:
+        - link "Home" [ref=e7] [cursor=pointer]:
+          - /url: /
+        - link "Learn" [ref=e8] [cursor=pointer]:
+          - /url: /learn/
+        - link "Downloads" [ref=e9] [cursor=pointer]:
+          - /url: /downloads/
+        - link "Tracker" [ref=e10] [cursor=pointer]:
+          - /url: /tracker/
+  - main [ref=e11]:
+    - generic [ref=e13]:
+      - heading "Dungeon Tracker" [level=1] [ref=e14]
+      - paragraph [ref=e15]: Track wizards, bosses, and minions through a 6-fight dungeon. Saves to your device automatically — no account, no backend.
+      - tablist [ref=e16]:
+        - button "Dungeon" [ref=e17] [cursor=pointer]
+        - button "Wizards" [ref=e18] [cursor=pointer]
+        - button "Bosses" [ref=e19] [cursor=pointer]
+        - button "Minions" [ref=e20] [cursor=pointer]
+        - button "Setup" [ref=e21] [cursor=pointer]
+      - generic [ref=e22]:
+        - generic [ref=e23]:
+          - generic [ref=e24]:
+            - generic [ref=e25]:
+              - generic [ref=e26]: Current Boss
+              - generic [ref=e27]: 1. Skeleton King
+              - generic [ref=e28]:
+                - text: HP 54 · ATK 4 ·
+                - generic [ref=e179]: SWIFT
+            - generic [ref=e29]:
+              - button "Previous boss" [ref=e30] [cursor=pointer]: ‹
+              - generic [ref=e31]: 1/6
+              - button "Next boss" [ref=e32] [cursor=pointer]: ›
+          - generic [ref=e110]:
+            - generic [ref=e112]: Boss HP
+            - generic [ref=e115]:
+              - button "-5 HP" [active] [ref=e116] [cursor=pointer]: −5
+              - button "-1 HP" [ref=e117] [cursor=pointer]: −1
+              - generic [ref=e118]: "49"
+              - button "+1 HP" [ref=e119] [cursor=pointer]: "+1"
+              - button "+5 HP" [ref=e120] [cursor=pointer]: "+5"
+          - generic [ref=e33]:
+            - generic [ref=e34]: Round
+            - generic [ref=e35]:
+              - button "-1 round" [ref=e36] [cursor=pointer]: −
+              - generic [ref=e37]: "1"
+              - button "+1 round" [ref=e38] [cursor=pointer]: +
+          - generic [ref=e39]:
+            - generic [ref=e40]: Band Glory
+            - generic [ref=e41]:
+              - button "-1 Glory" [ref=e42] [cursor=pointer]: −
+              - generic [ref=e43]: "0"
+              - button "+1 Glory" [ref=e44] [cursor=pointer]: +
+          - generic [ref=e45]:
+            - generic [ref=e46]: Active Wizard
+            - generic [ref=e47]: Aelar
+          - paragraph [ref=e48]: "DOOM watch: if a Boss with the DOOM label is alive at the end of round 5, it's a party wipe."
+        - generic [ref=e49]:
+          - heading "Wizards" [level=3] [ref=e50]
+          - generic [ref=e51]:
+            - generic [ref=e180]:
+              - generic [ref=e181]:
+                - generic [ref=e182]: Aelar ★
+                - generic [ref=e183]:
+                  - generic [ref=e184]:
+                    - text: ♥
+                    - strong [ref=e185]: "20"
+                  - generic [ref=e186]:
+                    - text: ¢
+                    - strong [ref=e187]: "0"
+                  - generic [ref=e188]: ★ 0
+              - generic [ref=e191]:
+                - button "−" [ref=e192] [cursor=pointer]
+                - button "+" [ref=e193] [cursor=pointer]
+            - generic [ref=e194]:
+              - generic [ref=e195]:
+                - generic [ref=e196]: Brunhild
+                - generic [ref=e197]:
+                  - generic [ref=e198]:
+                    - text: ♥
+                    - strong [ref=e199]: "20"
+                  - generic [ref=e200]:
+                    - text: ¢
+                    - strong [ref=e201]: "0"
+                  - generic [ref=e202]: ★ 0
+              - generic [ref=e205]:
+                - button "−" [ref=e206] [cursor=pointer]
+                - button "+" [ref=e207] [cursor=pointer]
+            - generic [ref=e208]:
+              - generic [ref=e209]:
+                - generic [ref=e210]: Cassien
+                - generic [ref=e211]:
+                  - generic [ref=e212]:
+                    - text: ♥
+                    - strong [ref=e213]: "20"
+                  - generic [ref=e214]:
+                    - text: ¢
+                    - strong [ref=e215]: "0"
+                  - generic [ref=e216]: ★ 0
+              - generic [ref=e219]:
+                - button "−" [ref=e220] [cursor=pointer]
+                - button "+" [ref=e221] [cursor=pointer]
+            - generic [ref=e222]:
+              - generic [ref=e223]:
+                - generic [ref=e224]: Dmitri
+                - generic [ref=e225]:
+                  - generic [ref=e226]:
+                    - text: ♥
+                    - strong [ref=e227]: "20"
+                  - generic [ref=e228]:
+                    - text: ¢
+                    - strong [ref=e229]: "0"
+                  - generic [ref=e230]: ★ 0
+              - generic [ref=e233]:
+                - button "−" [ref=e234] [cursor=pointer]
+                - button "+" [ref=e235] [cursor=pointer]
+  - contentinfo [ref=e54]:
+    - generic [ref=e55]:
+      - paragraph [ref=e56]: © 2026 DeckNForge — A persistent legacy card game from a single deck of playing cards.
+      - paragraph [ref=e57]: v2.0 Playtest Edition · Without teamwork, your band will never survive the dungeon. Without betrayal, you'll never claim the coppers.
+  - generic [ref=e60]:
+    - button "Menu" [ref=e61]:
+      - img [ref=e63]
+      - generic: Menu
+    - button "Inspect" [ref=e67]:
+      - img [ref=e69]
+      - generic: Inspect
+    - button "Audit" [ref=e71]:
+      - generic [ref=e72]:
+        - img [ref=e73]
+        - img [ref=e236]
+      - generic: Audit
+    - button "Settings" [ref=e79]:
+      - img [ref=e81]
+      - generic: Settings

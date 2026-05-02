@@ -1,0 +1,408 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>DeckNForge — Player Rules Sheet</title>
+<style>
+  /* ============================================
+     2-page printable rules reference (TIGHT)
+     Letter size, 0.5" margins
+     ============================================ */
+
+  @page {
+    size: 8.5in 11in;
+    margin: 0;
+  }
+
+  * { box-sizing: border-box; }
+
+  html, body {
+    margin: 0;
+    padding: 0;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+    color: #1a1a1a;
+    background: #e8e8e8;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+
+  body {
+    padding: 24px 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 16px;
+  }
+
+  .page {
+    width: 8.5in;
+    height: 11in;
+    background: white;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.15);
+    padding: 0.45in;
+    page-break-after: always;
+    overflow: hidden;
+    position: relative;
+  }
+
+  .page:last-child {
+    page-break-after: auto;
+  }
+
+  @media print {
+    body { background: #fff; padding: 0; }
+    .page { box-shadow: none; }
+  }
+
+  /* Top banner */
+  .top-banner {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    border-bottom: 1.5pt solid #333;
+    padding-bottom: 3pt;
+    margin-bottom: 7pt;
+  }
+  .top-banner .title {
+    font-size: 16pt;
+    font-weight: 800;
+    letter-spacing: 0.5pt;
+  }
+  .top-banner .subtitle {
+    font-size: 8.5pt;
+    color: #666;
+    font-style: italic;
+  }
+  .page-marker {
+    position: absolute;
+    bottom: 0.18in;
+    right: 0.45in;
+    font-size: 7.5pt;
+    color: #999;
+  }
+
+  /* Section headers */
+  .section-header {
+    background: #c9a857;
+    color: #1a1a1a;
+    font-weight: 700;
+    font-size: 10pt;
+    letter-spacing: 0.4pt;
+    text-transform: uppercase;
+    padding: 2.5pt 8pt;
+    border-radius: 6pt 6pt 0 0;
+    border: 1.2pt solid #1a1a1a;
+    border-bottom: none;
+  }
+  .section-header.combat   { background: #b8d3eb; }
+  .section-header.postgame { background: #d8c3e8; }
+  .section-header.setup    { background: #c9a857; }
+  .section-header.ref      { background: #d4d4d4; }
+
+  .section-body {
+    border: 1.2pt solid #1a1a1a;
+    border-top: none;
+    border-radius: 0 0 6pt 6pt;
+    padding: 5pt 8pt;
+    margin-bottom: 5pt;
+    font-size: 9pt;
+    line-height: 1.28;
+  }
+
+  .section-body p { margin: 0 0 3pt; }
+  .section-body p:last-child { margin-bottom: 0; }
+  .section-body strong { font-weight: 700; }
+
+  /* Round steps */
+  ol.round-steps {
+    margin: 0;
+    padding-left: 18pt;
+    counter-reset: step;
+    list-style: none;
+  }
+  ol.round-steps li {
+    margin-bottom: 2pt;
+    position: relative;
+    padding-left: 3pt;
+  }
+  ol.round-steps li::before {
+    counter-increment: step;
+    content: counter(step);
+    position: absolute;
+    left: -16pt;
+    top: 0;
+    width: 13pt;
+    height: 13pt;
+    background: #1a1a1a;
+    color: white;
+    font-weight: 700;
+    font-size: 8pt;
+    border-radius: 50%;
+    text-align: center;
+    line-height: 13pt;
+  }
+
+  /* Tables */
+  table.ref {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 8.5pt;
+    margin-top: 1pt;
+  }
+  table.ref th {
+    text-align: left;
+    background: #f0f0f0;
+    padding: 2pt 5pt;
+    border-bottom: 0.8pt solid #333;
+    font-weight: 700;
+    font-size: 8pt;
+    letter-spacing: 0.3pt;
+    text-transform: uppercase;
+  }
+  table.ref td {
+    padding: 2pt 5pt;
+    border-bottom: 0.4pt solid #ccc;
+    vertical-align: top;
+  }
+  table.ref tr:last-child td { border-bottom: none; }
+  table.ref .name { font-weight: 700; width: 80pt; }
+  table.ref .cost { width: 65pt; color: #555; }
+
+  /* Layout helpers */
+  .two-col {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 8pt;
+  }
+  .three-col {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 6pt;
+  }
+
+  .callout {
+    border: 0.8pt solid #1a1a1a;
+    border-radius: 3pt;
+    padding: 4pt 6pt;
+    background: #fdfaf0;
+    font-size: 8.5pt;
+    line-height: 1.25;
+  }
+  .callout strong { font-weight: 700; }
+
+  /* Glossary — two columns of compact key:value */
+  dl.glossary {
+    margin: 0;
+    columns: 2;
+    column-gap: 14pt;
+    font-size: 8pt;
+    line-height: 1.22;
+  }
+  dl.glossary dt {
+    font-weight: 700;
+    margin-top: 2pt;
+    break-inside: avoid;
+  }
+  dl.glossary dd {
+    margin: 0 0 0 0;
+    color: #333;
+  }
+
+  /* Suit symbols */
+  .suit-spade   { color: #1a1a1a; }
+  .suit-heart   { color: #b03030; }
+  .suit-club    { color: #1a1a1a; }
+  .suit-diamond { color: #b03030; }
+</style>
+</head>
+<body>
+
+<!-- ============================================================
+     PAGE 1 — GAMEPLAY
+     ============================================================ -->
+<div class="page">
+
+  <div class="top-banner">
+    <div class="title">DECKNFORGE</div>
+    <div class="subtitle">Player Rules — v2.0 — Page 1: Combat &amp; Play</div>
+  </div>
+
+  <!-- BUILD THE DUNGEON -->
+  <div class="section-header setup">Build the Dungeon (each game)</div>
+  <div class="section-body">
+    <p>Pool ALL wizards' Monster cards (Aces + Jokers). Shuffle face-down. Draw 6 → Bosses, fought in order. Remaining = Minion Pool. <strong>Boss HP = written HP × number of wizards.</strong> Minion HP unscaled. Each wizard draws 12 cards from their own combat deck and starts at 20 HP.</p>
+  </div>
+
+  <!-- ROUND STRUCTURE -->
+  <div class="section-header combat">The Round (repeats until boss dies or party falls)</div>
+  <div class="section-body">
+    <ol class="round-steps">
+      <li><strong>Plot.</strong> Each wizard plays 1 card face-down.</li>
+      <li><strong>Reveal.</strong> All cards flip simultaneously.</li>
+      <li><strong>Tactics.</strong> From active wizard clockwise, each may take ONE Tactic by discarding from hand. Or pass.</li>
+      <li><strong>Resolve damage.</strong> Sum face values + inscription effects. Apply to Boss. <em>All revealed cards are now committed (gone for the dungeon).</em></li>
+      <li><strong>Killing blow check.</strong> If Boss ≤ 0 HP: highest face-value card lands the kill (suit tiebreak: ♠ &gt; ♥ &gt; ♣ &gt; ♦). Award coppers + glory. Skip 6–8.</li>
+      <li><strong>Boss attack.</strong> Boss deals ATK to ALL wizards. Each: take it OR discard cards w/ combined face value <em>strictly greater</em> than the attack to dodge.</li>
+      <li><strong>Pressure.</strong> If 0 damage was dealt to Boss this round → ALL wizards take 2 (no dodge).</li>
+      <li><strong>Minions strike.</strong> Each active Minion attacks each wizard for its own ATK. Same dodge rule.</li>
+      <li><strong>Refill.</strong> Draw <strong>+2 cards</strong> (max hand 12). Then draw 1 from Minion Pool to summon next minion (skip if pool empty — Boss gains +1 ATK this fight instead). <em>Active wizard stays the same for the whole fight; on boss death, role passes to wizard with fewest coppers (ties: least Glory, then clockwise).</em></li>
+    </ol>
+  </div>
+
+  <!-- TACTICS + CONVERT -->
+  <div class="two-col">
+    <div>
+      <div class="section-header combat">Tactics (paid in cards)</div>
+      <div class="section-body" style="padding: 3pt 6pt;">
+        <table class="ref">
+          <tr><th>Name</th><th>Cost</th><th>Effect</th></tr>
+          <tr><td class="name">Spike</td><td class="cost">Discard 1</td><td>+3 to your card</td></tr>
+          <tr><td class="name">Foil</td><td class="cost">Discard 2</td><td>−3 from another's card (min 1)</td></tr>
+          <tr><td class="name">Snipe</td><td class="cost">Discard 1 Hero</td><td>Swap your card with another's</td></tr>
+          <tr><td class="name">Brace</td><td class="cost">Discard 1</td><td>You take 0 boss dmg this round</td></tr>
+        </table>
+        <p style="font-size: 7.5pt; margin-top: 2pt; color: #555;">One per wizard per round. Discarded cards are out for the dungeon.</p>
+      </div>
+    </div>
+
+    <div>
+      <div class="section-header combat">Convert (alternate to attack)</div>
+      <div class="section-body" style="padding: 3pt 6pt;">
+        <p style="font-size: 7.5pt; margin-bottom: 2pt;"><strong>Items only.</strong> Card removed for the dungeon. 0 damage this round.</p>
+        <table class="ref">
+          <tr><th>Suit</th><th>Buff</th></tr>
+          <tr><td class="name"><span class="suit-spade">♠</span> Spade</td><td>+1 shield per Spade lost (this dungeon)</td></tr>
+          <tr><td class="name"><span class="suit-heart">♥</span> Heart</td><td>Heal ⌈face value ÷ 2⌉</td></tr>
+          <tr><td class="name"><span class="suit-club">♣</span> Club</td><td>Draw 2</td></tr>
+          <tr><td class="name"><span class="suit-diamond">♦</span> Diamond</td><td>Plunder coppers = face value</td></tr>
+        </table>
+      </div>
+    </div>
+  </div>
+
+  <!-- KILLING BLOW + KEY RULES -->
+  <div class="two-col">
+    <div>
+      <div class="section-header combat">Killing Blow</div>
+      <div class="section-body" style="padding: 4pt 6pt;">
+        <p><strong>Killer:</strong> +3c, +1c per overkill (cap +5c). Plus ONE: <em>Rally</em> (all heal 5) | <em>Surge</em> (draw 3) | <em>Momentum</em> (next boss −10 HP).</p>
+        <p><strong>Assists:</strong> all other wizards +1c.</p>
+        <p><strong>All:</strong> +1 band Glory. <strong>Killer:</strong> +1 personal Glory.</p>
+        <p><strong>Legend boss bonus:</strong> next Fading draws 2, choose 1 to fade.</p>
+      </div>
+    </div>
+
+    <div>
+      <div class="section-header combat">Key Rules</div>
+      <div class="section-body" style="padding: 4pt 6pt;">
+        <p><strong>Hand limit:</strong> 12. End-of-round draw is +2 (capped at 12).</p>
+        <p><strong>Committed:</strong> any card played, Converted, or discarded is gone for THIS dungeon. Returns next dungeon.</p>
+        <p><strong>Between bosses:</strong> refill hand to 12, HP resets to 20.</p>
+        <p><strong>Empty deck:</strong> skip Plot next round; take no Pressure damage.</p>
+        <p><strong>0 HP:</strong> out of THIS fight only. Reset to 20 next boss.</p>
+        <p><strong>Boss dies:</strong> all active Minions are also defeated.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- WIN/LOSS -->
+  <div class="section-header combat">End of Game</div>
+  <div class="section-body" style="padding: 3pt 8pt;">
+    <p><strong>WIN:</strong> All 6 Bosses defeated. <strong>LOSS:</strong> All wizards at 0 HP in any single fight.</p>
+  </div>
+
+  <div class="page-marker">DeckNForge v2.0 · Page 1 of 2</div>
+</div>
+
+
+<!-- ============================================================
+     PAGE 2 — SETUP, POST-GAME, REFERENCE
+     ============================================================ -->
+<div class="page">
+
+  <div class="top-banner">
+    <div class="title">DECKNFORGE</div>
+    <div class="subtitle">Player Rules — v2.0 — Page 2: Setup, Post-Game, Reference</div>
+  </div>
+
+  <!-- BUILDING YOUR BAND -->
+  <div class="section-header setup">Building Your Band (one time per deck)</div>
+  <div class="section-body">
+    <p><strong>1. Name the band.</strong> Write a permanent name on the box.</p>
+    <p><strong>2. Build your 6 monsters</strong> (4 Aces + 2 Jokers). Set heroes (J/Q/K) aside; work from the 36 Items. For each monster: draw 3 random Items → <strong>HP</strong> = sum of face values, <strong>ATK</strong> = ⌈avg ÷ 2⌉ (min 1). Two of the 3 share a rank? → <strong>Legend</strong>, mark ⭐. Name the card. Return Items, reshuffle, next monster.</p>
+    <p style="font-size: 8.5pt; color: #444; margin-top: 2pt;"><strong>The Legend rule.</strong> Every band has at least one Legend. If your 6 rolls produced none, choose one monster and mark it ⭐.</p>
+    <p><strong>3. Inscribe your starting band.</strong> 30 coppers budget. Inscribe 3–6 cards. <span style="color:#555">Common 5c · Uncommon 10c · Rare 20c · Mythic = earned only · 1 per card · Mythic on heroes only.</span></p>
+    <p style="font-size: 8.5pt; color: #555; margin-top: 3pt;"><strong>Coppers = pennies.</strong> Bring a pocket of ~30 pennies to the table; these are your Coppers. Any small token works (pennies, beads, poker chips). Keep them in front of you, visible to all.</p>
+  </div>
+
+  <!-- ADDING LABELS -->
+  <div class="section-header setup">Adding Monster Labels</div>
+  <div class="section-body" style="padding: 4pt 8pt;">
+    <p style="margin-bottom: 3pt;"><strong>Not in your band's first dungeon.</strong> From dungeon 2 onward, when a Boss is first revealed the active wizard MAY add 1 label from the shared pool. Pick a tier and earn the reward immediately:</p>
+    <table class="ref">
+      <tr><th>Tier</th><th>Reward</th></tr>
+      <tr><td class="name" style="color:#3a7a2e;">Easy</td><td>+1c + (draw 1 OR heal 1)</td></tr>
+      <tr><td class="name" style="color:#a07a1e;">Medium</td><td>+2c + (draw 2 OR heal 2)</td></tr>
+      <tr><td class="name" style="color:#a73030;">Hard</td><td>+3c + (draw 3 OR heal 3)</td></tr>
+    </table>
+    <p style="font-size: 8pt; margin-top: 3pt;"><strong>Risk:</strong> if Boss survives the round, label-adder takes 1 damage. <strong>Limits:</strong> 2 per dungeon (consecutive rounds, clockwise); 5 lifetime per monster. Permanent.</p>
+  </div>
+
+  <!-- POST-GAME CYCLE -->
+  <div class="section-header postgame">Post-Game Cycle (after every game)</div>
+  <div class="section-body" style="padding: 4pt 8pt;">
+    <p style="margin-bottom: 3pt;">Record coppers &amp; glory first. Coppers follow the wizard. Glory follows the band (etched on the box).</p>
+    <div class="three-col">
+      <div class="callout">
+        <strong>1. Fading.</strong> Each wizard: shuffle your Blessed cards. Draw 1. Cross out ALL inscriptions on it. <strong>0 Blessed left?</strong> Band fades. Retire the box. Choose 1 inscription as heirloom for your next band.
+      </div>
+      <div class="callout">
+        <strong>2. Drifting.</strong> All decks to the center. Draft order = personal Glory this game. Tiebreaks: highest single Killing Blow face value, then most coppers. Pick a deck (your own is fine). Inherit everything except coppers.
+      </div>
+      <div class="callout">
+        <strong>3. Turning.</strong> Spend coppers on inscriptions from the Book. Add to any cards. 1 inscription per card. Mythic on heroes only. Faded cards may be re-inscribed. Unspent coppers carry.
+      </div>
+    </div>
+  </div>
+
+  <!-- PLAYER COUNTS + GLOSSARY (compact) -->
+  <div class="section-header ref">Player Counts</div>
+  <div class="section-body" style="padding: 3pt 8pt;">
+    <table class="ref">
+      <tr><th>Players</th><th>Boss HP</th><th>Hand</th><th>Start Coppers</th><th>Notes</th></tr>
+      <tr><td>1 (Solo)</td><td>×1</td><td>14</td><td>40c</td><td>No betrayal layer. All Coppers go to you.</td></tr>
+      <tr><td>2</td><td>×2</td><td>12</td><td>30c</td><td>Smaller budget = harder early game.</td></tr>
+      <tr><td>3 / 4</td><td>×3 / ×4</td><td>12</td><td>30c</td><td>Sweet spot.</td></tr>
+      <tr><td>5</td><td>×5</td><td>14</td><td>30c</td><td>Larger hand, ~90 min.</td></tr>
+    </table>
+  </div>
+
+  <!-- GLOSSARY -->
+  <div class="section-header ref">Glossary</div>
+  <div class="section-body" style="padding: 4pt 8pt;">
+    <dl class="glossary">
+      <dt>Band</dt><dd>Your deck. Permanent name. Drifts between wizards.</dd>
+      <dt>Hero</dt><dd>J, Q, K. Cannot Convert. Holds Mythic.</dd>
+      <dt>Item</dt><dd>2–10. Can Convert to suit buff.</dd>
+      <dt>Monster</dt><dd>Ace or Joker. Removed from combat deck. Built once.</dd>
+      <dt>Boss</dt><dd>One of 6 Monsters drawn at dungeon setup.</dd>
+      <dt>Minion</dt><dd>Monster from leftover pool, summoned in fight.</dd>
+      <dt>Inscription</dt><dd>Permanent ability on a card. Lasts until Faded.</dd>
+      <dt>Blessed</dt><dd>Card with at least 1 inscription.</dd>
+      <dt>Label</dt><dd>Permanent modifier stickered on a Monster.</dd>
+      <dt>Convert</dt><dd>Sacrifice played Item to trigger its suit buff. Card is committed.</dd>
+      <dt>Commit</dt><dd>Card removed from deck for THIS dungeon. Goes to face-up pile. Returns next dungeon. Played, Converted, and discarded cards all become committed.</dd>
+      <dt>Tactic</dt><dd>Disruptive action paid by discarding from hand.</dd>
+      <dt>Killing Blow</dt><dd>Highest face-value reveal that drops Boss to 0.</dd>
+      <dt>Party wipe</dt><dd>All wizards drop to 0 HP at once → game LOSS. (DOOM label: end of rd 5 if boss alive.)</dd>
+      <dt>Legend Boss</dt><dd>Monster marked ⭐. Bonus reward on kill.</dd>
+      <dt>Coppers</dt><dd>Currency for inscriptions. Stays with wizard.</dd>
+      <dt>Glory</dt><dd>Lifetime kill count of band. Etched on box.</dd>
+    </dl>
+  </div>
+
+  <div class="page-marker">DeckNForge v2.0 · Page 2 of 2</div>
+</div>
+
+</body>
+</html>

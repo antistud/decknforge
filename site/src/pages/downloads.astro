@@ -1,0 +1,95 @@
+---
+import Layout from '../layouts/Layout.astro';
+
+const files = [
+  {
+    title: 'Full Rulebook (PDF)',
+    desc: 'The complete v2.0 Playtest Edition rulebook. Print at home or read on a tablet.',
+    href: '/downloads/DeckNForge_v2.0_Rules.pdf',
+    cta: 'Download PDF',
+    size: '~308 KB',
+    primary: true,
+  },
+  {
+    title: 'Player Rules Sheet (Print)',
+    desc: 'A 2-page printable quick reference for the table. Letter size, 0.5" margins.',
+    href: '/downloads/DeckNForge_Player_Rules.html',
+    cta: 'Open Print Sheet',
+    size: 'HTML — print to PDF',
+    primary: true,
+  },
+  {
+    title: 'Wizard / Band Record Sheet',
+    desc: 'Print 2 per band. Track Monsters, Blessed cards, dungeon log, and drift history.',
+    href: '/downloads/DeckNForge_Wizard_Sheet.html',
+    cta: 'Open Record Sheet',
+    size: 'HTML — print to PDF',
+    primary: true,
+  },
+  {
+    title: 'Avery 18294 Label Sheet',
+    desc: 'All 60 labels (15 Monster Labels, 15 Common, 15 Uncommon, 10 Rare, 5 Mythic). Print at 100% scale.',
+    href: '/downloads/DeckNForge_Label_Sheet.html',
+    cta: 'Open Label Sheet',
+    size: 'HTML — print to Avery 18294',
+    primary: true,
+  },
+  {
+    title: 'Rules — Markdown source',
+    desc: 'Plain markdown for editing, forking, or reading anywhere.',
+    href: '/downloads/DeckNForge_v2.0_Rules.md',
+    cta: 'View Markdown',
+    size: '~22 KB',
+    primary: false,
+  },
+];
+---
+<Layout title="Downloads — DeckNForge">
+  <section class="section">
+    <div class="container">
+      <h1 class="center">Downloads</h1>
+      <p class="center text-dim" style="max-width: 720px; margin: 0 auto 24px;">
+        Everything you need to forge a band: rules, player sheets, and labels. All free.
+        Print sheets are HTML — open them and use your browser's print → "Save as PDF" or print directly.
+      </p>
+
+      <div class="grid cols-2">
+        {files.filter(f => f.primary).map(f => (
+          <div class="card">
+            <h3 style="margin-bottom:6px;">{f.title}</h3>
+            <p class="text-dim" style="margin-bottom:8px;">{f.desc}</p>
+            <p class="note">{f.size}</p>
+            <div class="btn-row" style="justify-content:flex-start;">
+              <a class="btn" href={f.href} target="_blank" rel="noopener">{f.cta}</a>
+            </div>
+          </div>
+        ))}
+      </div>
+
+      <hr class="divider" />
+
+      <h2>For tinkerers</h2>
+      <div class="grid cols-2">
+        {files.filter(f => !f.primary).map(f => (
+          <div class="card">
+            <h3 style="margin-bottom:6px;">{f.title}</h3>
+            <p class="text-dim" style="margin-bottom:8px;">{f.desc}</p>
+            <p class="note">{f.size}</p>
+            <div class="btn-row" style="justify-content:flex-start;">
+              <a class="btn btn-ghost" href={f.href} target="_blank" rel="noopener">{f.cta}</a>
+            </div>
+          </div>
+        ))}
+      </div>
+
+      <div class="card mt-3">
+        <h3>Printing tips</h3>
+        <ul>
+          <li><strong>Avery 18294 labels:</strong> print at 100% scale. <em>Do not</em> select "fit to page" or labels will misalign.</li>
+          <li><strong>Player Rules Sheet:</strong> already sized for Letter with 0.5" margins. Print double-sided if you want a single physical sheet.</li>
+          <li><strong>PDF rulebook:</strong> works on any e-reader, phone, or printer. The HTML versions are friendlier for browser print → "Save as PDF."</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+</Layout>

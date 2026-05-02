@@ -1,0 +1,142 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+<Layout title="Learn DeckNForge — How to Play">
+  <section class="section">
+    <div class="container">
+      <h1 class="center">Learn the Game</h1>
+      <p class="center text-dim" style="max-width:720px; margin: 0 auto 24px;">
+        DeckNForge is a 3–5 player legacy card game. You are a wizard. Your deck is your band. Every game leaves permanent marks the next wizard inherits.
+        Below is the quick-start. For the full rules, head to <a href="/downloads/">Downloads</a>.
+      </p>
+
+      <div class="card">
+        <h2>The 60-second pitch</h2>
+        <ul>
+          <li>Each wizard brings their own deck (their <strong>band</strong>).</li>
+          <li>Aces and Jokers become <strong>Monsters</strong>. Js, Qs, Ks are <strong>Heroes</strong>. Pip cards are <strong>Items</strong>.</li>
+          <li>A <strong>dungeon</strong> is 6 sequential boss fights. Wizards pool monsters; 6 are drawn as Bosses, the rest become <strong>Minions</strong>.</li>
+          <li>Wizards play cards face-down (Plot), reveal simultaneously, and add the values to damage the Boss.</li>
+          <li>Whoever lands the killing blow keeps the <strong>Coppers</strong>. Everyone else gets a small assist.</li>
+          <li>Between games, decks <strong>Fade</strong>, <strong>Drift</strong> to a new wizard, and get <strong>Turned</strong> with new inscriptions.</li>
+        </ul>
+      </div>
+
+      <div class="card">
+        <h2>Card breakdown (per band)</h2>
+        <table>
+          <thead>
+            <tr><th>Card</th><th>Count</th><th>Role</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>Aces + Jokers</td><td>6</td><td>Monsters (removed from combat deck)</td></tr>
+            <tr><td>J / Q / K</td><td>12</td><td>Heroes</td></tr>
+            <tr><td>2–10</td><td>36</td><td>Items</td></tr>
+            <tr><td><strong>Combat deck</strong></td><td><strong>48</strong></td><td>All non-Monster cards</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="card">
+        <h2>A round, in 9 steps</h2>
+        <ol>
+          <li><strong>Plot.</strong> Every wizard plays 1 card face-down.</li>
+          <li><strong>Reveal.</strong> All cards flip simultaneously.</li>
+          <li><strong>Tactics.</strong> Each wizard, clockwise from the active wizard, may take ONE Tactic — paid by discarding cards.</li>
+          <li><strong>Damage.</strong> Sum revealed values + inscription effects. Apply to the Boss. All revealed cards are <em>committed</em> for the rest of the dungeon.</li>
+          <li><strong>Killing blow.</strong> If Boss HP ≤ 0, the wizard with the highest revealed face value takes the kill (suit tiebreak ♠ &gt; ♥ &gt; ♣ &gt; ♦).</li>
+          <li><strong>Boss attack.</strong> Boss deals ATK to all wizards. Take it, or commit cards summing to <em>strictly more</em> than ATK to dodge.</li>
+          <li><strong>Pressure check.</strong> If 0 damage was dealt this round, ALL wizards take 2.</li>
+          <li><strong>Minions strike.</strong> Active Minions attack each wizard.</li>
+          <li><strong>Refill.</strong> Each wizard draws up to 2 (capped at 12-card hand).</li>
+        </ol>
+      </div>
+
+      <div class="grid cols-2">
+        <div class="card">
+          <h3>Tactics (cost cards, not coppers)</h3>
+          <table>
+            <thead><tr><th>Tactic</th><th>Cost</th><th>Effect</th></tr></thead>
+            <tbody>
+              <tr><td>Spike</td><td>1 card</td><td>+3 to your revealed card</td></tr>
+              <tr><td>Foil</td><td>2 cards</td><td>−3 to another wizard's reveal (min 1)</td></tr>
+              <tr><td>Snipe</td><td>1 Hero</td><td>Swap your reveal with another's</td></tr>
+              <tr><td>Brace</td><td>1 card</td><td>Take 0 boss damage this round</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="card">
+          <h3>Suit Convert (buffs)</h3>
+          <p class="text-dim" style="margin-bottom:6px;">Instead of dealing damage, sacrifice a played Item:</p>
+          <table>
+            <thead><tr><th>Suit</th><th>Effect</th></tr></thead>
+            <tbody>
+              <tr><td>♠ Spade</td><td>+1 shield per Spade lost in this dungeon</td></tr>
+              <tr><td>♥ Heart</td><td>Heal HP equal to ⌈face ÷ 2⌉</td></tr>
+              <tr><td>♣ Club</td><td>Draw 2 cards</td></tr>
+              <tr><td>♦ Diamond</td><td>Plunder Coppers equal to face value</td></tr>
+            </tbody>
+          </table>
+          <p class="note">Heroes (J/Q/K) cannot be Converted.</p>
+        </div>
+      </div>
+
+      <div class="card">
+        <h2>Killing the Boss</h2>
+        <ul>
+          <li><strong>Killer</strong> earns +3 Coppers, +1 per overkill (cap +5c), and chooses one: <em>Rally</em> (all heal 5), <em>Surge</em> (Killer draws 3), or <em>Momentum</em> (next Boss starts at HP −10).</li>
+          <li>All other wizards get +1c (assist).</li>
+          <li>All wizards: +1 Glory toward the band. Killer: +1 personal Glory.</li>
+          <li>Legend kill? Next Fading draws 2 Blessed cards — choose 1 to fade, the other survives.</li>
+        </ul>
+      </div>
+
+      <div class="card">
+        <h2>Boss HP scales with players</h2>
+        <table>
+          <thead><tr><th>Players</th><th>Boss HP ×</th><th>Starting hand</th><th>Inscription budget</th></tr></thead>
+          <tbody>
+            <tr><td>1 (Solo)</td><td>×1</td><td>14</td><td>40c</td></tr>
+            <tr><td>2</td><td>×2</td><td>12</td><td>30c</td></tr>
+            <tr><td>3</td><td>×3</td><td>12</td><td>30c</td></tr>
+            <tr><td>4</td><td>×4</td><td>12</td><td>30c</td></tr>
+            <tr><td>5</td><td>×5</td><td>14</td><td>30c</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="card">
+        <h2>The Post-Game Cycle</h2>
+        <ol>
+          <li><strong>Fading.</strong> Each wizard shuffles their Blessed cards, draws 1, crosses out its inscriptions.</li>
+          <li><strong>Drifting.</strong> Decks pool. Draft order = personal Glory this game. You may pick your own.</li>
+          <li><strong>Turning.</strong> Spend Coppers on new inscriptions in your inherited deck.</li>
+        </ol>
+        <p class="note">Coppers follow the wizard. Glory etches onto the band's box. Bands fade into legend when no Blessed cards remain.</p>
+      </div>
+
+      <div class="card">
+        <h2>Inscription tiers</h2>
+        <p class="text-dim">Spent in The Turning. 1 inscription per card max. Mythic only on Heroes — and Mythic is earned, not bought.</p>
+        <table>
+          <thead><tr><th>Tier</th><th>Cost</th><th>Examples</th></tr></thead>
+          <tbody>
+            <tr><td><span class="tag easy">Common</span></td><td>5c</td><td>Sharp, Sturdy, Glint, Quick, Bright</td></tr>
+            <tr><td><span class="tag med">Uncommon</span></td><td>10c</td><td>Echo, Banner, Blood Money, Vampiric, Thorns</td></tr>
+            <tr><td><span class="tag hard">Rare</span></td><td>20c</td><td>Ascension, Doublestrike, Phoenix, Wizard's Will, Pierce…</td></tr>
+            <tr><td><span class="tag" style="background:rgba(168,85,247,0.18);color:#c084fc;border:1px solid rgba(168,85,247,0.35);">Mythic</span></td><td>Earned</td><td>Royal Decree, Legend Etched, Tower's Memory, The Patron, Untouchable</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="card center">
+        <h2>Ready to play?</h2>
+        <p class="text-dim">Print the player rules, grab a deck, and open the tracker on your phone.</p>
+        <div class="btn-row">
+          <a class="btn" href="/downloads/">Downloads</a>
+          <a class="btn btn-ghost" href="/tracker/">Open Tracker</a>
+        </div>
+      </div>
+    </div>
+  </section>
+</Layout>

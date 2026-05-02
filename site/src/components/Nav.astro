@@ -1,0 +1,26 @@
+---
+const { pathname } = Astro.url;
+const links = [
+  { href: '/', label: 'Home' },
+  { href: '/learn/', label: 'Learn' },
+  { href: '/downloads/', label: 'Downloads' },
+  { href: '/tracker/', label: 'Tracker' },
+];
+const isActive = (href: string) => {
+  if (href === '/') return pathname === '/' || pathname === '';
+  return pathname === href || pathname === href.replace(/\/$/, '');
+};
+---
+<nav class="nav">
+  <div class="nav-inner">
+    <a href="/" class="nav-brand">
+      <img src="/logo.png" alt="DeckNForge logo" />
+      <span>DeckNForge</span>
+    </a>
+    <div class="nav-links">
+      {links.map((l) => (
+        <a href={l.href} class={isActive(l.href) ? 'active' : ''}>{l.label}</a>
+      ))}
+    </div>
+  </div>
+</nav>

@@ -1,0 +1,83 @@
+- generic [active] [ref=e1]:
+  - navigation [ref=e2]:
+    - generic [ref=e3]:
+      - link "DeckNForge logo" [ref=e4] [cursor=pointer]:
+        - /url: /
+        - img "DeckNForge logo" [ref=e5]
+      - generic [ref=e6]:
+        - link "Home" [ref=e7] [cursor=pointer]:
+          - /url: /
+        - link "Learn" [ref=e8] [cursor=pointer]:
+          - /url: /learn/
+        - link "Downloads" [ref=e9] [cursor=pointer]:
+          - /url: /downloads/
+        - link "Tracker" [ref=e10] [cursor=pointer]:
+          - /url: /tracker/
+  - main [ref=e11]:
+    - generic [ref=e13]:
+      - heading "Downloads" [level=1] [ref=e14]
+      - paragraph [ref=e15]: "Everything you need to forge a band: rules, player sheets, and labels. All free. Print sheets are HTML — open them and use your browser's print → \"Save as PDF\" or print directly."
+      - generic [ref=e16]:
+        - generic [ref=e17]:
+          - heading "Full Rulebook (PDF)" [level=3] [ref=e18]
+          - paragraph [ref=e19]: The complete v2.0 Playtest Edition rulebook. Print at home or read on a tablet.
+          - paragraph [ref=e20]: ~308 KB
+          - link "Download PDF" [ref=e22] [cursor=pointer]:
+            - /url: /downloads/DeckNForge_v2.0_Rules.pdf
+        - generic [ref=e23]:
+          - heading "Player Rules Sheet (Print)" [level=3] [ref=e24]
+          - paragraph [ref=e25]: A 2-page printable quick reference for the table. Letter size, 0.5" margins.
+          - paragraph [ref=e26]: HTML — print to PDF
+          - link "Open Print Sheet" [ref=e28] [cursor=pointer]:
+            - /url: /downloads/DeckNForge_Player_Rules.html
+        - generic [ref=e29]:
+          - heading "Wizard / Band Record Sheet" [level=3] [ref=e30]
+          - paragraph [ref=e31]: Print 2 per band. Track Monsters, Blessed cards, dungeon log, and drift history.
+          - paragraph [ref=e32]: HTML — print to PDF
+          - link "Open Record Sheet" [ref=e34] [cursor=pointer]:
+            - /url: /downloads/DeckNForge_Wizard_Sheet.html
+        - generic [ref=e35]:
+          - heading "Avery 18294 Label Sheet" [level=3] [ref=e36]
+          - paragraph [ref=e37]: All 60 labels (15 Monster Labels, 15 Common, 15 Uncommon, 10 Rare, 5 Mythic). Print at 100% scale.
+          - paragraph [ref=e38]: HTML — print to Avery 18294
+          - link "Open Label Sheet" [ref=e40] [cursor=pointer]:
+            - /url: /downloads/DeckNForge_Label_Sheet.html
+      - separator [ref=e41]
+      - heading "For tinkerers" [level=2] [ref=e42]
+      - generic [ref=e44]:
+        - heading "Rules — Markdown source" [level=3] [ref=e45]
+        - paragraph [ref=e46]: Plain markdown for editing, forking, or reading anywhere.
+        - paragraph [ref=e47]: ~22 KB
+        - link "View Markdown" [ref=e49] [cursor=pointer]:
+          - /url: /downloads/DeckNForge_v2.0_Rules.md
+      - generic [ref=e50]:
+        - heading "Printing tips" [level=3] [ref=e51]
+        - list [ref=e52]:
+          - listitem [ref=e53]:
+            - strong [ref=e54]: "Avery 18294 labels:"
+            - text: print at 100% scale.
+            - emphasis [ref=e55]: Do not
+            - text: select "fit to page" or labels will misalign.
+          - listitem [ref=e56]:
+            - strong [ref=e57]: "Player Rules Sheet:"
+            - text: already sized for Letter with 0.5" margins. Print double-sided if you want a single physical sheet.
+          - listitem [ref=e58]:
+            - strong [ref=e59]: "PDF rulebook:"
+            - text: works on any e-reader, phone, or printer. The HTML versions are friendlier for browser print → "Save as PDF."
+  - contentinfo [ref=e60]:
+    - generic [ref=e61]:
+      - paragraph [ref=e62]: © 2026 DeckNForge — A persistent legacy card game from a single deck of playing cards.
+      - paragraph [ref=e63]: v2.0 Playtest Edition · Without teamwork, your band will never survive the dungeon. Without betrayal, you'll never claim the coppers.
+  - generic [ref=e66]:
+    - button "Menu" [ref=e67]:
+      - img [ref=e69]
+      - generic: Menu
+    - button "Inspect" [ref=e73]:
+      - img [ref=e75]
+      - generic: Inspect
+    - button "Audit" [ref=e77]:
+      - img [ref=e79]
+      - generic: Audit
+    - button "Settings" [ref=e82]:
+      - img [ref=e84]
+      - generic: Settings
