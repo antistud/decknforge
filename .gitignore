@@ -1,0 +1,36 @@
+# dependencies
+node_modules/
+site/node_modules/
+
+# build output
+dist/
+site/dist/
+.astro/
+site/.astro/
+
+# logs
+npm-debug.log*
+*.log
+
+# environment
+.env
+.env.*
+!.env.example
+
+# editor
+.vscode/
+.idea/
+.DS_Store
+
+# screenshots saved during local browser testing
+/contribute-mobile.png
+/downloads-mobile.png
+/home-desktop.png
+/home-mobile.png
+/home-with-github.png
+/learn-mobile.png
+/tracker-bosses.png
+/tracker-dungeon.png
+/tracker-empty.png
+/tracker-fixed.png
+/tracker-wizards.png
