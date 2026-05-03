@@ -292,7 +292,7 @@ em { font-family: var(--font-italic); font-style: italic; }
 .hero {
   position: relative;
   text-align: center;
-  padding: 72px 18px 64px;
+  padding: clamp(88px, 10vw, 132px) 18px clamp(80px, 9vw, 110px);
   overflow: hidden;
   background:
     linear-gradient(180deg, var(--paper-bright), var(--paper));
@@ -326,7 +326,7 @@ em { font-family: var(--font-italic); font-style: italic; }
   letter-spacing: 0.04em;
   text-transform: uppercase;
   max-width: 880px;
-  margin: 8px auto 14px;
+  margin: 12px auto 22px;
 }
 /* Red-ink emphasis inside the foil headline */
 .hero-pitch .hero-accent {
@@ -342,7 +342,7 @@ em { font-family: var(--font-italic); font-style: italic; }
   color: var(--ink-soft);
   font-size: clamp(1.05rem, 2.6vw, 1.25rem);
   max-width: 720px;
-  margin: 6px auto 18px;
+  margin: 10px auto 28px;
   position: relative;
 }
 .hero-tag::before, .hero-tag::after {
