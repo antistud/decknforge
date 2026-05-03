@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 360 28" fill="none" stroke="#b88a2c" stroke-width="1.4" stroke-linecap="round">
+  <path d="M30 14 Q70 4 110 14 T172 14"/>
+  <path d="M188 14 Q230 4 270 14 T330 14"/>
+  <circle cx="180" cy="14" r="4" fill="#b88a2c" stroke="none"/>
+  <circle cx="180" cy="14" r="1.6" fill="#efe2c4" stroke="none"/>
+  <circle cx="30"  cy="14" r="1.8" fill="#b88a2c" stroke="none"/>
+  <circle cx="330" cy="14" r="1.8" fill="#b88a2c" stroke="none"/>
+  <path d="M170 14 q-4 -6 -10 -6" stroke-width="1"/>
+  <path d="M190 14 q4 -6 10 -6" stroke-width="1"/>
+  <path d="M170 14 q-4 6 -10 6" stroke-width="1"/>
+  <path d="M190 14 q4 6 10 6" stroke-width="1"/>
+</svg>
