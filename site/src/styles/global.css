@@ -295,9 +295,7 @@ em { font-family: var(--font-italic); font-style: italic; }
   padding: 72px 18px 64px;
   overflow: hidden;
   background:
-    linear-gradient(180deg, var(--paper-bright), var(--paper) 60%, var(--paper-deep));
-  border-bottom: 1px solid var(--paper-edge);
-  box-shadow: 0 -1px 0 rgba(255,255,255,0.5) inset;
+    linear-gradient(180deg, var(--paper-bright), var(--paper));
 }
 .hero::before {
   content: "";
