@@ -6,172 +6,74 @@ import Layout from '../layouts/Layout.astro';
     <div class="container">
       <h1 class="center" style="margin-bottom:18px;">Dungeon Tracker</h1>
 
-      <div class="tabs" role="tablist" id="tabs">
-        <button class="active" data-tab="dungeon">Dungeon</button>
-        <button data-tab="wizards">Wizards</button>
-        <button data-tab="bosses">Bosses</button>
-        <button data-tab="minions">Minions</button>
-        <button data-tab="setup">Setup</button>
-      </div>
-
-      <!-- DUNGEON TAB -->
-      <div class="tab-panel" data-panel="dungeon">
-        <div class="card">
-          <div class="stat">
-            <div>
-              <div class="stat-label">Current Boss</div>
-              <div id="curr-boss-name" style="font-family:var(--font-display); font-size:1.4rem; color:var(--gold-bright);">—</div>
-              <div id="curr-boss-meta" class="text-dim" style="font-size:0.9rem;"></div>
-            </div>
-            <div class="stepper">
-              <button id="boss-prev" aria-label="Previous boss">‹</button>
-              <span id="boss-index" class="val" style="min-width:64px;">0/6</span>
-              <button id="boss-next" aria-label="Next boss">›</button>
-            </div>
-          </div>
-          <div id="curr-boss-hp-row" class="stat" style="display:none;">
-            <div>
-              <div class="stat-label">Boss HP</div>
-              <div class="hp-bar"><span id="curr-boss-hp-bar" style="width:100%"></span></div>
-            </div>
-            <div class="stepper">
-              <button data-curr-hp="-5" aria-label="-5 HP">−5</button>
-              <button data-curr-hp="-1" aria-label="-1 HP">−1</button>
-              <span id="curr-boss-hp" class="val big">0</span>
-              <button data-curr-hp="+1" aria-label="+1 HP">+1</button>
-              <button data-curr-hp="+5" aria-label="+5 HP">+5</button>
-            </div>
-          </div>
-          <div class="stat">
+      <div class="card">
+        <div class="grid cols-2">
+          <div class="stat" style="padding:0; border:0;">
             <div class="stat-label">Round</div>
             <div class="stepper">
-              <button id="round-dec" aria-label="-1 round">−</button>
+              <button id="round-dec" type="button" aria-label="-1 round">−</button>
               <span id="round-val" class="val">1</span>
-              <button id="round-inc" aria-label="+1 round">+</button>
+              <button id="round-inc" type="button" aria-label="+1 round">+</button>
             </div>
           </div>
-          <div class="stat">
-            <div class="stat-label">Band Glory</div>
+          <div class="stat" style="padding:0; border:0;">
+            <div class="stat-label">Glory</div>
             <div class="stepper">
-              <button data-glory="-1" aria-label="-1 Glory">−</button>
+              <button data-glory="-1" type="button" aria-label="-1 Glory">−</button>
               <span id="glory-val" class="val">0</span>
-              <button data-glory="+1" aria-label="+1 Glory">+</button>
+              <button data-glory="1" type="button" aria-label="+1 Glory">+</button>
             </div>
           </div>
-          <div class="stat">
-            <div class="stat-label">Active Wizard</div>
-            <div id="active-wizard" style="font-family:var(--font-display); color:var(--gold-bright);">—</div>
-          </div>
-          <p class="note">DOOM watch: if a Boss with the DOOM label is alive at the end of round 5, it's a party wipe.</p>
-        </div>
-
-        <div class="card">
-          <h3 style="margin-bottom:8px;">Wizards</h3>
-          <div id="wizards-mini"></div>
-        </div>
-
-        <div class="reset-row">
-          <span id="autosave-indicator" class="text-dim" title="Tracker autosaves to your browser. Refresh, close the tab, and come back — your dungeon is still here.">
-            <svg viewBox="0 0 16 16" width="14" height="14" fill="currentColor" aria-hidden="true" style="vertical-align:-2px;">
-              <path d="M8 1.5a6.5 6.5 0 1 0 0 13 6.5 6.5 0 0 0 0-13zM7.5 4a.5.5 0 0 1 1 0v4.293l2.354 2.353a.5.5 0 0 1-.708.708L7.146 8.854a.5.5 0 0 1-.146-.354V4z"/>
-            </svg>
-            Autosaved
-          </span>
-          <button id="reset-dungeon-quick" class="icon-btn danger" type="button" aria-label="Reset tracker">
-            <svg viewBox="0 0 16 16" width="14" height="14" fill="currentColor" aria-hidden="true" style="vertical-align:-2px;">
-              <path d="M5.5 5.5A.5.5 0 0 1 6 6v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5zm2.5 0a.5.5 0 0 1 .5.5v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5zm3 .5a.5.5 0 0 0-1 0v6a.5.5 0 0 0 1 0V6z"/>
-              <path d="M14.5 3a1 1 0 0 1-1 1H13v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V4h-.5a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1H6a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1h3.5a1 1 0 0 1 1 1v1zM4.118 4 4 4.059V13a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1V4.059L11.882 4H4.118zM2.5 3h11V2h-11v1z"/>
-            </svg>
-            Reset
-          </button>
         </div>
       </div>
 
-      <!-- WIZARDS TAB -->
-      <div class="tab-panel" data-panel="wizards" hidden>
-        <div class="card">
-          <div class="field-row">
-            <input id="new-wizard-name" type="text" placeholder="Wizard name" />
-            <button class="btn" id="add-wizard">Add</button>
+      <div class="card">
+        <div class="list-item-head">
+          <div class="list-item-name">Boss</div>
+          <div style="display:flex; gap:8px; align-items:center; flex-wrap:wrap;">
+            <label class="text-dim" for="boss-max" style="font-size:0.85rem;">Max</label>
+            <input id="boss-max" type="number" min="0" placeholder="HP" style="max-width:80px;" />
+            <button id="boss-heal" class="icon-btn" type="button">Heal</button>
           </div>
-          <p class="note">Each wizard tracks HP (20 default), Coppers, and personal Glory. Tap a wizard to mark them active.</p>
+        </div>
+        <div class="hp-bar"><span id="boss-hp-bar" style="width:0%"></span></div>
+        <div class="stat" style="border:0; padding-top:10px;">
+          <div class="stat-label">HP</div>
+          <div class="stepper">
+            <button data-boss-hp="-10" type="button" aria-label="-10 HP">−10</button>
+            <button data-boss-hp="-5" type="button" aria-label="-5 HP">−5</button>
+            <button data-boss-hp="-1" type="button" aria-label="-1 HP">−1</button>
+            <span id="boss-hp" class="val big">0</span>
+            <button data-boss-hp="1" type="button" aria-label="+1 HP">+1</button>
+            <button data-boss-hp="5" type="button" aria-label="+5 HP">+5</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="list-item-head">
+          <div class="list-item-name">Wizards</div>
+          <button id="add-wizard" class="icon-btn" type="button">+ Add</button>
         </div>
         <div id="wizards-list"></div>
       </div>
 
-      <!-- BOSSES TAB -->
-      <div class="tab-panel" data-panel="bosses" hidden>
-        <div class="card">
-          <div class="field-row">
-            <input id="new-boss-name" type="text" placeholder="Boss name (e.g. Ace of Spades)" />
-            <input id="new-boss-hp" type="number" placeholder="HP" min="1" style="max-width:90px;" />
-            <input id="new-boss-atk" type="number" placeholder="ATK" min="0" style="max-width:80px;" />
-          </div>
-          <div class="field-row" style="margin-top:8px;">
-            <input id="new-boss-labels" type="text" placeholder="Labels (e.g. DOOM, TOUGH)" />
-            <button class="btn" id="add-boss">Add Boss</button>
-          </div>
-          <p class="note">Boss HP is automatically multiplied by the player count from Setup. Add up to 6 bosses; the dungeon plays them in order.</p>
+      <div class="card">
+        <div class="list-item-head">
+          <div class="list-item-name">Monsters</div>
+          <button id="add-monster" class="icon-btn" type="button">+ Add</button>
         </div>
-        <div id="bosses-list"></div>
+        <div id="monsters-list"></div>
       </div>
 
-      <!-- MINIONS TAB -->
-      <div class="tab-panel" data-panel="minions" hidden>
-        <div class="card">
-          <div class="field-row">
-            <input id="new-minion-name" type="text" placeholder="Minion name" />
-            <input id="new-minion-hp" type="number" placeholder="HP" min="1" style="max-width:90px;" />
-            <input id="new-minion-atk" type="number" placeholder="ATK" min="0" style="max-width:80px;" />
-          </div>
-          <div class="btn-row" style="justify-content:flex-start; margin-top:8px;">
-            <button class="btn" id="add-minion">Summon Minion</button>
-          </div>
-          <p class="note">Minions disappear when the current boss dies — but they stay listed here for the rest of this fight.</p>
-        </div>
-        <div id="minions-list"></div>
-      </div>
-
-      <!-- SETUP TAB -->
-      <div class="tab-panel" data-panel="setup" hidden>
-        <div class="card">
-          <h3 style="margin-bottom:8px;">Player count</h3>
-          <p class="text-dim" style="margin-bottom:8px;">Sets boss HP multiplier and starting hand size.</p>
-          <div class="stat">
-            <div class="stat-label">Players</div>
-            <div class="stepper">
-              <button id="players-dec" aria-label="-1 player">−</button>
-              <span id="players-val" class="val">3</span>
-              <button id="players-inc" aria-label="+1 player">+</button>
-            </div>
-          </div>
-          <p class="note" id="players-note"></p>
-        </div>
-
-        <div class="card">
-          <h3 style="margin-bottom:8px;">Quick start</h3>
-          <p class="text-dim">Seed a fresh tracker with 4 wizards and 6 placeholder bosses to get going fast.</p>
-          <div class="btn-row" style="justify-content:flex-start; margin-top:8px;">
-            <button class="btn" id="quickstart">Seed 4 wizards + 6 bosses</button>
-          </div>
-        </div>
-
-        <div class="card">
-          <h3 style="margin-bottom:8px;">Reset &amp; persistence</h3>
-          <div class="grid cols-2" style="gap:14px;">
-            <div>
-              <strong>Reset HP &amp; Round</strong>
-              <p class="text-dim" style="font-size:0.9rem; margin: 4px 0 8px;">Restores all wizards to 20 HP, current boss to full HP, clears minions, sets round to 1. Keeps wizards, bosses, coppers, and glory.</p>
-              <button class="btn btn-ghost" id="reset-fight">Reset HP &amp; Round</button>
-            </div>
-            <div>
-              <strong style="color:var(--wax);">Wipe everything</strong>
-              <p class="text-dim" style="font-size:0.9rem; margin: 4px 0 8px;">Removes all wizards, bosses, coppers, glory, and round state. Cannot be undone.</p>
-              <button class="btn btn-danger" id="reset-all">Wipe All Data</button>
-            </div>
-          </div>
-          <p class="note">All tracker data is saved automatically to your browser's local storage. Refresh the page, close the tab, or come back tomorrow — your dungeon will be exactly where you left it. Clearing site data, switching browsers, or using a different device will lose the state.</p>
-        </div>
+      <div class="reset-row">
+        <span id="autosave-indicator" class="text-dim" title="Tracker autosaves to your browser. Refresh, close the tab, and come back — your dungeon is still here.">
+          <svg viewBox="0 0 16 16" width="14" height="14" fill="currentColor" aria-hidden="true" style="vertical-align:-2px;">
+            <path d="M8 1.5a6.5 6.5 0 1 0 0 13 6.5 6.5 0 0 0 0-13zM7.5 4a.5.5 0 0 1 1 0v4.293l2.354 2.353a.5.5 0 0 1-.708.708L7.146 8.854a.5.5 0 0 1-.146-.354V4z"/>
+          </svg>
+          Autosaved
+        </span>
+        <button id="reset-all" class="icon-btn danger" type="button" aria-label="Reset tracker">Reset</button>
       </div>
     </div>
   </section>
@@ -179,20 +81,20 @@ import Layout from '../layouts/Layout.astro';
   <script is:inline>
     (function () {
       'use strict';
-      const KEY = 'decknforge.tracker.v1';
-      const STARTING_HP = 20;
+      const KEY = 'decknforge.tracker.v2';
+      const WIZARD_HP = 20;
+      const MONSTER_HP = 10;
 
       function makeId() { return Math.random().toString(36).slice(2, 9); }
+      function clamp(n, lo, hi) { return Math.max(lo, Math.min(hi, n)); }
 
       const defaultState = () => ({
-        players: 3,
         round: 1,
         glory: 0,
-        activeWizardId: null,
-        currentBossIndex: 0,
+        bossHp: 0,
+        bossMaxHp: 0,
         wizards: [],
-        bosses: [],
-        minions: [],
+        monsters: [],
       });
 
       let state = load();
@@ -203,16 +105,7 @@ import Layout from '../layouts/Layout.astro';
           if (!raw) return defaultState();
           const parsed = JSON.parse(raw);
           return Object.assign(defaultState(), parsed);
-        } catch (e) {
-          return defaultState();
-        }
-      }
-
-      function save() {
-        try {
-          localStorage.setItem(KEY, JSON.stringify(state));
-          flashSaved();
-        } catch (e) {}
+        } catch (e) { return defaultState(); }
       }
 
       let savedTimer = null;
@@ -224,476 +117,156 @@ import Layout from '../layouts/Layout.astro';
         savedTimer = setTimeout(() => el.classList.remove('saved-flash'), 600);
       }
 
-      function clamp(n, lo, hi) { return Math.max(lo, Math.min(hi, n)); }
-
-      function setActiveTab(name) {
-        document.querySelectorAll('#tabs button').forEach(b => {
-          b.classList.toggle('active', b.dataset.tab === name);
-        });
-        document.querySelectorAll('.tab-panel').forEach(p => {
-          p.hidden = p.dataset.panel !== name;
-        });
+      function save() {
+        try { localStorage.setItem(KEY, JSON.stringify(state)); flashSaved(); } catch (e) {}
       }
 
-      document.getElementById('tabs').addEventListener('click', (e) => {
-        const btn = e.target.closest('button[data-tab]');
-        if (!btn) return;
-        setActiveTab(btn.dataset.tab);
+      // Round
+      document.getElementById('round-inc').addEventListener('click', () => {
+        state.round = Math.min(20, state.round + 1); save(); render();
+      });
+      document.getElementById('round-dec').addEventListener('click', () => {
+        state.round = Math.max(1, state.round - 1); save(); render();
       });
 
-      // ===== WIZARDS =====
-      function renderWizards() {
-        const list = document.getElementById('wizards-list');
-        const mini = document.getElementById('wizards-mini');
-        if (!list) return;
-        list.innerHTML = '';
-        mini.innerHTML = '';
-        if (state.wizards.length === 0) {
-          list.innerHTML = '<div class="card text-dim center">No wizards yet. Add one above.</div>';
-          mini.innerHTML = '<div class="text-dim">No wizards yet. <a href="#" data-go-tab="wizards">Add some.</a></div>';
-        }
-        state.wizards.forEach(w => {
-          const isActive = state.activeWizardId === w.id;
-          const card = document.createElement('div');
-          card.className = 'player-card' + (isActive ? ' active' : '');
-          card.innerHTML = `
-            ${isActive ? '<div class="badge-active">Active</div>' : ''}
-            <div class="list-item-head">
-              <div class="list-item-name">${escapeHtml(w.name)}</div>
-              <div style="display:flex; gap:6px;">
-                <button class="icon-btn" data-action="set-active" data-id="${w.id}">${isActive ? '★ Active' : 'Set Active'}</button>
-                <button class="icon-btn" data-action="remove-wizard" data-id="${w.id}">Remove</button>
-              </div>
-            </div>
-            <div class="stat">
-              <div class="stat-label">HP</div>
-              <div class="stepper">
-                <button data-action="hp" data-id="${w.id}" data-d="-5">−5</button>
-                <button data-action="hp" data-id="${w.id}" data-d="-1">−1</button>
-                <span class="val big">${w.hp}</span>
-                <button data-action="hp" data-id="${w.id}" data-d="+1">+1</button>
-                <button data-action="hp" data-id="${w.id}" data-d="+5">+5</button>
-              </div>
-            </div>
-            <div class="hp-bar"><span style="width:${clamp(w.hp/STARTING_HP*100,0,100)}%"></span></div>
-            <div class="stat">
-              <div class="stat-label">Coppers</div>
-              <div class="stepper">
-                <button data-action="copper" data-id="${w.id}" data-d="-5">−5</button>
-                <button data-action="copper" data-id="${w.id}" data-d="-1">−1</button>
-                <span class="val">${w.coppers}</span>
-                <button data-action="copper" data-id="${w.id}" data-d="+1">+1</button>
-                <button data-action="copper" data-id="${w.id}" data-d="+3">+3</button>
-              </div>
-            </div>
-            <div class="stat">
-              <div class="stat-label">Personal Glory</div>
-              <div class="stepper">
-                <button data-action="pglory" data-id="${w.id}" data-d="-1">−</button>
-                <span class="val">${w.glory}</span>
-                <button data-action="pglory" data-id="${w.id}" data-d="+1">+</button>
-              </div>
-            </div>
-            <div class="btn-row" style="justify-content:flex-start; margin-top:8px;">
-              <button class="icon-btn" data-action="reset-hp" data-id="${w.id}">Reset HP to 20</button>
-            </div>
-          `;
-          list.appendChild(card);
-
-          // mini summary on dungeon tab
-          const mc = document.createElement('div');
-          mc.className = 'stat';
-          mc.innerHTML = `
-            <div>
-              <div class="stat-label">${escapeHtml(w.name)}${isActive ? ' ★' : ''}</div>
-              <div style="display:flex; gap:14px; font-size:0.95rem;">
-                <span>♥ <strong>${w.hp}</strong></span>
-                <span>¢ <strong>${w.coppers}</strong></span>
-                <span style="color:var(--text-dim);">★ ${w.glory}</span>
-              </div>
-              <div class="hp-bar"><span style="width:${clamp(w.hp/STARTING_HP*100,0,100)}%"></span></div>
-            </div>
-            <div class="stepper">
-              <button data-action="hp" data-id="${w.id}" data-d="-1">−</button>
-              <button data-action="hp" data-id="${w.id}" data-d="+1">+</button>
-            </div>
-          `;
-          mini.appendChild(mc);
+      // Glory
+      document.querySelectorAll('[data-glory]').forEach(el => {
+        el.addEventListener('click', () => {
+          state.glory = Math.max(0, state.glory + parseInt(el.dataset.glory, 10));
+          save(); render();
         });
-      }
+      });
 
+      // Boss HP
+      document.querySelectorAll('[data-boss-hp]').forEach(el => {
+        el.addEventListener('click', () => {
+          state.bossHp = clamp(state.bossHp + parseInt(el.dataset.bossHp, 10), 0, 9999);
+          save(); render();
+        });
+      });
+      const bossMaxInput = document.getElementById('boss-max');
+      bossMaxInput.addEventListener('input', () => {
+        const v = parseInt(bossMaxInput.value, 10);
+        state.bossMaxHp = isNaN(v) ? 0 : Math.max(0, v);
+        if (state.bossMaxHp > 0 && state.bossHp > state.bossMaxHp) state.bossHp = state.bossMaxHp;
+        if (state.bossMaxHp > 0 && state.bossHp === 0) state.bossHp = state.bossMaxHp;
+        save(); render();
+      });
+      document.getElementById('boss-heal').addEventListener('click', () => {
+        state.bossHp = state.bossMaxHp;
+        save(); render();
+      });
+
+      // Add wizard / monster
       document.getElementById('add-wizard').addEventListener('click', () => {
-        const input = document.getElementById('new-wizard-name');
-        const name = (input.value || '').trim();
-        if (!name) return;
-        const w = { id: makeId(), name, hp: STARTING_HP, coppers: 0, glory: 0 };
-        state.wizards.push(w);
-        if (!state.activeWizardId) state.activeWizardId = w.id;
-        input.value = '';
-        save(); renderAll();
+        state.wizards.push({ id: makeId(), hp: WIZARD_HP });
+        save(); render();
+      });
+      document.getElementById('add-monster').addEventListener('click', () => {
+        state.monsters.push({ id: makeId(), hp: MONSTER_HP });
+        save(); render();
       });
 
-      document.getElementById('new-wizard-name').addEventListener('keydown', (e) => {
-        if (e.key === 'Enter') document.getElementById('add-wizard').click();
+      // Reset
+      document.getElementById('reset-all').addEventListener('click', () => {
+        if (!confirm('Reset everything?\n\nClears wizards, monsters, boss HP, round, and glory.')) return;
+        state = defaultState();
+        document.getElementById('boss-max').value = '';
+        save(); render();
       });
 
-      // delegated wizard actions
+      // Per-row delegated actions
       document.body.addEventListener('click', (e) => {
-        const goTab = e.target.closest('[data-go-tab]');
-        if (goTab) { e.preventDefault(); setActiveTab(goTab.dataset.goTab); return; }
         const btn = e.target.closest('button[data-action]');
         if (!btn) return;
         const id = btn.dataset.id;
         const action = btn.dataset.action;
-        if (action === 'set-active') {
-          state.activeWizardId = id; save(); renderAll(); return;
-        }
-        if (action === 'remove-wizard') {
+        const d = parseInt(btn.dataset.d || '0', 10);
+        if (action === 'wiz-hp') {
+          const w = state.wizards.find(w => w.id === id);
+          if (w) { w.hp = clamp(w.hp + d, 0, 99); save(); render(); }
+        } else if (action === 'wiz-remove') {
           state.wizards = state.wizards.filter(w => w.id !== id);
-          if (state.activeWizardId === id) state.activeWizardId = state.wizards[0]?.id ?? null;
-          save(); renderAll(); return;
-        }
-        if (action === 'reset-hp') {
-          const w = state.wizards.find(w => w.id === id);
-          if (w) { w.hp = STARTING_HP; save(); renderAll(); }
-          return;
-        }
-        if (action === 'hp') {
-          const w = state.wizards.find(w => w.id === id);
-          if (w) { w.hp = clamp(w.hp + parseInt(btn.dataset.d, 10), 0, 99); save(); renderAll(); }
-          return;
-        }
-        if (action === 'copper') {
-          const w = state.wizards.find(w => w.id === id);
-          if (w) { w.coppers = Math.max(0, w.coppers + parseInt(btn.dataset.d, 10)); save(); renderAll(); }
-          return;
-        }
-        if (action === 'pglory') {
-          const w = state.wizards.find(w => w.id === id);
-          if (w) { w.glory = Math.max(0, w.glory + parseInt(btn.dataset.d, 10)); save(); renderAll(); }
-          return;
-        }
-        // boss actions
-        if (action === 'boss-hp') {
-          const b = state.bosses.find(b => b.id === id);
-          if (b) { b.hp = clamp(b.hp + parseInt(btn.dataset.d, 10), 0, 999); save(); renderAll(); }
-          return;
-        }
-        if (action === 'remove-boss') {
-          const idx = state.bosses.findIndex(b => b.id === id);
-          state.bosses = state.bosses.filter(b => b.id !== id);
-          if (idx <= state.currentBossIndex && state.currentBossIndex > 0) state.currentBossIndex--;
-          save(); renderAll(); return;
-        }
-        if (action === 'set-current-boss') {
-          const idx = state.bosses.findIndex(b => b.id === id);
-          if (idx >= 0) { state.currentBossIndex = idx; save(); renderAll(); }
-          return;
-        }
-        if (action === 'reset-boss-hp') {
-          const b = state.bosses.find(b => b.id === id);
-          if (b) { b.hp = effectiveBossMaxHP(b); save(); renderAll(); }
-          return;
-        }
-        // minion actions
-        if (action === 'minion-hp') {
-          const m = state.minions.find(m => m.id === id);
-          if (m) { m.hp = clamp(m.hp + parseInt(btn.dataset.d, 10), 0, 999); save(); renderAll(); }
-          return;
-        }
-        if (action === 'remove-minion') {
-          state.minions = state.minions.filter(m => m.id !== id);
-          save(); renderAll(); return;
+          save(); render();
+        } else if (action === 'mon-hp') {
+          const m = state.monsters.find(m => m.id === id);
+          if (m) { m.hp = clamp(m.hp + d, 0, 9999); save(); render(); }
+        } else if (action === 'mon-remove') {
+          state.monsters = state.monsters.filter(m => m.id !== id);
+          save(); render();
         }
       });
 
-      // ===== BOSSES =====
-      function effectiveBossMaxHP(b) { return b.baseHp * Math.max(1, state.players); }
+      function renderBoss() {
+        document.getElementById('boss-hp').textContent = state.bossHp;
+        const maxEl = document.getElementById('boss-max');
+        if (document.activeElement !== maxEl) {
+          maxEl.value = state.bossMaxHp || '';
+        }
+        const pct = state.bossMaxHp > 0 ? clamp(state.bossHp / state.bossMaxHp * 100, 0, 100) : 0;
+        document.getElementById('boss-hp-bar').style.width = pct + '%';
+      }
 
-      function renderBosses() {
-        const list = document.getElementById('bosses-list');
-        if (!list) return;
+      function renderWizards() {
+        const list = document.getElementById('wizards-list');
         list.innerHTML = '';
-        if (state.bosses.length === 0) {
-          list.innerHTML = '<div class="card text-dim center">No bosses yet. Add up to 6.</div>';
+        if (state.wizards.length === 0) {
+          list.innerHTML = '<div class="text-dim center" style="padding:12px 0;">No wizards yet. Tap + Add.</div>';
           return;
         }
-        state.bosses.forEach((b, i) => {
-          const isCurrent = i === state.currentBossIndex;
-          const max = effectiveBossMaxHP(b);
-          const dead = b.hp <= 0;
-          const card = document.createElement('div');
-          card.className = 'list-item' + (dead ? ' dead' : '');
-          card.style.borderColor = isCurrent ? 'var(--gold)' : '';
-          card.style.boxShadow = isCurrent ? 'var(--shadow-glow)' : '';
-          card.innerHTML = `
-            <div class="list-item-head">
-              <div>
-                <div class="list-item-name ${dead ? 'dead' : ''}">${i+1}. ${escapeHtml(b.name)}${b.legend ? ' ⭐' : ''}</div>
-                <div class="text-dim" style="font-size:0.85rem;">
-                  Base HP ${b.baseHp} × ${state.players} = <strong>${max}</strong> · ATK ${b.atk}
-                  ${b.labels && b.labels.length ? ' · ' + b.labels.map(l => `<span class="tag ${labelTier(l)}">${escapeHtml(l)}</span>`).join(' ') : ''}
-                </div>
-              </div>
-              <div style="display:flex; gap:6px; flex-wrap:wrap;">
-                ${!isCurrent ? `<button class="icon-btn" data-action="set-current-boss" data-id="${b.id}">Set Current</button>` : '<span class="tag med">Current</span>'}
-                <button class="icon-btn" data-action="reset-boss-hp" data-id="${b.id}">Reset HP</button>
-                <button class="icon-btn" data-action="remove-boss" data-id="${b.id}">Remove</button>
-              </div>
+        state.wizards.forEach((w, i) => {
+          const row = document.createElement('div');
+          row.className = 'tracker-row';
+          row.innerHTML = `
+            <div class="tracker-row-label">Wizard ${i + 1}</div>
+            <div class="hp-bar"><span style="width:${clamp(w.hp / WIZARD_HP * 100, 0, 100)}%"></span></div>
+            <div class="stepper">
+              <button data-action="wiz-hp" data-id="${w.id}" data-d="-5" type="button" aria-label="-5 HP">−5</button>
+              <button data-action="wiz-hp" data-id="${w.id}" data-d="-1" type="button" aria-label="-1 HP">−1</button>
+              <span class="val">${w.hp}</span>
+              <button data-action="wiz-hp" data-id="${w.id}" data-d="1"  type="button" aria-label="+1 HP">+1</button>
+              <button data-action="wiz-hp" data-id="${w.id}" data-d="5"  type="button" aria-label="+5 HP">+5</button>
             </div>
-            <div class="hp-bar"><span style="width:${clamp(b.hp/max*100,0,100)}%"></span></div>
-            <div class="stat" style="border:0; padding-top:6px;">
-              <div class="stat-label">HP</div>
-              <div class="stepper">
-                <button data-action="boss-hp" data-id="${b.id}" data-d="-10">−10</button>
-                <button data-action="boss-hp" data-id="${b.id}" data-d="-5">−5</button>
-                <button data-action="boss-hp" data-id="${b.id}" data-d="-1">−1</button>
-                <span class="val big">${b.hp}</span>
-                <button data-action="boss-hp" data-id="${b.id}" data-d="+1">+1</button>
-                <button data-action="boss-hp" data-id="${b.id}" data-d="+5">+5</button>
-              </div>
-            </div>
+            <button class="icon-btn danger" data-action="wiz-remove" data-id="${w.id}" type="button" aria-label="Remove wizard">×</button>
           `;
-          list.appendChild(card);
+          list.appendChild(row);
         });
       }
 
-      function labelTier(l) {
-        const u = (l || '').toUpperCase();
-        if (['DOOM','VAMPIRIC','CURSED','HEXPROOF','RAMPAGE'].includes(u)) return 'hard';
-        if (['TOUGH','CUNNING','HUNGRY','VICIOUS','RESILIENT'].includes(u)) return 'med';
-        return 'easy';
-      }
-
-      document.getElementById('add-boss').addEventListener('click', () => {
-        if (state.bosses.length >= 6) {
-          alert('A dungeon has 6 bosses. Remove one before adding another.');
-          return;
-        }
-        const name = document.getElementById('new-boss-name').value.trim();
-        const baseHp = parseInt(document.getElementById('new-boss-hp').value, 10);
-        const atk = parseInt(document.getElementById('new-boss-atk').value, 10);
-        const labelsRaw = document.getElementById('new-boss-labels').value.trim();
-        const labels = labelsRaw ? labelsRaw.split(',').map(s => s.trim()).filter(Boolean) : [];
-        if (!name || isNaN(baseHp) || isNaN(atk)) {
-          alert('Need a name, HP, and ATK.');
-          return;
-        }
-        const b = {
-          id: makeId(), name, baseHp, atk, labels,
-          hp: baseHp * Math.max(1, state.players),
-          legend: false,
-        };
-        state.bosses.push(b);
-        document.getElementById('new-boss-name').value = '';
-        document.getElementById('new-boss-hp').value = '';
-        document.getElementById('new-boss-atk').value = '';
-        document.getElementById('new-boss-labels').value = '';
-        save(); renderAll();
-      });
-
-      // ===== MINIONS =====
-      function renderMinions() {
-        const list = document.getElementById('minions-list');
-        if (!list) return;
+      function renderMonsters() {
+        const list = document.getElementById('monsters-list');
         list.innerHTML = '';
-        if (state.minions.length === 0) {
-          list.innerHTML = '<div class="card text-dim center">No active minions.</div>';
+        if (state.monsters.length === 0) {
+          list.innerHTML = '<div class="text-dim center" style="padding:12px 0;">No monsters. Tap + Add.</div>';
           return;
         }
-        state.minions.forEach(m => {
-          const dead = m.hp <= 0;
-          const card = document.createElement('div');
-          card.className = 'list-item' + (dead ? ' dead' : '');
-          card.innerHTML = `
-            <div class="list-item-head">
-              <div>
-                <div class="list-item-name ${dead ? 'dead' : ''}">${escapeHtml(m.name)}</div>
-                <div class="text-dim" style="font-size:0.85rem;">HP ${m.maxHp} · ATK ${m.atk}</div>
-              </div>
-              <button class="icon-btn" data-action="remove-minion" data-id="${m.id}">Remove</button>
+        state.monsters.forEach((m, i) => {
+          const row = document.createElement('div');
+          row.className = 'tracker-row';
+          row.innerHTML = `
+            <div class="tracker-row-label">Monster ${i + 1}</div>
+            <div class="stepper">
+              <button data-action="mon-hp" data-id="${m.id}" data-d="-5" type="button" aria-label="-5 HP">−5</button>
+              <button data-action="mon-hp" data-id="${m.id}" data-d="-1" type="button" aria-label="-1 HP">−1</button>
+              <span class="val">${m.hp}</span>
+              <button data-action="mon-hp" data-id="${m.id}" data-d="1"  type="button" aria-label="+1 HP">+1</button>
+              <button data-action="mon-hp" data-id="${m.id}" data-d="5"  type="button" aria-label="+5 HP">+5</button>
             </div>
-            <div class="hp-bar"><span style="width:${clamp(m.hp/m.maxHp*100,0,100)}%"></span></div>
-            <div class="stat" style="border:0; padding-top:6px;">
-              <div class="stat-label">HP</div>
-              <div class="stepper">
-                <button data-action="minion-hp" data-id="${m.id}" data-d="-5">−5</button>
-                <button data-action="minion-hp" data-id="${m.id}" data-d="-1">−1</button>
-                <span class="val">${m.hp}</span>
-                <button data-action="minion-hp" data-id="${m.id}" data-d="+1">+1</button>
-                <button data-action="minion-hp" data-id="${m.id}" data-d="+5">+5</button>
-              </div>
-            </div>
+            <button class="icon-btn danger" data-action="mon-remove" data-id="${m.id}" type="button" aria-label="Remove monster">×</button>
           `;
-          list.appendChild(card);
+          list.appendChild(row);
         });
       }
 
-      document.getElementById('add-minion').addEventListener('click', () => {
-        const name = document.getElementById('new-minion-name').value.trim();
-        const hp = parseInt(document.getElementById('new-minion-hp').value, 10);
-        const atk = parseInt(document.getElementById('new-minion-atk').value, 10);
-        if (!name || isNaN(hp) || isNaN(atk)) { alert('Need a name, HP, and ATK.'); return; }
-        state.minions.push({ id: makeId(), name, hp, maxHp: hp, atk });
-        document.getElementById('new-minion-name').value = '';
-        document.getElementById('new-minion-hp').value = '';
-        document.getElementById('new-minion-atk').value = '';
-        save(); renderAll();
-      });
-
-      // ===== DUNGEON OVERVIEW =====
-      function renderDungeon() {
-        const idxEl = document.getElementById('boss-index');
-        const nameEl = document.getElementById('curr-boss-name');
-        const metaEl = document.getElementById('curr-boss-meta');
-        const hpRow = document.getElementById('curr-boss-hp-row');
-        const hpVal = document.getElementById('curr-boss-hp');
-        const hpBar = document.getElementById('curr-boss-hp-bar');
-
-        const total = state.bosses.length;
-        const idx = state.currentBossIndex;
-        idxEl.textContent = total > 0 ? `${Math.min(idx+1, total)}/${total}` : '0/6';
-        const b = state.bosses[idx];
-        if (!b) {
-          nameEl.textContent = '—';
-          metaEl.textContent = total === 0 ? 'Add bosses in the Bosses tab.' : 'No boss at this slot.';
-          hpRow.style.display = 'none';
-        } else {
-          const max = effectiveBossMaxHP(b);
-          nameEl.textContent = `${idx+1}. ${b.name}${b.legend ? ' ⭐' : ''}` + (b.hp <= 0 ? ' (defeated)' : '');
-          metaEl.innerHTML = `HP ${max} · ATK ${b.atk}${b.labels && b.labels.length ? ' · ' + b.labels.map(l => `<span class="tag ${labelTier(l)}">${escapeHtml(l)}</span>`).join(' ') : ''}`;
-          hpRow.style.display = '';
-          hpVal.textContent = b.hp;
-          hpBar.style.width = clamp(b.hp/max*100, 0, 100) + '%';
-        }
+      function render() {
         document.getElementById('round-val').textContent = state.round;
         document.getElementById('glory-val').textContent = state.glory;
-
-        const aw = state.wizards.find(w => w.id === state.activeWizardId);
-        document.getElementById('active-wizard').textContent = aw ? aw.name : '—';
-      }
-
-      document.getElementById('boss-prev').addEventListener('click', () => {
-        if (state.bosses.length === 0) return;
-        state.currentBossIndex = Math.max(0, state.currentBossIndex - 1);
-        save(); renderAll();
-      });
-      document.getElementById('boss-next').addEventListener('click', () => {
-        if (state.bosses.length === 0) return;
-        state.currentBossIndex = Math.min(state.bosses.length - 1, state.currentBossIndex + 1);
-        // reset wizards' HP when advancing past a defeated boss
-        save(); renderAll();
-      });
-      document.getElementById('round-inc').addEventListener('click', () => {
-        state.round = Math.min(20, state.round + 1); save(); renderAll();
-      });
-      document.getElementById('round-dec').addEventListener('click', () => {
-        state.round = Math.max(1, state.round - 1); save(); renderAll();
-      });
-      document.querySelectorAll('[data-glory]').forEach(el => {
-        el.addEventListener('click', () => {
-          state.glory = Math.max(0, state.glory + parseInt(el.dataset.glory, 10));
-          save(); renderAll();
-        });
-      });
-      document.querySelectorAll('[data-curr-hp]').forEach(el => {
-        el.addEventListener('click', () => {
-          const b = state.bosses[state.currentBossIndex];
-          if (!b) return;
-          b.hp = clamp(b.hp + parseInt(el.dataset.currHp, 10), 0, 999);
-          save(); renderAll();
-        });
-      });
-
-      // ===== SETUP =====
-      function renderSetup() {
-        document.getElementById('players-val').textContent = state.players;
-        const tunings = {
-          1: 'Solo: Boss HP × 1, hand 14, inscriptions 40c.',
-          2: '2 wizards: Boss HP × 2, hand 12, inscriptions 30c.',
-          3: '3 wizards: Boss HP × 3, hand 12, inscriptions 30c. Sweet spot.',
-          4: '4 wizards: Boss HP × 4, hand 12, inscriptions 30c. Sweet spot.',
-          5: '5 wizards: Boss HP × 5, hand 14, inscriptions 30c. ~90 min.',
-        };
-        document.getElementById('players-note').textContent = tunings[state.players] || '';
-      }
-      document.getElementById('players-inc').addEventListener('click', () => {
-        state.players = Math.min(5, state.players + 1);
-        rescaleBossHP(); save(); renderAll();
-      });
-      document.getElementById('players-dec').addEventListener('click', () => {
-        state.players = Math.max(1, state.players - 1);
-        rescaleBossHP(); save(); renderAll();
-      });
-      function rescaleBossHP() {
-        // Reset surviving bosses' HP to new max when player count changes
-        state.bosses.forEach(b => {
-          const newMax = effectiveBossMaxHP(b);
-          if (b.hp > newMax) b.hp = newMax;
-        });
-      }
-
-      document.getElementById('quickstart').addEventListener('click', () => {
-        if (state.wizards.length || state.bosses.length) {
-          if (!confirm('Replace current wizards and bosses?')) return;
-        }
-        state.wizards = ['Aelar','Brunhild','Cassien','Dmitri'].map(n => ({
-          id: makeId(), name: n, hp: STARTING_HP, coppers: 0, glory: 0
-        }));
-        state.activeWizardId = state.wizards[0].id;
-        const samples = [
-          { name: 'Skeleton King',  baseHp: 18, atk: 4, labels: ['SWIFT'] },
-          { name: 'Dragon Whelp',   baseHp: 22, atk: 5, labels: ['TOUGH'] },
-          { name: 'Goblin Warlord', baseHp: 16, atk: 3, labels: [] },
-          { name: 'The Watcher',    baseHp: 24, atk: 5, labels: ['CUNNING'] },
-          { name: 'Bone Tyrant',    baseHp: 26, atk: 6, labels: ['VAMPIRIC'] },
-          { name: 'Doomspawn',      baseHp: 30, atk: 7, labels: ['DOOM'] },
-        ];
-        state.bosses = samples.map(s => ({
-          id: makeId(),
-          name: s.name, baseHp: s.baseHp, atk: s.atk, labels: s.labels,
-          hp: s.baseHp * Math.max(1, state.players),
-          legend: false,
-        }));
-        state.currentBossIndex = 0;
-        state.round = 1;
-        state.minions = [];
-        save(); renderAll();
-        setActiveTab('dungeon');
-      });
-
-      function wipeEverything() {
-        if (!confirm('Wipe the entire tracker?\n\nThis removes all wizards, bosses, coppers, and glory. Cannot be undone.')) return;
-        state = defaultState();
-        save(); renderAll();
-        setActiveTab('dungeon');
-      }
-      document.getElementById('reset-all').addEventListener('click', wipeEverything);
-      document.getElementById('reset-dungeon-quick').addEventListener('click', wipeEverything);
-      document.getElementById('reset-fight').addEventListener('click', () => {
-        state.wizards.forEach(w => { w.hp = STARTING_HP; });
-        state.minions = [];
-        state.round = 1;
-        const b = state.bosses[state.currentBossIndex];
-        if (b) b.hp = effectiveBossMaxHP(b);
-        save(); renderAll();
-      });
-
-      function escapeHtml(s) {
-        return String(s).replace(/[&<>"']/g, c => ({
-          '&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'
-        }[c]));
-      }
-
-      function renderAll() {
-        renderDungeon();
+        renderBoss();
         renderWizards();
-        renderBosses();
-        renderMinions();
-        renderSetup();
+        renderMonsters();
       }
 
-      renderAll();
+      render();
     })();
   </script>
 </Layout>

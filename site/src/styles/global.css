@@ -598,6 +598,31 @@ hr.divider {
   .tracker-grid { grid-template-columns: 1fr 1fr; }
 }
 
+.tracker-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 12px 0;
+  border-bottom: 1px dashed var(--paper-edge);
+  flex-wrap: wrap;
+}
+.tracker-row:last-child { border-bottom: 0; }
+.tracker-row-label {
+  font-family: var(--font-display);
+  font-size: 0.78rem;
+  letter-spacing: 0.10em;
+  text-transform: uppercase;
+  color: var(--ink-faint);
+  flex: 0 0 auto;
+  min-width: 80px;
+}
+.tracker-row .hp-bar {
+  flex: 1 1 120px;
+  min-width: 80px;
+  margin-top: 0;
+}
+.tracker-row .stepper { flex: 0 0 auto; }
+
 .stat {
   display: flex;
   align-items: center;
