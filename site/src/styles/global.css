@@ -405,26 +405,33 @@ em { font-family: var(--font-italic); font-style: italic; }
   font-size: 0.85rem;
   letter-spacing: 0.14em;
   text-transform: uppercase;
-  color: #fbecc4;
+  color: var(--ink);
   text-decoration: none !important;
   cursor: pointer;
-  border-radius: 999px;
-  border: 1px solid rgba(0, 0, 0, 0.4);
-  background:
-    radial-gradient(120% 100% at 30% 18%, rgba(255, 255, 255, 0.22), transparent 55%),
-    linear-gradient(180deg, var(--wax-bright), var(--wax) 50%, var(--wax-deep));
+  border-radius: var(--radius);
+  border: 1px solid var(--ink-soft);
+  background: linear-gradient(180deg, var(--paper-bright), var(--paper-deep));
   box-shadow:
-    0 1px 0 rgba(255, 255, 255, 0.18) inset,
-    0 -2px 4px rgba(0, 0, 0, 0.20) inset,
-    0 6px 14px rgba(58, 18, 12, 0.32);
-  transition: transform 120ms ease, filter 120ms ease, box-shadow 120ms ease;
+    0 1px 0 rgba(255, 250, 232, 0.7) inset,
+    0 -1px 0 rgba(0, 0, 0, 0.08) inset,
+    0 2px 6px rgba(45, 28, 15, 0.15);
+  transition: transform 120ms ease, background 120ms ease, box-shadow 120ms ease;
 }
 .btn:hover {
+  background: linear-gradient(180deg, #fff5d6, var(--paper));
+  color: var(--ink);
   transform: translateY(-1px);
-  filter: brightness(1.06);
-  color: #fff5d6;
+  box-shadow:
+    0 1px 0 rgba(255, 250, 232, 0.7) inset,
+    0 -1px 0 rgba(0, 0, 0, 0.08) inset,
+    0 4px 10px rgba(45, 28, 15, 0.20);
 }
-.btn:active { transform: translateY(1px); filter: brightness(0.95); }
+.btn:active {
+  transform: translateY(1px);
+  box-shadow:
+    inset 0 1px 2px rgba(45, 28, 15, 0.20),
+    0 1px 2px rgba(45, 28, 15, 0.10);
+}
 
 .btn.btn-ghost {
   color: var(--ink);
